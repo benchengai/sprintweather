@@ -1,5 +1,7 @@
 # SprintWeather
 
+**Live demo:** [benchengai.github.io/demos/sprintweather](https://benchengai.github.io/demos/sprintweather/) (static, synthetic team; themes are saved outputs of a real pipeline run)
+
 An opt-in, self-reported, k-anonymous team pulse that feeds sprint
 retrospectives. Members answer three 1–5 questions and one yes/no question each
 sprint, with an optional note. The team sees aggregates, trends, paraphrased
@@ -108,7 +110,8 @@ if it finds one. To serve the demo from a sub-path, set the same base path for
 both steps, e.g. `DEMO_BASE_PATH=/demos/sprintweather npm run build:demo`, then
 `DEMO_BASE_PATH=/demos/sprintweather npm run serve:demo`. To deploy on Vercel, set the environment variable
 `SW_MODE=demo` (or use `npm run build:demo` as the build command and `out` as the
-output directory). It has not been deployed.
+output directory). The public demo at https://benchengai.github.io/demos/sprintweather/ is built with the
+sub-path command above.
 
 **Local mode** (real check-ins, stored in `.data/store.json`):
 
