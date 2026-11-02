@@ -3,7 +3,9 @@
 import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
-import type { CallMeta } from "../lib/llm/client";
+import OpenAI from "openai";
+
+import { LLMError, type CallMeta } from "../lib/llm/client";
 
 export interface PlantedTheme {
   id: string;
@@ -86,17 +88,42 @@ export function recordCall(meta: CallMeta, context: Record<string, unknown>): vo
   appendFileSync(LEDGER, `${JSON.stringify({ at: new Date().toISOString(), ...context, ...meta })}\n`);
 }
 
-/** Run async jobs with at most `limit` in flight. */
+/** Run async jobs with at most `limit` in flight. After the first error no new
+ * job starts; jobs already running finish, then the error is rethrown. */
 export async function pool<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>): Promise<R[]> {
   const out: R[] = new Array(items.length);
   let next = 0;
+  let failure: unknown = null;
   await Promise.all(
     Array.from({ length: Math.min(limit, items.length) }, async () => {
-      while (next < items.length) {
+      while (next < items.length && failure === null) {
         const i = next++;
-        out[i] = await fn(items[i]);
+        try {
+          out[i] = await fn(items[i]);
+        } catch (e) {
+          failure ??= e;
+        }
       }
     }),
   );
+  if (failure !== null) throw failure;
   return out;
+}
+
+/** Errors that say nothing about the model (budget cap, auth, quota, rate limit,
+ * server, network): the benchmark stops and caches nothing, so a rerun resumes. */
+export function stopsBenchmark(e: unknown): boolean {
+  if (e instanceof LLMError) return e.message.startsWith("budget");
+  if (e instanceof OpenAI.APIError) return e.status === undefined || [401, 403, 429].includes(e.status) || e.status >= 500;
+  return false;
+}
+
+const TRANSIENT = /^(Error: )?(401|403|429|5\d\d)\b|no credits|connection error|timed out/i;
+
+/** A cached run, or null if there is none or it only records a transient error
+ * (older caches stored those as failed runs). */
+export function cached<T extends { ok: boolean; error?: string }>(file: string): T | null {
+  if (!existsSync(file)) return null;
+  const run = readJson<T>(file);
+  return !run.ok && TRANSIENT.test(run.error ?? "") ? null : run;
 }

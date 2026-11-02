@@ -18,19 +18,41 @@ the tables are generated from them.
 |---|---|
 | Privacy property tests, API tests, export scan | Done; all pass |
 | Theme step on the development set, `gpt-6-luna` and `gpt-6.1-terra` | Done; one complete run per model (`runs/smoke3`) |
-| Planned benchmark: 3 runs per model, development **and held-out** sets, retro prompts included | **Not done.** The OpenAI account behind the key ran out of credits (`429 You have no credits remaining`) partway through the fourth development run. The key is shared with sibling projects; SprintWeather itself had spent $0.063 |
-| Retro prompts | Implemented and unit-tested through the API path; **never run against a model** for the same reason. The demo shows none |
+| Full benchmark: 3 runs each of `gpt-6-luna` and `gpt-6.1-terra` | **Not done: OpenAI credits ran out.** The account behind the key returned `429 You have no credits remaining` partway through the fourth development run. The key is shared with sibling projects; SprintWeather itself had spent $0.063 |
+| Held-out scoring | **Not done: OpenAI credits ran out.** No model has seen the held-out set, so it is still blind |
+| Retro prompts | Implemented and unit-tested through the API path; **not run against a model: OpenAI credits ran out.** The demo shows none |
 
-The held-out set ([`data/eval/heldout.json`](../../data/eval/heldout.json),
-two teams, 42 notes) has not been seen by any model, so it is still blind. To run
-the planned benchmark once the account has credits (about $0.20 at the measured
-per-scope cost, well under the $2 budget):
+No number in this report estimates or extrapolates the missing runs. Everything
+below is from runs that finished.
+
+### Completing the missing runs
+
+The benchmark caches each finished scope under `runs/eval/` and resumes from that
+cache. A model's own failure (invalid or truncated output, a refusal) is recorded
+as a failed run. A quota, rate-limit, auth, server or network error, or the
+budget cap, stops the benchmark without caching anything, so the same command
+picks up where it stopped. This was checked against the credit-less account: the
+command below exited with the 429, cached nothing, and billed nothing. Once the
+account has credits, from the repository root:
 
 ```bash
-npx tsx scripts/eval-themes.ts --env-file <path-to-.env> --models gpt-6-luna,gpt-6.1-terra --runs 3
-npx tsx scripts/demo-pipeline.ts --from runs/eval/<chosen-model>/run1
+npx tsx scripts/eval-themes.ts --env-file /Users/ben/Documents/ClaudeProject/Personal/elicitsense/.env --models gpt-6-luna,gpt-6.1-terra --runs 3
+```
+
+It writes `runs/eval/results.json` and `docs/eval/results.md`, with the
+development and held-out sets and retro prompts for all six runs. To show that
+benchmark's outputs in the demo (no API call), then rebuild:
+
+```bash
+npx tsx scripts/demo-pipeline.ts --from runs/eval/gpt-6-luna/run1
+```
+
+```bash
 npm run build:demo
 ```
+
+The runner keeps its own spending cap (`--budget`, default $1.90, counting
+everything already in `runs/ledger.jsonl`).
 
 ## 1. Privacy properties
 
@@ -136,7 +158,7 @@ Recall by planted theme:
    rewritten, except one (`gpt-6.1-terra`, Sprint 22 scope creep) whose rewrite
    used "grew", which the stemmer did not map to the listed word "grow". Irregular
    verb forms were added to the everyday list afterwards; the run that would have
-   tested that fix was cut off by the credit limit.
+   tested that fix was cut off by the credit limit, so it is untested on that theme.
 5. **Distinctive phrases were never echoed, even before the guard.** Both models
    kept "Klingon", "rubber duck", "Marta", "Calvinball" and the rest out of their
    first drafts. The guard is the deterministic backstop; in these runs it caught

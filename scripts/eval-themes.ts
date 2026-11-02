@@ -4,8 +4,11 @@
  * development set, two held-out teams), then generate retro prompts for each demo
  * sprint from a release that includes that run's themes. Each finished scope is
  * cached under runs/eval/<model>/run<r>/, so an interrupted benchmark resumes
- * where it stopped. A failed call is recorded and counted, not retried. Every call
- * is appended to runs/ledger.jsonl, and the run stops once the budget is spent.
+ * where it stopped. Only a model's own failure (invalid or truncated output, a
+ * refusal) is recorded as a failed run and counted, not retried. Quota, rate-limit,
+ * auth, server and network errors, and the budget cap, stop the benchmark without
+ * caching anything, so running the same command again resumes. Every call is
+ * appended to runs/ledger.jsonl.
  *
  *   npx tsx scripts/eval-themes.ts --env-file <path> [--models a,b] [--runs 3] [--scopes s1,h1] [--sets dev]
  *     [--budget 1.9] [--out runs/eval] [--report docs/eval/results.md] [--score-only]
@@ -21,7 +24,7 @@ import { buildRelease, type Dataset } from "../lib/release";
 import { retroPrompts } from "../lib/retro";
 import { extractThemes, toThemeResult, type PipelineResult } from "../lib/themes/pipeline";
 import type { PromptResult } from "../lib/types";
-import { arg, ledgerTotal, loadEnv, pool, readJson, recordCall, seededInt, writeJson, type NoteSet, type Scope } from "./common";
+import { arg, cached, ledgerTotal, loadEnv, pool, readJson, recordCall, seededInt, stopsBenchmark, writeJson, type NoteSet, type Scope } from "./common";
 import { scorePrompts, scoreScope, type ScopeScore } from "./score";
 
 const VERSION = 1;
@@ -70,7 +73,8 @@ function caller(model: string, context: Record<string, unknown>) {
 
 async function themeRun(model: string, run: number, scope: Scope): Promise<ThemeRun> {
   const file = `${OUT}/${model}/run${run}/${scope.id}.json`;
-  if (existsSync(file)) return readJson<ThemeRun>(file);
+  const hit = cached<ThemeRun>(file);
+  if (hit) return hit;
   if (SCORE_ONLY) return { version: VERSION, ok: false, error: "not run", calls: [] };
   const calls: CallMeta[] = [];
   const call = caller(model, { script: "eval", model, run, scope: scope.id });
@@ -84,7 +88,7 @@ async function themeRun(model: string, run: number, scope: Scope): Promise<Theme
     const result = await extractThemes(scope.notes.map((n) => n.text), { k: K, call: tracked, random: seededInt(scope.id, run) });
     out = { version: VERSION, ok: true, result, calls };
   } catch (e) {
-    if (e instanceof LLMError && e.message.startsWith("budget")) throw e;
+    if (stopsBenchmark(e)) throw e;
     out = { version: VERSION, ok: false, error: String(e).slice(0, 500), calls };
   }
   writeJson(file, out);
@@ -94,7 +98,8 @@ async function themeRun(model: string, run: number, scope: Scope): Promise<Theme
 
 async function promptRun(model: string, run: number, themes: Map<string, ThemeRun>): Promise<PromptRun> {
   const file = `${OUT}/${model}/run${run}/prompts.json`;
-  if (existsSync(file)) return readJson<PromptRun>(file);
+  const hit = cached<PromptRun>(file);
+  if (hit) return hit;
   if (SCORE_ONLY) return { version: VERSION, ok: false, error: "not run", sprints: [] };
   const themeResults = devSet.scopes
     .filter((s) => themes.get(s.id)?.ok)
@@ -109,7 +114,7 @@ async function promptRun(model: string, run: number, themes: Map<string, ThemeRu
     });
     out = { version: VERSION, ok: true, sprints };
   } catch (e) {
-    if (e instanceof LLMError && e.message.startsWith("budget")) throw e;
+    if (stopsBenchmark(e)) throw e;
     out = { version: VERSION, ok: false, error: String(e).slice(0, 500), sprints: [] };
   }
   writeJson(file, out);
@@ -264,4 +269,11 @@ async function main() {
   console.log(`ledger total: $${ledgerTotal().toFixed(4)}`);
 }
 
-await main();
+try {
+  await main();
+} catch (e) {
+  console.error(`stopped, nothing cached for unfinished work: ${String(e).slice(0, 200)}`);
+  console.error(`finished scopes are cached under ${OUT}/; run the same command again to resume.`);
+  console.error(`ledger total: $${ledgerTotal().toFixed(4)}`);
+  process.exitCode = 1;
+}

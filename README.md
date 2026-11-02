@@ -126,7 +126,9 @@ machine you trust.
 npm test
 ```
 
-**Theme evaluation** (calls the API; writes `runs/` and `docs/eval/results.md`):
+**Theme evaluation** (calls the API; caches each finished scope under `runs/eval/`
+and resumes from it; writes `docs/eval/results.md`). `--env-file` points at a file
+with `OPENAI_API_KEY`; it is only read, and existing variables win:
 
 ```bash
 npx tsx scripts/eval-themes.ts --env-file .env --models gpt-6-luna,gpt-6.1-terra --runs 3
@@ -154,16 +156,19 @@ Details and method: [docs/eval/README.md](docs/eval/README.md).
   | Cost for 8 scopes | $0.0041 | $0.0331 |
 
   Every theme with 6 or more notes was found, except one withheld by the wording
-  guard over a since-fixed false alarm. The other misses are themes at exactly
+  guard over a false alarm ("grew", since added to the everyday-word list). The other misses are themes at exactly
   k = 5 notes, where the second call confirmed only 3 or 4 notes. The guard caught
   two statements that repeated 4–5 words from a single note.
 - **API spend: $0.063** of the $2 budget.
 
-**Not done:** the planned 3-run benchmark per model, the blind held-out set and
-the retro-prompt step against a live model. The OpenAI account behind the
-(shared) key ran out of credits after SprintWeather had spent $0.063. The demo
-therefore shows themes from one development run and no retro prompts. One
-command reruns everything (see the evaluation report).
+**Not done: OpenAI credits ran out.** This covers the full benchmark (3 runs
+each of `gpt-6-luna` and `gpt-6.1-terra`), the held-out scoring, and running the
+retro-prompt step against a model. The account behind the shared key returned
+`429 You have no credits remaining` after SprintWeather had spent $0.063. None
+of the numbers above estimate those runs. The demo shows only outputs of runs
+that finished: the themes of one complete development run, unedited, and no
+retro prompts. The benchmark resumes from its cache, and the exact command to
+complete it is in the [evaluation report](docs/eval/README.md#completing-the-missing-runs).
 
 ## Limitations
 
