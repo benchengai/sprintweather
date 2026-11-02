@@ -109,3 +109,13 @@ export function welchInterval(before: number[], after: number[]): (Interval & { 
   const half = tQuantile(0.975, df) * se;
   return { estimate: diff, lo: diff - half, hi: diff + half, df };
 }
+
+/** 95% Wilson interval for a proportion. */
+export function wilsonInterval(successes: number, n: number): Interval {
+  const z = 1.959964;
+  const p = successes / n;
+  const denom = 1 + (z * z) / n;
+  const centre = (p + (z * z) / (2 * n)) / denom;
+  const half = (z * Math.sqrt((p * (1 - p)) / n + (z * z) / (4 * n * n))) / denom;
+  return { estimate: p, lo: Math.max(0, centre - half), hi: Math.min(1, centre + half) };
+}

@@ -1,0 +1,169 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Actions identified after incidents are often left incomplete or pushed back.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          8,
+          9,
+          6,
+          10,
+          7
+        ],
+        "rewritten": true
+      }
+    ],
+    "withheld": [
+      {
+        "statement": "A meeting-free afternoon supports focused, productive work.",
+        "reason": "verified-below-k",
+        "supportIdx": [
+          3,
+          0,
+          5,
+          1
+        ]
+      }
+    ],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_f4fa96ee90e6494b839c79596893bf91",
+        "inputTokens": 573,
+        "cachedInputTokens": 0,
+        "outputTokens": 292,
+        "reasoningTokens": 191,
+        "latencyS": 3.87,
+        "costUsd": 0.0002033
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_3fe275acb7234db3b35794aefb8a8a3e",
+        "inputTokens": 439,
+        "cachedInputTokens": 0,
+        "outputTokens": 377,
+        "reasoningTokens": 313,
+        "latencyS": 6.11,
+        "costUsd": 0.0002324
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6-luna",
+        "requestId": "req_d0cefc46ee9745aa8f309cebe8078e3f",
+        "inputTokens": 153,
+        "cachedInputTokens": 0,
+        "outputTokens": 98,
+        "reasoningTokens": 62,
+        "latencyS": 2.27,
+        "costUsd": 0.00006429999999999999
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "A meeting-free afternoon supports focused, productive work.",
+            "topic": "process",
+            "polarity": "positive",
+            "note_ids": [
+              "n01",
+              "n02",
+              "n03",
+              "n09",
+              "n10",
+              "n12"
+            ]
+          },
+          {
+            "statement": "Post-incident follow-up work remains unfinished or is repeatedly deferred.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n05",
+              "n07",
+              "n08",
+              "n11",
+              "n14"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n09",
+              "n10",
+              "n12"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n05",
+              "n07",
+              "n08",
+              "n11",
+              "n14"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t2",
+              "statement": "Actions identified after incidents are often left incomplete or pushed back."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 1,
+      "rewritten": 1
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_f4fa96ee90e6494b839c79596893bf91",
+      "inputTokens": 573,
+      "cachedInputTokens": 0,
+      "outputTokens": 292,
+      "reasoningTokens": 191,
+      "latencyS": 3.87,
+      "costUsd": 0.0002033
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_3fe275acb7234db3b35794aefb8a8a3e",
+      "inputTokens": 439,
+      "cachedInputTokens": 0,
+      "outputTokens": 377,
+      "reasoningTokens": 313,
+      "latencyS": 6.11,
+      "costUsd": 0.0002324
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_d0cefc46ee9745aa8f309cebe8078e3f",
+      "inputTokens": 153,
+      "cachedInputTokens": 0,
+      "outputTokens": 98,
+      "reasoningTokens": 62,
+      "latencyS": 2.27,
+      "costUsd": 0.00006429999999999999
+    }
+  ]
+}

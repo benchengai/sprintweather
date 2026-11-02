@@ -1,0 +1,186 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [],
+    "withheld": [
+      {
+        "statement": "Flaky automated tests create unreliable CI results and require repeated reruns, slowing development.",
+        "reason": "verified-below-k",
+        "supportIdx": []
+      },
+      {
+        "statement": "Early interactive prototypes improve design handoffs, answer questions, and reduce back-and-forth.",
+        "reason": "verified-below-k",
+        "supportIdx": []
+      },
+      {
+        "statement": "App review delays or rejections hold releases and make launch timing difficult to predict.",
+        "reason": "wording",
+        "supportIdx": [
+          3,
+          0,
+          1,
+          4,
+          5,
+          2
+        ],
+        "guard": {
+          "ok": false,
+          "words": [
+            "store"
+          ],
+          "phrases": [],
+          "placeholders": false
+        }
+      }
+    ],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_722a0033916043f99dffffb566a8bbf7",
+        "inputTokens": 688,
+        "cachedInputTokens": 0,
+        "outputTokens": 602,
+        "reasoningTokens": 370,
+        "latencyS": 6.34,
+        "costUsd": 0.0003698
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_cba0698b2ee3411ca50f7df7ae299b57",
+        "inputTokens": 608,
+        "cachedInputTokens": 0,
+        "outputTokens": 1526,
+        "reasoningTokens": 1460,
+        "latencyS": 16.93,
+        "costUsd": 0.0008238
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6-luna",
+        "requestId": "req_7e1c4e03190845b0a76c9c9848c91054",
+        "inputTokens": 160,
+        "cachedInputTokens": 0,
+        "outputTokens": 166,
+        "reasoningTokens": 123,
+        "latencyS": 2.63,
+        "costUsd": 0.000099
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Flaky automated tests create unreliable CI results and require repeated reruns, slowing development.",
+            "topic": "tooling",
+            "polarity": "concern",
+            "note_ids": [
+              "n01",
+              "n02",
+              "n03",
+              "n05",
+              "n09",
+              "n16",
+              "n17"
+            ]
+          },
+          {
+            "statement": "App review delays or rejections hold releases and make launch timing difficult to predict.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n07",
+              "n10",
+              "n11",
+              "n13",
+              "n20",
+              "n21"
+            ]
+          },
+          {
+            "statement": "Early interactive prototypes improve design handoffs, answer questions, and reduce back-and-forth.",
+            "topic": "collaboration",
+            "polarity": "positive",
+            "note_ids": [
+              "n04",
+              "n08",
+              "n12",
+              "n14",
+              "n15"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": []
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n07",
+              "n10",
+              "n11",
+              "n13",
+              "n20",
+              "n21"
+            ]
+          },
+          {
+            "theme_id": "t3",
+            "supported_note_ids": []
+          }
+        ]
+      },
+      "rewrite": {
+        "rewrites": [
+          {
+            "theme_id": "t2",
+            "statement": "Store review bottlenecks or rejections can hold releases and make release timing hard to predict."
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 1,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_722a0033916043f99dffffb566a8bbf7",
+      "inputTokens": 688,
+      "cachedInputTokens": 0,
+      "outputTokens": 602,
+      "reasoningTokens": 370,
+      "latencyS": 6.34,
+      "costUsd": 0.0003698
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_cba0698b2ee3411ca50f7df7ae299b57",
+      "inputTokens": 608,
+      "cachedInputTokens": 0,
+      "outputTokens": 1526,
+      "reasoningTokens": 1460,
+      "latencyS": 16.93,
+      "costUsd": 0.0008238
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_7e1c4e03190845b0a76c9c9848c91054",
+      "inputTokens": 160,
+      "cachedInputTokens": 0,
+      "outputTokens": 166,
+      "reasoningTokens": 123,
+      "latencyS": 2.63,
+      "costUsd": 0.000099
+    }
+  ]
+}

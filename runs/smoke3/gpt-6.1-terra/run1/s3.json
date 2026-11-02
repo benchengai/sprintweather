@@ -1,0 +1,148 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Incident response took substantial work time.",
+        "topic": "workload",
+        "polarity": "concern",
+        "support": 7,
+        "supportIdx": [
+          6,
+          2,
+          3,
+          4,
+          5,
+          0,
+          1
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Meetings reduced the time available for other work.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          7,
+          12,
+          8,
+          11,
+          9
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_94a89ed5916c498ea880492edbf487c8",
+        "inputTokens": 618,
+        "cachedInputTokens": 0,
+        "outputTokens": 860,
+        "reasoningTokens": 757,
+        "latencyS": 11.06,
+        "costUsd": 0.004918
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_ea020d7e6f7f4ea18868b1db3e61583d",
+        "inputTokens": 472,
+        "cachedInputTokens": 0,
+        "outputTokens": 261,
+        "reasoningTokens": 188,
+        "latencyS": 4.69,
+        "costUsd": 0.001777
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Incident response took substantial work time.",
+            "topic": "workload",
+            "polarity": "concern",
+            "note_ids": [
+              "n03",
+              "n04",
+              "n05",
+              "n06",
+              "n07",
+              "n10",
+              "n16"
+            ]
+          },
+          {
+            "statement": "Meetings reduced the time available for other work.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n08",
+              "n11",
+              "n12",
+              "n13",
+              "n14",
+              "n15"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n03",
+              "n04",
+              "n05",
+              "n06",
+              "n07",
+              "n10",
+              "n16"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n11",
+              "n12",
+              "n13",
+              "n14",
+              "n15"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_94a89ed5916c498ea880492edbf487c8",
+      "inputTokens": 618,
+      "cachedInputTokens": 0,
+      "outputTokens": 860,
+      "reasoningTokens": 757,
+      "latencyS": 11.06,
+      "costUsd": 0.004918
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_ea020d7e6f7f4ea18868b1db3e61583d",
+      "inputTokens": 472,
+      "cachedInputTokens": 0,
+      "outputTokens": 261,
+      "reasoningTokens": 188,
+      "latencyS": 4.69,
+      "costUsd": 0.001777
+    }
+  ]
+}

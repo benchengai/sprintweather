@@ -32,7 +32,7 @@ export function emptyStore(k = DEFAULT_K): StoreData {
 }
 
 export function storePath(): string {
-  return path.resolve(process.env.SW_STORE ?? ".data/store.json");
+  return path.resolve(/* turbopackIgnore: true */ process.cwd(), process.env.SW_STORE ?? ".data/store.json");
 }
 
 export async function readStore(file = storePath()): Promise<StoreData> {

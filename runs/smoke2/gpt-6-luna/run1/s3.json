@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Frequent meetings limited time for focused work.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          10,
+          7,
+          12,
+          8,
+          11,
+          9
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Production incidents consumed time intended for planned work.",
+        "topic": "workload",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          6,
+          2,
+          3,
+          4,
+          1
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_1869c098635c4a3192ef3914ee8276f4",
+        "inputTokens": 618,
+        "cachedInputTokens": 0,
+        "outputTokens": 589,
+        "reasoningTokens": 485,
+        "latencyS": 6.94,
+        "costUsd": 0.0003563
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_031beac6fade42ecafe336a4b57250ee",
+        "inputTokens": 474,
+        "cachedInputTokens": 0,
+        "outputTokens": 313,
+        "reasoningTokens": 243,
+        "latencyS": 4.61,
+        "costUsd": 0.0002039
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Production incidents consumed time intended for planned work.",
+            "topic": "workload",
+            "polarity": "concern",
+            "note_ids": [
+              "n03",
+              "n04",
+              "n05",
+              "n06",
+              "n07",
+              "n10",
+              "n16"
+            ]
+          },
+          {
+            "statement": "Frequent meetings limited time for focused work.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n08",
+              "n11",
+              "n12",
+              "n13",
+              "n14",
+              "n15"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n03",
+              "n04",
+              "n05",
+              "n06",
+              "n16"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n08",
+              "n11",
+              "n12",
+              "n13",
+              "n14",
+              "n15"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_1869c098635c4a3192ef3914ee8276f4",
+      "inputTokens": 618,
+      "cachedInputTokens": 0,
+      "outputTokens": 589,
+      "reasoningTokens": 485,
+      "latencyS": 6.94,
+      "costUsd": 0.0003563
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_031beac6fade42ecafe336a4b57250ee",
+      "inputTokens": 474,
+      "cachedInputTokens": 0,
+      "outputTokens": 313,
+      "reasoningTokens": 243,
+      "latencyS": 4.61,
+      "costUsd": 0.0002039
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Code reviews often wait too long before someone picks them up.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          1,
+          0,
+          2,
+          5,
+          3,
+          4
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Working together in pairs benefited the team.",
+        "topic": "collaboration",
+        "polarity": "positive",
+        "support": 5,
+        "supportIdx": [
+          6,
+          8,
+          7,
+          9,
+          10
+        ],
+        "rewritten": true
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_3248486f206e4a10a98a5556d4963740",
+        "inputTokens": 590,
+        "cachedInputTokens": 0,
+        "outputTokens": 410,
+        "reasoningTokens": 266,
+        "latencyS": 4.87,
+        "costUsd": 0.000264
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_4e7e456c639742678a98fd0ff5d52e3e",
+        "inputTokens": 451,
+        "cachedInputTokens": 0,
+        "outputTokens": 188,
+        "reasoningTokens": 118,
+        "latencyS": 3.28,
+        "costUsd": 0.0001391
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6-luna",
+        "requestId": "req_249676ca01cb4d16945d4a471edfacbd",
+        "inputTokens": 155,
+        "cachedInputTokens": 0,
+        "outputTokens": 104,
+        "reasoningTokens": 72,
+        "latencyS": 2.4,
+        "costUsd": 0.0000675
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Code reviews often wait too long before someone picks them up.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n03",
+              "n04",
+              "n07",
+              "n10",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "statement": "Pairing was a positive part of the sprint.",
+            "topic": "collaboration",
+            "polarity": "positive",
+            "note_ids": [
+              "n01",
+              "n08",
+              "n09",
+              "n11",
+              "n13"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n03",
+              "n04",
+              "n07",
+              "n10",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n01",
+              "n08",
+              "n09",
+              "n11",
+              "n13"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t2",
+              "statement": "Working together in pairs benefited the team."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 1,
+      "rewritten": 1
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_3248486f206e4a10a98a5556d4963740",
+      "inputTokens": 590,
+      "cachedInputTokens": 0,
+      "outputTokens": 410,
+      "reasoningTokens": 266,
+      "latencyS": 4.87,
+      "costUsd": 0.000264
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_4e7e456c639742678a98fd0ff5d52e3e",
+      "inputTokens": 451,
+      "cachedInputTokens": 0,
+      "outputTokens": 188,
+      "reasoningTokens": 118,
+      "latencyS": 3.28,
+      "costUsd": 0.0001391
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_249676ca01cb4d16945d4a471edfacbd",
+      "inputTokens": 155,
+      "cachedInputTokens": 0,
+      "outputTokens": 104,
+      "reasoningTokens": 72,
+      "latencyS": 2.4,
+      "costUsd": 0.0000675
+    }
+  ]
+}

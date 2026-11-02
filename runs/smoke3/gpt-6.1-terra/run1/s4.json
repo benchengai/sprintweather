@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Dedicated quiet time supports productive work.",
+        "topic": "process",
+        "polarity": "positive",
+        "support": 6,
+        "supportIdx": [
+          3,
+          4,
+          2,
+          0,
+          5,
+          1
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Incident follow-up work remains incomplete.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          8,
+          9,
+          6,
+          10,
+          7
+        ],
+        "rewritten": true
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_487a0cd23b3b4ca7998afe52d7fc7441",
+        "inputTokens": 573,
+        "cachedInputTokens": 0,
+        "outputTokens": 306,
+        "reasoningTokens": 212,
+        "latencyS": 4.8,
+        "costUsd": 0.002103
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_5ef49ddbd232432f9addc59298bbb2d2",
+        "inputTokens": 431,
+        "cachedInputTokens": 0,
+        "outputTokens": 113,
+        "reasoningTokens": 43,
+        "latencyS": 2.22,
+        "costUsd": 0.000996
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_19aca2cd58914224a7c2273c96a14dbb",
+        "inputTokens": 149,
+        "cachedInputTokens": 0,
+        "outputTokens": 83,
+        "reasoningTokens": 52,
+        "latencyS": 2.47,
+        "costUsd": 0.000564
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Dedicated quiet time supports productive work.",
+            "topic": "process",
+            "polarity": "positive",
+            "note_ids": [
+              "n01",
+              "n02",
+              "n03",
+              "n09",
+              "n10",
+              "n12"
+            ]
+          },
+          {
+            "statement": "Post-incident follow-up work remains unfinished.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n05",
+              "n07",
+              "n08",
+              "n11",
+              "n14"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n02",
+              "n03",
+              "n09",
+              "n10",
+              "n12"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n05",
+              "n07",
+              "n08",
+              "n11",
+              "n14"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t2",
+              "statement": "Incident follow-up work remains incomplete."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 1,
+      "rewritten": 1
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_487a0cd23b3b4ca7998afe52d7fc7441",
+      "inputTokens": 573,
+      "cachedInputTokens": 0,
+      "outputTokens": 306,
+      "reasoningTokens": 212,
+      "latencyS": 4.8,
+      "costUsd": 0.002103
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_5ef49ddbd232432f9addc59298bbb2d2",
+      "inputTokens": 431,
+      "cachedInputTokens": 0,
+      "outputTokens": 113,
+      "reasoningTokens": 43,
+      "latencyS": 2.22,
+      "costUsd": 0.000996
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_19aca2cd58914224a7c2273c96a14dbb",
+      "inputTokens": 149,
+      "cachedInputTokens": 0,
+      "outputTokens": 83,
+      "reasoningTokens": 52,
+      "latencyS": 2.47,
+      "costUsd": 0.000564
+    }
+  ]
+}

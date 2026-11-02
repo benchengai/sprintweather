@@ -1,0 +1,178 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Sprint goals and priorities were often unclear, leaving teams uncertain about what to focus on.",
+        "topic": "goals",
+        "polarity": "concern",
+        "support": 7,
+        "supportIdx": [
+          2,
+          4,
+          6,
+          0,
+          5,
+          3,
+          1
+        ],
+        "rewritten": true
+      },
+      {
+        "statement": "Waiting on dependent work blocked progress.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          10,
+          11,
+          8,
+          9,
+          7
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_b7dacc2f928545fe80d05179bad812ee",
+        "inputTokens": 598,
+        "cachedInputTokens": 0,
+        "outputTokens": 733,
+        "reasoningTokens": 627,
+        "latencyS": 8.53,
+        "costUsd": 0.0004263
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_80b34707a5cc47d496b94604dfb95531",
+        "inputTokens": 442,
+        "cachedInputTokens": 0,
+        "outputTokens": 105,
+        "reasoningTokens": 32,
+        "latencyS": 1.97,
+        "costUsd": 0.0000967
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6-luna",
+        "requestId": "req_6ed62b1ebffa425eba31ea045a478a97",
+        "inputTokens": 158,
+        "cachedInputTokens": 0,
+        "outputTokens": 207,
+        "reasoningTokens": 166,
+        "latencyS": 3.48,
+        "costUsd": 0.0001193
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Sprint goals and priorities were unclear or shifted, making work direction difficult to align.",
+            "topic": "goals",
+            "polarity": "concern",
+            "note_ids": [
+              "n03",
+              "n04",
+              "n05",
+              "n06",
+              "n07",
+              "n10",
+              "n13"
+            ]
+          },
+          {
+            "statement": "Waiting on dependent work blocked progress.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n02",
+              "n08",
+              "n11",
+              "n12",
+              "n15"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n03",
+              "n04",
+              "n05",
+              "n06",
+              "n07",
+              "n10",
+              "n13"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n02",
+              "n08",
+              "n11",
+              "n12",
+              "n15"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t1",
+              "statement": "Sprint goals and priorities were often unclear, leaving teams uncertain about what to focus on."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 1,
+      "rewritten": 1
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_b7dacc2f928545fe80d05179bad812ee",
+      "inputTokens": 598,
+      "cachedInputTokens": 0,
+      "outputTokens": 733,
+      "reasoningTokens": 627,
+      "latencyS": 8.53,
+      "costUsd": 0.0004263
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_80b34707a5cc47d496b94604dfb95531",
+      "inputTokens": 442,
+      "cachedInputTokens": 0,
+      "outputTokens": 105,
+      "reasoningTokens": 32,
+      "latencyS": 1.97,
+      "costUsd": 0.0000967
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_6ed62b1ebffa425eba31ea045a478a97",
+      "inputTokens": 158,
+      "cachedInputTokens": 0,
+      "outputTokens": 207,
+      "reasoningTokens": 166,
+      "latencyS": 3.48,
+      "costUsd": 0.0001193
+    }
+  ]
+}

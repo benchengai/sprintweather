@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Meeting-free afternoons support focused, productive work.",
+        "topic": "process",
+        "polarity": "positive",
+        "support": 6,
+        "supportIdx": [
+          3,
+          4,
+          2,
+          0,
+          5,
+          1
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Some work to address the incident is still unfinished.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          8,
+          9,
+          6,
+          10,
+          7
+        ],
+        "rewritten": true
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_959ebe9e379343e9ac543aaf6dd81b42",
+        "inputTokens": 573,
+        "cachedInputTokens": 0,
+        "outputTokens": 301,
+        "reasoningTokens": 205,
+        "latencyS": 3.64,
+        "costUsd": 0.0002078
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_d3d9b0d1a3ea4d33b8fd57b048e4c41f",
+        "inputTokens": 433,
+        "cachedInputTokens": 0,
+        "outputTokens": 417,
+        "reasoningTokens": 347,
+        "latencyS": 6.09,
+        "costUsd": 0.0002518
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6-luna",
+        "requestId": "req_fa05d83038434bc9b2c722325e989ecd",
+        "inputTokens": 149,
+        "cachedInputTokens": 0,
+        "outputTokens": 73,
+        "reasoningTokens": 39,
+        "latencyS": 2.09,
+        "costUsd": 0.000051399999999999996
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Meeting-free afternoons support focused, productive work.",
+            "topic": "process",
+            "polarity": "positive",
+            "note_ids": [
+              "n01",
+              "n02",
+              "n03",
+              "n09",
+              "n10",
+              "n12"
+            ]
+          },
+          {
+            "statement": "Post-incident follow-up work remains incomplete.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n05",
+              "n07",
+              "n08",
+              "n11",
+              "n14"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n02",
+              "n03",
+              "n09",
+              "n10",
+              "n12"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n05",
+              "n07",
+              "n08",
+              "n11",
+              "n14"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t2",
+              "statement": "Some work to address the incident is still unfinished."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 1,
+      "rewritten": 1
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_959ebe9e379343e9ac543aaf6dd81b42",
+      "inputTokens": 573,
+      "cachedInputTokens": 0,
+      "outputTokens": 301,
+      "reasoningTokens": 205,
+      "latencyS": 3.64,
+      "costUsd": 0.0002078
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_d3d9b0d1a3ea4d33b8fd57b048e4c41f",
+      "inputTokens": 433,
+      "cachedInputTokens": 0,
+      "outputTokens": 417,
+      "reasoningTokens": 347,
+      "latencyS": 6.09,
+      "costUsd": 0.0002518
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_fa05d83038434bc9b2c722325e989ecd",
+      "inputTokens": 149,
+      "cachedInputTokens": 0,
+      "outputTokens": 73,
+      "reasoningTokens": 39,
+      "latencyS": 2.09,
+      "costUsd": 0.000051399999999999996
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Alerts often fire without requiring action.",
+        "topic": "tooling",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          1,
+          3,
+          6,
+          5,
+          0,
+          4
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Requirements often arrive after work has begun.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          9,
+          10,
+          11,
+          8,
+          7
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [
+      {
+        "statement": "Knowledge-sharing sessions help the team learn about the system.",
+        "reason": "verified-below-k",
+        "supportIdx": [
+          13,
+          15,
+          14
+        ]
+      }
+    ],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_01e6cbe405444c259a92ca0ec43a0d92",
+        "inputTokens": 661,
+        "cachedInputTokens": 0,
+        "outputTokens": 571,
+        "reasoningTokens": 431,
+        "latencyS": 6.59,
+        "costUsd": 0.00035160000000000004
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_cf03d7a32b984597943d383149bd0238",
+        "inputTokens": 547,
+        "cachedInputTokens": 0,
+        "outputTokens": 661,
+        "reasoningTokens": 571,
+        "latencyS": 7.66,
+        "costUsd": 0.0003852
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Alerts often fire without requiring action.",
+            "topic": "tooling",
+            "polarity": "concern",
+            "note_ids": [
+              "n02",
+              "n03",
+              "n10",
+              "n11",
+              "n13",
+              "n17",
+              "n19"
+            ]
+          },
+          {
+            "statement": "Knowledge-sharing sessions help the team learn about the system.",
+            "topic": "collaboration",
+            "polarity": "positive",
+            "note_ids": [
+              "n04",
+              "n05",
+              "n06",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "statement": "Requirements often arrive after work has begun.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n07",
+              "n16",
+              "n18",
+              "n20",
+              "n21"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n02",
+              "n03",
+              "n10",
+              "n13",
+              "n17",
+              "n19"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n04",
+              "n05",
+              "n12"
+            ]
+          },
+          {
+            "theme_id": "t3",
+            "supported_note_ids": [
+              "n07",
+              "n16",
+              "n18",
+              "n20",
+              "n21"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_01e6cbe405444c259a92ca0ec43a0d92",
+      "inputTokens": 661,
+      "cachedInputTokens": 0,
+      "outputTokens": 571,
+      "reasoningTokens": 431,
+      "latencyS": 6.59,
+      "costUsd": 0.00035160000000000004
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_cf03d7a32b984597943d383149bd0238",
+      "inputTokens": 547,
+      "cachedInputTokens": 0,
+      "outputTokens": 661,
+      "reasoningTokens": 571,
+      "latencyS": 7.66,
+      "costUsd": 0.0003852
+    }
+  ]
+}

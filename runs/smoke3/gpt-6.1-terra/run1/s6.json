@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "The sprint had a clear sense of direction.",
+        "topic": "goals",
+        "polarity": "positive",
+        "support": 6,
+        "supportIdx": [
+          5,
+          0,
+          3,
+          4,
+          2,
+          1
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "The release process went smoothly.",
+        "topic": "process",
+        "polarity": "positive",
+        "support": 5,
+        "supportIdx": [
+          9,
+          8,
+          10,
+          7,
+          6
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_075b8e2fa70f4d34b03cca699382b9c4",
+        "inputTokens": 543,
+        "cachedInputTokens": 0,
+        "outputTokens": 291,
+        "reasoningTokens": 198,
+        "latencyS": 4.6,
+        "costUsd": 0.001998
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_368a63df80fb4a5ca5189a23edaaa7c2",
+        "inputTokens": 398,
+        "cachedInputTokens": 0,
+        "outputTokens": 103,
+        "reasoningTokens": 33,
+        "latencyS": 2.79,
+        "costUsd": 0.000913
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "The sprint had a clear sense of direction.",
+            "topic": "goals",
+            "polarity": "positive",
+            "note_ids": [
+              "n01",
+              "n04",
+              "n07",
+              "n11",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "statement": "The release process went smoothly.",
+            "topic": "process",
+            "polarity": "positive",
+            "note_ids": [
+              "n02",
+              "n03",
+              "n08",
+              "n09",
+              "n10"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n04",
+              "n07",
+              "n11",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n02",
+              "n03",
+              "n08",
+              "n09",
+              "n10"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_075b8e2fa70f4d34b03cca699382b9c4",
+      "inputTokens": 543,
+      "cachedInputTokens": 0,
+      "outputTokens": 291,
+      "reasoningTokens": 198,
+      "latencyS": 4.6,
+      "costUsd": 0.001998
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_368a63df80fb4a5ca5189a23edaaa7c2",
+      "inputTokens": 398,
+      "cachedInputTokens": 0,
+      "outputTokens": 103,
+      "reasoningTokens": 33,
+      "latencyS": 2.79,
+      "costUsd": 0.000913
+    }
+  ]
+}

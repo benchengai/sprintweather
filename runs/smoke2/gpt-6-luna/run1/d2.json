@@ -1,0 +1,242 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Team learning sessions are valuable opportunities to learn.",
+        "topic": "collaboration",
+        "polarity": "positive",
+        "support": 5,
+        "supportIdx": [
+          13,
+          15,
+          16,
+          14,
+          12
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [
+      {
+        "statement": "Requirements arrive late enough to disrupt work already underway.",
+        "reason": "verified-below-k",
+        "supportIdx": [
+          9,
+          10,
+          11,
+          7
+        ]
+      },
+      {
+        "statement": "On-call alerts often need no action.",
+        "reason": "wording",
+        "supportIdx": [
+          1,
+          3,
+          6,
+          5,
+          0,
+          4
+        ],
+        "guard": {
+          "ok": false,
+          "words": [
+            "action"
+          ],
+          "phrases": [],
+          "placeholders": false
+        }
+      }
+    ],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_b72fd77611e440d696c4535dbf2b5d3a",
+        "inputTokens": 661,
+        "cachedInputTokens": 0,
+        "outputTokens": 771,
+        "reasoningTokens": 625,
+        "latencyS": 8.61,
+        "costUsd": 0.0004516
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_5cb4c05a79964f22ae1e9be49d87a8bc",
+        "inputTokens": 554,
+        "cachedInputTokens": 0,
+        "outputTokens": 476,
+        "reasoningTokens": 383,
+        "latencyS": 5.41,
+        "costUsd": 0.0002934
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6-luna",
+        "requestId": "req_503d06759a05444cb1045916354c7303",
+        "inputTokens": 159,
+        "cachedInputTokens": 0,
+        "outputTokens": 84,
+        "reasoningTokens": 50,
+        "latencyS": 2.04,
+        "costUsd": 0.0000579
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6-luna",
+        "requestId": "req_6f49338eb7294059af661d01337b0581",
+        "inputTokens": 150,
+        "cachedInputTokens": 0,
+        "outputTokens": 94,
+        "reasoningTokens": 62,
+        "latencyS": 2.12,
+        "costUsd": 0.000062
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "On-call alert noise includes many non-actionable or false alarms.",
+            "topic": "tooling",
+            "polarity": "concern",
+            "note_ids": [
+              "n02",
+              "n03",
+              "n10",
+              "n11",
+              "n13",
+              "n17",
+              "n19"
+            ]
+          },
+          {
+            "statement": "Team learning sessions are valuable opportunities to learn.",
+            "topic": "collaboration",
+            "polarity": "positive",
+            "note_ids": [
+              "n04",
+              "n05",
+              "n06",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "statement": "Requirements arrive late enough to disrupt work already underway.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n07",
+              "n16",
+              "n18",
+              "n20",
+              "n21"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n02",
+              "n03",
+              "n10",
+              "n13",
+              "n17",
+              "n19"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n04",
+              "n05",
+              "n06",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "theme_id": "t3",
+            "supported_note_ids": [
+              "n07",
+              "n16",
+              "n18",
+              "n21"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t1",
+              "statement": "On-call notifications often arrive without requiring a response."
+            }
+          ]
+        },
+        {
+          "rewrites": [
+            {
+              "theme_id": "t1",
+              "statement": "On-call alerts often need no action."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 1,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_b72fd77611e440d696c4535dbf2b5d3a",
+      "inputTokens": 661,
+      "cachedInputTokens": 0,
+      "outputTokens": 771,
+      "reasoningTokens": 625,
+      "latencyS": 8.61,
+      "costUsd": 0.0004516
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_5cb4c05a79964f22ae1e9be49d87a8bc",
+      "inputTokens": 554,
+      "cachedInputTokens": 0,
+      "outputTokens": 476,
+      "reasoningTokens": 383,
+      "latencyS": 5.41,
+      "costUsd": 0.0002934
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_503d06759a05444cb1045916354c7303",
+      "inputTokens": 159,
+      "cachedInputTokens": 0,
+      "outputTokens": 84,
+      "reasoningTokens": 50,
+      "latencyS": 2.04,
+      "costUsd": 0.0000579
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_6f49338eb7294059af661d01337b0581",
+      "inputTokens": 150,
+      "cachedInputTokens": 0,
+      "outputTokens": 94,
+      "reasoningTokens": 62,
+      "latencyS": 2.12,
+      "costUsd": 0.000062
+    }
+  ]
+}

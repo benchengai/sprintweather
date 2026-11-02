@@ -1,0 +1,140 @@
+[
+  {
+    "sprint": "s1",
+    "notes": 14,
+    "themes": [
+      {
+        "statement": "Code reviews often took too long, delaying work or leaving changes waiting.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 6
+      },
+      {
+        "statement": "Pairing was a valued way to work together.",
+        "topic": "collaboration",
+        "polarity": "positive",
+        "support": 5
+      }
+    ],
+    "withheld": 0,
+    "model": "gpt-6-luna",
+    "generatedAt": "2026-11-02",
+    "costUsd": 0.0004921999999999999,
+    "source": "runs/smoke3/gpt-6-luna/run1"
+  },
+  {
+    "sprint": "s2",
+    "notes": 15,
+    "themes": [
+      {
+        "statement": "Work was added or changed after sprint planning, making the planned scope unstable.",
+        "topic": "workload",
+        "polarity": "concern",
+        "support": 7
+      },
+      {
+        "statement": "Code reviews took too long and delayed work.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5
+      }
+    ],
+    "withheld": 0,
+    "model": "gpt-6-luna",
+    "generatedAt": "2026-11-02",
+    "costUsd": 0.0003344,
+    "source": "runs/smoke3/gpt-6-luna/run1"
+  },
+  {
+    "sprint": "s3",
+    "notes": 16,
+    "themes": [
+      {
+        "statement": "Unplanned production work displaced planned sprint work for much of the sprint.",
+        "topic": "workload",
+        "polarity": "concern",
+        "support": 6
+      },
+      {
+        "statement": "Frequent meetings left too little uninterrupted time for focused work.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 6
+      }
+    ],
+    "withheld": 0,
+    "model": "gpt-6-luna",
+    "generatedAt": "2026-11-02",
+    "costUsd": 0.0004524,
+    "source": "runs/smoke3/gpt-6-luna/run1"
+  },
+  {
+    "sprint": "s4",
+    "notes": 14,
+    "themes": [
+      {
+        "statement": "Meeting-free afternoons support focused, productive work.",
+        "topic": "process",
+        "polarity": "positive",
+        "support": 6
+      },
+      {
+        "statement": "Some work to address the incident is still unfinished.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5
+      }
+    ],
+    "withheld": 0,
+    "model": "gpt-6-luna",
+    "generatedAt": "2026-11-02",
+    "costUsd": 0.000511,
+    "source": "runs/smoke3/gpt-6-luna/run1"
+  },
+  {
+    "sprint": "s5",
+    "notes": 16,
+    "themes": [
+      {
+        "statement": "Sprint goals and priorities were unclear or changed during the work.",
+        "topic": "goals",
+        "polarity": "concern",
+        "support": 7
+      },
+      {
+        "statement": "Coordination and shared changes sometimes slowed progress.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5
+      }
+    ],
+    "withheld": 0,
+    "model": "gpt-6-luna",
+    "generatedAt": "2026-11-02",
+    "costUsd": 0.0004443,
+    "source": "runs/smoke3/gpt-6-luna/run1"
+  },
+  {
+    "sprint": "s6",
+    "notes": 14,
+    "themes": [
+      {
+        "statement": "Clear goals and priorities helped guide the sprint.",
+        "topic": "goals",
+        "polarity": "positive",
+        "support": 6
+      },
+      {
+        "statement": "Releases and deployments went smoothly.",
+        "topic": "process",
+        "polarity": "positive",
+        "support": 5
+      }
+    ],
+    "withheld": 0,
+    "model": "gpt-6-luna",
+    "generatedAt": "2026-11-02",
+    "costUsd": 0.0004326,
+    "source": "runs/smoke3/gpt-6-luna/run1"
+  }
+]

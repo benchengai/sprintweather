@@ -1,0 +1,148 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Unplanned production work displaced planned sprint work for much of the sprint.",
+        "topic": "workload",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          6,
+          2,
+          3,
+          4,
+          0,
+          1
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Frequent meetings left too little uninterrupted time for focused work.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          10,
+          7,
+          12,
+          8,
+          11,
+          9
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_1dfce8612ff64c1cb91164d14f1e4e0d",
+        "inputTokens": 618,
+        "cachedInputTokens": 0,
+        "outputTokens": 314,
+        "reasoningTokens": 202,
+        "latencyS": 4.2,
+        "costUsd": 0.0002188
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_b674063f493540ef9f809d497d1ac350",
+        "inputTokens": 481,
+        "cachedInputTokens": 0,
+        "outputTokens": 371,
+        "reasoningTokens": 298,
+        "latencyS": 4.82,
+        "costUsd": 0.00023359999999999999
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Unplanned production work displaced planned sprint work for much of the sprint.",
+            "topic": "workload",
+            "polarity": "concern",
+            "note_ids": [
+              "n03",
+              "n04",
+              "n05",
+              "n06",
+              "n07",
+              "n10",
+              "n16"
+            ]
+          },
+          {
+            "statement": "Frequent meetings left too little uninterrupted time for focused work.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n08",
+              "n11",
+              "n12",
+              "n13",
+              "n14",
+              "n15"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n03",
+              "n04",
+              "n05",
+              "n06",
+              "n10",
+              "n16"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n08",
+              "n11",
+              "n12",
+              "n13",
+              "n14",
+              "n15"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_1dfce8612ff64c1cb91164d14f1e4e0d",
+      "inputTokens": 618,
+      "cachedInputTokens": 0,
+      "outputTokens": 314,
+      "reasoningTokens": 202,
+      "latencyS": 4.2,
+      "costUsd": 0.0002188
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_b674063f493540ef9f809d497d1ac350",
+      "inputTokens": 481,
+      "cachedInputTokens": 0,
+      "outputTokens": 371,
+      "reasoningTokens": 298,
+      "latencyS": 4.82,
+      "costUsd": 0.00023359999999999999
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Changes often waited too long for review.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          1,
+          0,
+          2,
+          5,
+          3,
+          4
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Pairing was a valuable way to work.",
+        "topic": "collaboration",
+        "polarity": "positive",
+        "support": 5,
+        "supportIdx": [
+          6,
+          8,
+          7,
+          9,
+          10
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_ecaef346bd3a4a78a21ff7aeb2f3a3b8",
+        "inputTokens": 590,
+        "cachedInputTokens": 0,
+        "outputTokens": 206,
+        "reasoningTokens": 110,
+        "latencyS": 7.36,
+        "costUsd": 0.00162
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_389cb12263194a86a03b1efaec597c86",
+        "inputTokens": 445,
+        "cachedInputTokens": 0,
+        "outputTokens": 96,
+        "reasoningTokens": 26,
+        "latencyS": 2.27,
+        "costUsd": 0.000925
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Changes often waited too long for review.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n03",
+              "n04",
+              "n07",
+              "n10",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "statement": "Pairing was a valuable way to work.",
+            "topic": "collaboration",
+            "polarity": "positive",
+            "note_ids": [
+              "n01",
+              "n08",
+              "n09",
+              "n11",
+              "n13"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n03",
+              "n04",
+              "n07",
+              "n10",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n01",
+              "n08",
+              "n09",
+              "n11",
+              "n13"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_ecaef346bd3a4a78a21ff7aeb2f3a3b8",
+      "inputTokens": 590,
+      "cachedInputTokens": 0,
+      "outputTokens": 206,
+      "reasoningTokens": 110,
+      "latencyS": 7.36,
+      "costUsd": 0.00162
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_389cb12263194a86a03b1efaec597c86",
+      "inputTokens": 445,
+      "cachedInputTokens": 0,
+      "outputTokens": 96,
+      "reasoningTokens": 26,
+      "latencyS": 2.27,
+      "costUsd": 0.000925
+    }
+  ]
+}

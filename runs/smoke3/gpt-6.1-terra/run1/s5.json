@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "The sprint goal was unclear.",
+        "topic": "goals",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          2,
+          4,
+          6,
+          0,
+          3
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Work was blocked while waiting for dependencies.",
+        "topic": "collaboration",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          10,
+          11,
+          8,
+          9,
+          7
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_a8a1c9e9699045c19c0045cace6ac114",
+        "inputTokens": 598,
+        "cachedInputTokens": 0,
+        "outputTokens": 229,
+        "reasoningTokens": 137,
+        "latencyS": 3.76,
+        "costUsd": 0.001743
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_c2ea7bd2b350412aa1993773a7ad840e",
+        "inputTokens": 400,
+        "cachedInputTokens": 0,
+        "outputTokens": 65,
+        "reasoningTokens": 0,
+        "latencyS": 2.13,
+        "costUsd": 0.000725
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "The sprint goal was unclear.",
+            "topic": "goals",
+            "polarity": "concern",
+            "note_ids": [
+              "n03",
+              "n04",
+              "n05",
+              "n06",
+              "n10"
+            ]
+          },
+          {
+            "statement": "Work was blocked while waiting for dependencies.",
+            "topic": "collaboration",
+            "polarity": "concern",
+            "note_ids": [
+              "n02",
+              "n08",
+              "n11",
+              "n12",
+              "n15"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n03",
+              "n04",
+              "n05",
+              "n06",
+              "n10"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n02",
+              "n08",
+              "n11",
+              "n12",
+              "n15"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_a8a1c9e9699045c19c0045cace6ac114",
+      "inputTokens": 598,
+      "cachedInputTokens": 0,
+      "outputTokens": 229,
+      "reasoningTokens": 137,
+      "latencyS": 3.76,
+      "costUsd": 0.001743
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_c2ea7bd2b350412aa1993773a7ad840e",
+      "inputTokens": 400,
+      "cachedInputTokens": 0,
+      "outputTokens": 65,
+      "reasoningTokens": 0,
+      "latencyS": 2.13,
+      "costUsd": 0.000725
+    }
+  ]
+}

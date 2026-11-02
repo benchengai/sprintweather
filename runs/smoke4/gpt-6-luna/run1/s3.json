@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "ok": false,
+  "error": "Error: 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.",
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_993e0f4fbf424936bac2ae5850d5f6c0",
+      "inputTokens": 618,
+      "cachedInputTokens": 0,
+      "outputTokens": 408,
+      "reasoningTokens": 306,
+      "latencyS": 6.44,
+      "costUsd": 0.0002658
+    }
+  ]
+}

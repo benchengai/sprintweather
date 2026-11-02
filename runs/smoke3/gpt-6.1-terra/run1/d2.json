@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Alerts generate too much noise.",
+        "topic": "tooling",
+        "polarity": "concern",
+        "support": 7,
+        "supportIdx": [
+          1,
+          3,
+          6,
+          2,
+          5,
+          0,
+          4
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [
+      {
+        "statement": "Learning sessions are valuable.",
+        "reason": "verified-below-k",
+        "supportIdx": [
+          13,
+          15,
+          12
+        ]
+      },
+      {
+        "statement": "Requirements arrive too late.",
+        "reason": "verified-below-k",
+        "supportIdx": [
+          9,
+          11,
+          8,
+          7
+        ]
+      }
+    ],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_267143d3fcc54a5285f2e485f33abe8d",
+        "inputTokens": 661,
+        "cachedInputTokens": 0,
+        "outputTokens": 324,
+        "reasoningTokens": 194,
+        "latencyS": 5.06,
+        "costUsd": 0.002281
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_4a3f6392dbc44f29afd91a1142d84c04",
+        "inputTokens": 537,
+        "cachedInputTokens": 0,
+        "outputTokens": 281,
+        "reasoningTokens": 191,
+        "latencyS": 4.7,
+        "costUsd": 0.001942
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Alerts generate too much noise.",
+            "topic": "tooling",
+            "polarity": "concern",
+            "note_ids": [
+              "n02",
+              "n03",
+              "n10",
+              "n11",
+              "n13",
+              "n17",
+              "n19"
+            ]
+          },
+          {
+            "statement": "Learning sessions are valuable.",
+            "topic": "collaboration",
+            "polarity": "positive",
+            "note_ids": [
+              "n04",
+              "n05",
+              "n06",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "statement": "Requirements arrive too late.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n07",
+              "n16",
+              "n18",
+              "n20",
+              "n21"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n02",
+              "n03",
+              "n10",
+              "n11",
+              "n13",
+              "n17",
+              "n19"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n04",
+              "n05",
+              "n14"
+            ]
+          },
+          {
+            "theme_id": "t3",
+            "supported_note_ids": [
+              "n07",
+              "n18",
+              "n20",
+              "n21"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_267143d3fcc54a5285f2e485f33abe8d",
+      "inputTokens": 661,
+      "cachedInputTokens": 0,
+      "outputTokens": 324,
+      "reasoningTokens": 194,
+      "latencyS": 5.06,
+      "costUsd": 0.002281
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_4a3f6392dbc44f29afd91a1142d84c04",
+      "inputTokens": 537,
+      "cachedInputTokens": 0,
+      "outputTokens": 281,
+      "reasoningTokens": 191,
+      "latencyS": 4.7,
+      "costUsd": 0.001942
+    }
+  ]
+}
