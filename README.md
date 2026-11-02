@@ -104,7 +104,9 @@ npm run serve:demo
 
 Then open http://localhost:4173. `build:demo` also scans the built site for any
 note text, distinctive phrase, raw-response field or key-like string, and fails
-if it finds one. To deploy on Vercel, set the environment variable
+if it finds one. To serve the demo from a sub-path, set the same base path for
+both steps, e.g. `DEMO_BASE_PATH=/demos/sprintweather npm run build:demo`, then
+`DEMO_BASE_PATH=/demos/sprintweather npm run serve:demo`. To deploy on Vercel, set the environment variable
 `SW_MODE=demo` (or use `npm run build:demo` as the build command and `out` as the
 output directory). It has not been deployed.
 
@@ -144,31 +146,33 @@ Details and method: [docs/eval/README.md](docs/eval/README.md).
   no single response in the row space of the released aggregates. With the differencing check disabled,
   five tests fail with concrete counterexamples. The same holds through the real
   API route handlers.
-- **Theme step, development set (8 scopes, 131 notes, 18 planted themes at or
-  above k), one run per model:**
+- **Theme step, 3 runs per model** over a development set (8 scopes, 131 notes,
+  18 planted themes at or above k) and a held-out set first run in this
+  benchmark (2 teams, 42 notes, 6 planted themes):
 
   | | `gpt-6-luna` | `gpt-6.1-terra` |
   |---|---|---|
-  | Planted themes recovered | 17 of 18 | 14 of 18 |
+  | Planted themes recovered, dev (per run) | 16, 14, 16 of 18 | 17, 16, 17 of 18 |
+  | Planted themes recovered, held out (per run) | 5, 5, 6 of 6 | 6, 6, 6 of 6 |
   | Themes below k released | 0 | 0 |
   | Released themes truly backed by fewer than k notes | 0 | 0 |
-  | Distinctive phrases leaked | 0 | 0 |
-  | Cost for 8 scopes | $0.0041 | $0.0331 |
+  | Distinctive phrases leaked (also in raw drafts) | 0 | 0 |
+  | Cost per run (10 scopes + retro prompts for 6 sprints) | $0.008 | $0.058 |
 
-  Every theme with 6 or more notes was found, except one withheld by the wording
-  guard over a false alarm ("grew", since added to the everyday-word list). The other misses are themes at exactly
-  k = 5 notes, where the second call confirmed only 3 or 4 notes. The guard caught
-  two statements that repeated 4–5 words from a single note.
-- **API spend: $0.063** of the $2 budget.
+  Every miss was a theme the extractor proposed but the second call confirmed for
+  fewer than k notes; most were themes with exactly k = 5 notes. `gpt-6.1-terra`
+  recovered more themes than `gpt-6-luna` at about 7 times the cost, which
+  reverses a single earlier development run (17 against 14). The wording guard
+  flagged 29 drafts in the six runs, 7 of them repeating 4–6 words from a single
+  note; all 29 were rewritten and none withheld.
+- **Retro prompts**: 143 questions over 3 runs per model, none naming a sub-group
+  or role, none echoing a distinctive phrase. Every question that cites an action
+  item describes a change after it, not one caused by it.
+- **API spend: $0.26** in total ($0.20 for the 3-run benchmark, $0.06 for
+  development smoke tests).
 
-**Not done: OpenAI credits ran out.** This covers the full benchmark (3 runs
-each of `gpt-6-luna` and `gpt-6.1-terra`), the held-out scoring, and running the
-retro-prompt step against a model. The account behind the shared key returned
-`429 You have no credits remaining` after SprintWeather had spent $0.063. None
-of the numbers above estimate those runs. The demo shows only outputs of runs
-that finished: the themes of one complete development run, unedited, and no
-retro prompts. The benchmark resumes from its cache, and the exact command to
-complete it is in the [evaluation report](docs/eval/README.md#completing-the-missing-runs).
+The demo shows the themes and retro prompts of one benchmark run
+(`runs/eval/gpt-6-luna/run1`), unedited.
 
 ## Limitations
 
@@ -182,7 +186,8 @@ complete it is in the [evaluation report](docs/eval/README.md#completing-the-mis
   assumes independence.
 - Whoever runs the server can read the store and could forge responses with unused
   codes. Local mode has no authentication.
-- One development run per model is not a benchmark (see "Not done").
+- Three runs per model on 24 synthetic planted themes is a small sample; the gap
+  between the two models is a direction, not a settled ranking.
 - Not legal advice.
 
 ## Layout
