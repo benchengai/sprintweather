@@ -34,8 +34,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="banner" role="note">
             <div className="wrap">
               <strong>Demo with synthetic data.</strong> A fictional 20-person team over six sprints; the answers come from a
-              seeded script. Themes and retro prompts are saved outputs of real pipeline runs over hand-written synthetic
-              notes. Nothing here describes a real person.
+              seeded script. Themes are saved, unedited outputs of a real pipeline run over hand-written synthetic notes.
+              Nothing here describes a real person.
             </div>
           </div>
         ) : (

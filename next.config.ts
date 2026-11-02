@@ -12,6 +12,7 @@ const config: NextConfig = {
   trailingSlash: true,
   images: { unoptimized: true },
   env: { NEXT_PUBLIC_SW_MODE: demo ? "demo" : "local" },
+  agentRules: false,
 };
 
 export default config;

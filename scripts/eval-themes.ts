@@ -7,7 +7,10 @@
  * where it stopped. A failed call is recorded and counted, not retried. Every call
  * is appended to runs/ledger.jsonl, and the run stops once the budget is spent.
  *
- *   npx tsx scripts/eval-themes.ts --env-file <path> [--models a,b] [--runs 3] [--scopes s1,h1] [--budget 1.9]
+ *   npx tsx scripts/eval-themes.ts --env-file <path> [--models a,b] [--runs 3] [--scopes s1,h1] [--sets dev]
+ *     [--budget 1.9] [--out runs/eval] [--report docs/eval/results.md] [--score-only]
+ *
+ * --score-only scores whatever is cached and never calls the API.
  */
 
 import { existsSync } from "node:fs";
@@ -28,6 +31,8 @@ const OUT = arg("out") ?? "runs/eval";
 const ONLY = arg("scopes")?.split(",");
 const SETS = arg("sets")?.split(",");
 const BUDGET = Number(arg("budget") ?? 1.9);
+const SCORE_ONLY = process.argv.includes("--score-only");
+const REPORT = arg("report");
 loadEnv(arg("env-file") ?? ".env");
 
 const devSet = readJson<NoteSet>("data/synthetic/notes.json");
@@ -66,6 +71,7 @@ function caller(model: string, context: Record<string, unknown>) {
 async function themeRun(model: string, run: number, scope: Scope): Promise<ThemeRun> {
   const file = `${OUT}/${model}/run${run}/${scope.id}.json`;
   if (existsSync(file)) return readJson<ThemeRun>(file);
+  if (SCORE_ONLY) return { version: VERSION, ok: false, error: "not run", calls: [] };
   const calls: CallMeta[] = [];
   const call = caller(model, { script: "eval", model, run, scope: scope.id });
   const tracked: typeof call = async (req) => {
@@ -89,6 +95,7 @@ async function themeRun(model: string, run: number, scope: Scope): Promise<Theme
 async function promptRun(model: string, run: number, themes: Map<string, ThemeRun>): Promise<PromptRun> {
   const file = `${OUT}/${model}/run${run}/prompts.json`;
   if (existsSync(file)) return readJson<PromptRun>(file);
+  if (SCORE_ONLY) return { version: VERSION, ok: false, error: "not run", sprints: [] };
   const themeResults = devSet.scopes
     .filter((s) => themes.get(s.id)?.ok)
     .map((s) => toThemeResult(s.id, s.notes.length, model, themes.get(s.id)!.result!, `${OUT}/${model}/run${run}`));
@@ -144,7 +151,8 @@ interface RunRow {
 function rowFor(model: string, run: number, themes: Map<string, ThemeRun>, prompts: PromptRun): RunRow {
   const scores = scopes.filter((s) => themes.get(s.id)?.ok).map((s) => ({ set: s.set, score: scoreScope(s, K, themes.get(s.id)!.result!) }));
   const sum = (f: (x: ScopeScore) => number, set?: string) => scores.filter((s) => !set || s.set === set).reduce((a, s) => a + f(s.score), 0);
-  const recall = (set: string) => sum((x) => x.recalled.length, set) / Math.max(1, sum((x) => x.plantedAtK, set));
+  // NaN when the set was not run, so the report says so instead of showing 0.
+  const recall = (set: string) => sum((x) => x.recalled.length, set) / sum((x) => x.plantedAtK, set);
   const allCalls = [...themes.values()].flatMap((t) => t.calls);
   const promptCalls = prompts.sprints.map((p) => p.meta).filter(Boolean) as CallMeta[];
   const markers = devSet.scopes.flatMap((s) => s.notes.flatMap((n) => n.markers ?? []));
@@ -168,7 +176,7 @@ function rowFor(model: string, run: number, themes: Map<string, ThemeRun>, promp
     flagged: sum((x) => x.flagged),
     rewritten: sum((x) => x.rewritten),
     withheldWording: sum((x) => x.withheldWording),
-    prompts: p.reduce((a, x) => a + x.prompts, 0),
+    prompts: prompts.ok && prompts.sprints.length ? p.reduce((a, x) => a + x.prompts, 0) : NaN,
     promptSubgroupMentions: p.reduce((a, x) => a + x.subgroupMentions, 0),
     promptMarkerLeaks: p.reduce((a, x) => a + x.markerLeaks.length, 0),
     themeCostUsd: cost(allCalls),
@@ -196,6 +204,7 @@ function summarise(rows: RunRow[]): Summary {
 
 function cell(s: Summary, key: string, digits = 2): string {
   const v = s[key];
+  if (Number.isNaN(v.mean)) return "not run";
   const f = (x: number) => x.toFixed(digits);
   return f(v.min) === f(v.max) ? f(v.mean) : `${f(v.mean)} (${f(v.min)}–${f(v.max)})`;
 }
@@ -215,6 +224,10 @@ function markdown(models: Record<string, { rows: RunRow[]; summary: Summary }>):
   }
   lines.push("", "Retro prompts (six demo sprints per run):", "", "| Model | Prompts | Naming a sub-group | Distinctive markers | Prompt cost per run (USD) | Theme cost per run (USD) | Input / output tokens per run | Reasoning tokens |", "|---|---|---|---|---|---|---|---|");
   for (const [model, { summary: s }] of Object.entries(models)) {
+    if (Number.isNaN(s.prompts.mean)) {
+      lines.push(`| \`${model}\` | not run | | | | ${cell(s, "themeCostUsd", 4)} | ${cell(s, "inputTokens", 0)} / ${cell(s, "outputTokens", 0)} | ${cell(s, "reasoningTokens", 0)} |`);
+      continue;
+    }
     lines.push(
       `| \`${model}\` | ${cell(s, "prompts", 1)} | ${cell(s, "promptSubgroupMentions", 1)} | ${cell(s, "promptMarkerLeaks", 1)} | ${cell(s, "promptCostUsd", 4)} | ${cell(s, "themeCostUsd", 4)} | ${cell(s, "inputTokens", 0)} / ${cell(s, "outputTokens", 0)} | ${cell(s, "reasoningTokens", 0)} |`,
     );
@@ -238,11 +251,12 @@ async function main() {
     const rows = done.filter((r) => r.model === model);
     models[model] = { rows, summary: summarise(rows) };
   }
-  if (!FILTERED) {
+  if (!FILTERED || REPORT) {
+    const report = REPORT ?? "docs/eval/results.md";
     writeJson(`${OUT}/results.json`, { k: K, runs: RUNS, pricesAsOf: AS_OF, models });
     const { writeFileSync } = await import("node:fs");
-    writeFileSync("docs/eval/results.md", markdown(models));
-    console.log("wrote docs/eval/results.md");
+    writeFileSync(report, markdown(models));
+    console.log(`wrote ${report}`);
   }
   for (const [model, { summary }] of Object.entries(models)) {
     console.log(`${model}: recall dev ${cell(summary, "recallDev")}, held out ${cell(summary, "recallHeldOut")}, violations ${cell(summary, "violations", 1)}, leaks ${cell(summary, "markerLeaks", 1)}, cost ${cell(summary, "costUsd", 4)}`);

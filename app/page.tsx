@@ -15,7 +15,7 @@ export default function Home() {
         </Link>
       </p>
 
-      <div className="grid section">
+      <div className="grid-2 section">
         <div className="card">
           <h3>1. Check in</h3>
           <p className="small">
