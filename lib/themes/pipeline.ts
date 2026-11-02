@@ -7,8 +7,9 @@
  * 3. Verify: a second call checks, theme by theme, which cited notes really make
  *    that point. Only verified notes count, and a theme needs at least k of them.
  * 4. Guard (deterministic): a statement may not reuse a word or four-word phrase
- *    that fewer than k notes share. Flagged statements get one rewrite call and are
- *    checked again; any that still fail are withheld.
+ *    that only one note uses, or a name that fewer than k notes use. Flagged
+ *    statements get up to two rewrite calls and are checked after each; any that
+ *    still fail are withheld.
  *
  * Only the statement, topic, polarity and support count leave this module for
  * storage. Note ids are internal to one run and the notes are deleted afterwards.
@@ -17,12 +18,13 @@
 import { randomInt } from "node:crypto";
 
 import type { CallMeta, JsonCaller } from "../llm/client";
-import type { StoredTheme } from "../types";
+import type { StoredTheme, ThemeResult } from "../types";
 import { checkStatement, scrub, type GuardResult } from "./guard";
 
 export const TOPICS = ["workload", "process", "tooling", "goals", "collaboration", "wellbeing", "other"] as const;
 export const POLARITIES = ["concern", "positive", "mixed"] as const;
 export const MAX_THEMES = 6;
+export const MAX_REWRITES = 2;
 
 export interface PipelineTheme extends StoredTheme {
   /** Indices into the input notes. Used by the evaluation only, never stored. */
@@ -51,13 +53,13 @@ const EXTRACT_SYSTEM = (k: number) => `You summarise anonymous sprint check-in n
 Rules:
 1. A theme is a point that at least ${k} different notes make. If fewer than ${k} notes share a point, leave it out, however important it seems.
 2. For each theme, cite the id of every note that makes that point, and only those.
-3. Write each theme as one plain sentence of at most 16 words, in generic wording that many writers could have used. Do not quote or closely echo any note. Leave out names, product or project names, numbers, jokes, metaphors and any detail that only one note mentions.
+3. State one point per theme, as one plain sentence of at most 14 words, in generic wording that many writers could have used. Do not add details that only some of the cited notes mention. Do not quote or closely echo any note. Leave out names, product or project names, numbers, jokes and metaphors.
 4. Describe what the notes say about the work: workload, process, tools, goals, collaboration. Do not add feelings the writers did not state, and never describe one person.
 5. Return at most ${MAX_THEMES} themes. Returning none is fine.`;
 
 const VERIFY_SYSTEM = `You check whether anonymous notes support a theme statement.
 
-For each theme you get the statement and the notes that were cited for it. List the ids of the notes that clearly make the point in the statement, even if in other words. Leave out notes that only touch the topic loosely, make a different point, or support only part of a statement that combines several points.`;
+For each theme you get the statement and the notes that were cited for it. List the ids of the notes that make the statement's point: a reader would agree the note says that, even if the wording or emphasis differs. Leave out notes that make a related but different point, or only mention the topic.`;
 
 const REWRITE_SYSTEM = `You rewrite theme statements for a team retrospective so they cannot be traced to one person's wording.
 
@@ -205,42 +207,48 @@ export async function extractThemes(notes: string[], { k, call, random = randomI
     }
   });
 
-  // 4. Wording guard, with one rewrite for flagged statements.
+  // 4. Wording guard, with up to MAX_REWRITES rewrites for flagged statements.
+  const current = new Map(supported.map((s) => [s.id, s.statement]));
   const checks = new Map(supported.map((s) => [s.id, checkStatement(s.statement, scrubbed, k)]));
-  const flagged = supported.filter((s) => !checks.get(s.id)!.ok);
-  result.guard.flagged = flagged.length;
-  const rewrites = new Map<string, string>();
-  if (flagged.length > 0) {
+  result.guard.flagged = supported.filter((s) => !checks.get(s.id)!.ok).length;
+  const rewrites: unknown[] = [];
+  // Everything flagged so far, so a later round cannot drift back to earlier wording.
+  const avoid = new Map(supported.map((s) => [s.id, new Set<string>()]));
+  for (let round = 0; round < MAX_REWRITES; round++) {
+    const flagged = supported.filter((s) => !checks.get(s.id)!.ok);
+    if (flagged.length === 0) break;
     const prompt = flagged
       .map((s) => {
         const g = checks.get(s.id)!;
-        const avoid = [...g.words, ...g.phrases.map((p) => `"${p}"`)];
-        if (g.placeholders) avoid.push("bracketed placeholders such as [link]");
-        return `Theme ${s.id}: ${s.statement}\nDo not use: ${avoid.join(", ")}`;
+        const list = avoid.get(s.id)!;
+        for (const w of g.words) list.add(w);
+        for (const p of g.phrases) list.add(`"${p}"`);
+        if (g.placeholders) list.add("bracketed placeholders such as [link]");
+        return `Theme ${s.id}: ${current.get(s.id)}\nDo not use: ${[...list].join(", ")}`;
       })
       .join("\n\n");
     const rewrite = await call({ system: REWRITE_SYSTEM, prompt, schema: rewriteSchema(flagged.map((s) => s.id)), name: "rewrite" });
     result.calls.push({ step: "rewrite", ...rewrite.meta });
     const out = JSON.parse(rewrite.text) as { rewrites: { theme_id: string; statement: string }[] };
-    result.raw.rewrite = out;
-    for (const r of out.rewrites) if (r.statement.trim()) rewrites.set(r.theme_id, r.statement.trim());
+    rewrites.push(out);
+    for (const r of out.rewrites) {
+      const statement = r.statement.trim();
+      if (!statement || !current.has(r.theme_id) || checks.get(r.theme_id)!.ok) continue;
+      current.set(r.theme_id, statement);
+      checks.set(r.theme_id, checkStatement(statement, scrubbed, k));
+    }
   }
+  if (rewrites.length) result.raw.rewrite = rewrites;
 
   for (const s of supported) {
     const supportIdx = s.verified.map((id) => idToIndex.get(id)!);
-    let statement = s.statement;
-    let rewritten = false;
+    const statement = current.get(s.id)!;
     if (!checks.get(s.id)!.ok) {
-      const replacement = rewrites.get(s.id);
-      const recheck = replacement ? checkStatement(replacement, scrubbed, k) : null;
-      if (!replacement || !recheck!.ok) {
-        result.withheld.push({ statement, reason: "wording", supportIdx, guard: recheck ?? checks.get(s.id) });
-        continue;
-      }
-      statement = replacement;
-      rewritten = true;
-      result.guard.rewritten++;
+      result.withheld.push({ statement, reason: "wording", supportIdx, guard: checks.get(s.id) });
+      continue;
     }
+    const rewritten = statement !== s.statement;
+    if (rewritten) result.guard.rewritten++;
     result.themes.push({ statement, topic: s.topic, polarity: s.polarity, support: supportIdx.length, supportIdx, rewritten });
   }
   result.themes.sort((a, b) => b.support - a.support);
@@ -249,4 +257,18 @@ export async function extractThemes(notes: string[], { k, call, random = randomI
 
 export function totalCost(calls: { costUsd: number | null }[]): number | null {
   return calls.some((c) => c.costUsd === null) ? null : calls.reduce((a, c) => a + (c.costUsd ?? 0), 0);
+}
+
+/** What gets stored: statements and counts, no note ids or text. */
+export function toThemeResult(sprint: string, notes: number, model: string, r: PipelineResult, source?: string): ThemeResult {
+  return {
+    sprint,
+    notes,
+    themes: r.themes.map(({ statement, topic, polarity, support }) => ({ statement, topic, polarity, support })),
+    withheld: r.withheld.length,
+    model,
+    generatedAt: new Date().toISOString().slice(0, 10),
+    costUsd: totalCost(r.calls),
+    ...(source ? { source } : {}),
+  };
 }

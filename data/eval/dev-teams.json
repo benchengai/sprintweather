@@ -1,0 +1,314 @@
+{
+  "_comment": "SYNTHETIC. Two fictional teams, part of the development set: originally written as held-out data, but a gpt-6-luna smoke test ran on them before the prompts and guard were final, so they are no longer blind. No real person wrote or is described by any note.",
+  "k": 5,
+  "scopes": [
+    {
+      "id": "d1",
+      "label": "Mobile team",
+      "planted": [
+        {
+          "id": "d1-store-review",
+          "summary": "App store review delays held up releases"
+        },
+        {
+          "id": "d1-flaky-tests",
+          "summary": "Flaky UI tests on CI waste time"
+        },
+        {
+          "id": "d1-prototypes",
+          "summary": "Shared prototypes improved the design handoff (positive)"
+        },
+        {
+          "id": "d1-quiet-room",
+          "summary": "Need a quiet place for calls (below k)"
+        }
+      ],
+      "notes": [
+        {
+          "text": "The app store review took four days and blocked our release.",
+          "themes": [
+            "d1-store-review"
+          ]
+        },
+        {
+          "text": "Waiting on store approval again pushed the launch.",
+          "themes": [
+            "d1-store-review"
+          ]
+        },
+        {
+          "text": "Release was ready on Monday but app review only cleared on Thursday.",
+          "themes": [
+            "d1-store-review"
+          ]
+        },
+        {
+          "text": "Store review delays make our release dates meaningless.",
+          "themes": [
+            "d1-store-review"
+          ]
+        },
+        {
+          "text": "We lost most of the week waiting for the app to be approved.",
+          "themes": [
+            "d1-store-review"
+          ]
+        },
+        {
+          "text": "App review rejected the build over a screenshot, so we waited all over again.",
+          "themes": [
+            "d1-store-review"
+          ]
+        },
+        {
+          "text": "The UI tests fail randomly and we rerun them three times.",
+          "themes": [
+            "d1-flaky-tests"
+          ]
+        },
+        {
+          "text": "Flaky end-to-end tests are wasting hours every day.",
+          "themes": [
+            "d1-flaky-tests"
+          ]
+        },
+        {
+          "text": "CI goes red for no reason, it is always the emulator tests.",
+          "themes": [
+            "d1-flaky-tests"
+          ]
+        },
+        {
+          "text": "I do not trust the test results any more because they flake.",
+          "themes": [
+            "d1-flaky-tests"
+          ]
+        },
+        {
+          "text": "Rerunning flaky UI tests is now part of my morning routine, like brushing my teeth with a cactus.",
+          "themes": [
+            "d1-flaky-tests"
+          ],
+          "markers": [
+            "cactus",
+            "teeth",
+            "brushing"
+          ]
+        },
+        {
+          "text": "Unreliable automated tests slowed every merge.",
+          "themes": [
+            "d1-flaky-tests"
+          ]
+        },
+        {
+          "text": "Half my CI runs fail on tests that pass locally.",
+          "themes": [
+            "d1-flaky-tests"
+          ]
+        },
+        {
+          "text": "The clickable prototypes made the design handoff much clearer.",
+          "themes": [
+            "d1-prototypes"
+          ]
+        },
+        {
+          "text": "Working from a shared prototype saved a lot of back and forth with design.",
+          "themes": [
+            "d1-prototypes"
+          ]
+        },
+        {
+          "text": "Design handoff was much better this time thanks to the interactive mockups.",
+          "themes": [
+            "d1-prototypes"
+          ]
+        },
+        {
+          "text": "Seeing the prototype early answered most of my questions.",
+          "themes": [
+            "d1-prototypes"
+          ]
+        },
+        {
+          "text": "Prototypes before development started were really helpful.",
+          "themes": [
+            "d1-prototypes"
+          ]
+        },
+        {
+          "text": "We need a quiet room for customer calls.",
+          "themes": [
+            "d1-quiet-room"
+          ]
+        },
+        {
+          "text": "Hard to take calls in the open office.",
+          "themes": [
+            "d1-quiet-room"
+          ]
+        },
+        {
+          "text": "Since Joaquin went on leave, nobody knows how the push notification setup works.",
+          "themes": [],
+          "markers": [
+            "joaquin"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d2",
+      "label": "Data platform team",
+      "planted": [
+        {
+          "id": "d2-noisy-alerts",
+          "summary": "On-call alerts are noisy and mostly not actionable"
+        },
+        {
+          "id": "d2-late-reqs",
+          "summary": "Requirements from stakeholders arrive late"
+        },
+        {
+          "id": "d2-sessions",
+          "summary": "Knowledge-sharing sessions are useful (positive)"
+        },
+        {
+          "id": "d2-dashboards",
+          "summary": "Dashboards are slow (below k)"
+        }
+      ],
+      "notes": [
+        {
+          "text": "Most alerts on call this week were false alarms.",
+          "themes": [
+            "d2-noisy-alerts"
+          ]
+        },
+        {
+          "text": "The pager went off constantly for things that did not need action.",
+          "themes": [
+            "d2-noisy-alerts"
+          ]
+        },
+        {
+          "text": "Alert noise makes it hard to spot the real problems.",
+          "themes": [
+            "d2-noisy-alerts"
+          ]
+        },
+        {
+          "text": "Too many alerts fire for harmless spikes.",
+          "themes": [
+            "d2-noisy-alerts"
+          ]
+        },
+        {
+          "text": "On call was exhausting because of noisy alerts that fixed themselves.",
+          "themes": [
+            "d2-noisy-alerts"
+          ]
+        },
+        {
+          "text": "We should tune the alert thresholds, most pages were not actionable.",
+          "themes": [
+            "d2-noisy-alerts"
+          ]
+        },
+        {
+          "text": "Alerts kept firing all night for nothing; on call felt like playing whack-a-mole in the dark.",
+          "themes": [
+            "d2-noisy-alerts"
+          ],
+          "markers": [
+            "whack-a-mole",
+            "mole"
+          ]
+        },
+        {
+          "text": "Stakeholders sent the requirements after we had started building.",
+          "themes": [
+            "d2-late-reqs"
+          ]
+        },
+        {
+          "text": "We got the final spec two days before the deadline.",
+          "themes": [
+            "d2-late-reqs"
+          ]
+        },
+        {
+          "text": "Requirements keep arriving late, so we rework things.",
+          "themes": [
+            "d2-late-reqs"
+          ]
+        },
+        {
+          "text": "Late changes from the business side meant redoing the pipeline twice.",
+          "themes": [
+            "d2-late-reqs"
+          ]
+        },
+        {
+          "text": "Hard to plan when requirements show up mid-sprint.",
+          "themes": [
+            "d2-late-reqs"
+          ]
+        },
+        {
+          "text": "The Friday knowledge-sharing sessions are really useful.",
+          "themes": [
+            "d2-sessions"
+          ]
+        },
+        {
+          "text": "Learned a lot from the internal tech talks this sprint.",
+          "themes": [
+            "d2-sessions"
+          ]
+        },
+        {
+          "text": "Loved the session where we walked through the ingestion jobs.",
+          "themes": [
+            "d2-sessions"
+          ]
+        },
+        {
+          "text": "Knowledge sharing sessions helped me understand parts of the system I never touch.",
+          "themes": [
+            "d2-sessions"
+          ]
+        },
+        {
+          "text": "Please keep the weekly learning sessions.",
+          "themes": [
+            "d2-sessions"
+          ]
+        },
+        {
+          "text": "Dashboards take ages to load.",
+          "themes": [
+            "d2-dashboards"
+          ]
+        },
+        {
+          "text": "The reporting dashboards time out on large queries.",
+          "themes": [
+            "d2-dashboards"
+          ]
+        },
+        {
+          "text": "Our monitoring dashboards are painfully slow.",
+          "themes": [
+            "d2-dashboards"
+          ]
+        },
+        {
+          "text": "Not much to add.",
+          "themes": []
+        }
+      ]
+    }
+  ]
+}

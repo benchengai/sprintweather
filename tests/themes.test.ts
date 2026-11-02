@@ -139,6 +139,15 @@ describe("wording guard", () => {
     expect(p.phrases.length).toBeGreaterThan(0);
   });
 
+  it("allows a domain word several notes share, but holds names to k notes", () => {
+    const store = ["The app store review took days.", "Waiting on store approval again.", "Store review delays hurt.", "Release slipped.", "Fine."];
+    expect(checkStatement("Store review held up releases.", store, 5).ok).toBe(true);
+    const named = ["Since Marta left nobody owns releases.", "We miss Marta on reviews.", "Reviews are slow.", "Fine.", "Ok."];
+    expect(checkStatement("Work slowed after Marta left.", named, 5).words).toContain("marta");
+    // A capital at the start of a sentence is not a name.
+    expect(checkStatement("Reviews wait too long.", ["Reviews are slow. Reviews pile up.", "Reviews again.", "x", "y", "z"], 5).ok).toBe(true);
+  });
+
   it("flags placeholders left by scrubbing", () => {
     expect(checkStatement("People asked about [ticket].", notes, 5).placeholders).toBe(true);
   });

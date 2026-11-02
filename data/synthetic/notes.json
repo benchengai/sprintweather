@@ -1,0 +1,161 @@
+{
+  "_comment": "SYNTHETIC. Hand-written check-in notes for a fictional 20-person product team over six sprints, with planted themes. Used for the demo (themes are generated from these by real pipeline runs) and as the development set of the theme evaluation. No real person wrote or is described by any note.",
+  "k": 5,
+  "scopes": [
+    {
+      "id": "s1",
+      "label": "Sprint 21",
+      "planted": [
+        { "id": "s1-review-wait", "summary": "Code reviews wait too long before someone picks them up" },
+        { "id": "s1-pairing", "summary": "Pairing on the onboarding flow helped (positive)" },
+        { "id": "s1-wifi", "summary": "Office wifi is unreliable (below k)" }
+      ],
+      "notes": [
+        { "text": "My pull requests sat for two days before anyone reviewed them.", "themes": ["s1-review-wait"] },
+        { "text": "Reviews are the slowest part of the week; things wait until someone has a spare hour.", "themes": ["s1-review-wait"] },
+        { "text": "Waited on code review a lot this sprint, which stalled the refund work.", "themes": ["s1-review-wait"] },
+        { "text": "Nobody seems to own picking up reviews, so they pile up.", "themes": ["s1-review-wait"] },
+        { "text": "PRs waiting for review most of Thursday and Friday. My rubber duck has heard more about the ledger service than my reviewers have.", "themes": ["s1-review-wait"], "markers": ["rubber duck", "ledger"] },
+        { "text": "Getting a second pair of eyes on a change takes far too long.", "themes": ["s1-review-wait"] },
+        { "text": "Pairing with someone on the onboarding flow was the best part of the sprint.", "themes": ["s1-pairing"] },
+        { "text": "The pairing sessions helped me finally understand the onboarding code.", "themes": ["s1-pairing"] },
+        { "text": "Really liked pairing on the signup screens, we caught bugs early.", "themes": ["s1-pairing"] },
+        { "text": "Pair programming on onboarding made the work faster and more fun.", "themes": ["s1-pairing"] },
+        { "text": "Pairing helped a lot; would like to keep doing it next sprint.", "themes": ["s1-pairing"] },
+        { "text": "Office wifi keeps dropping after lunch.", "themes": ["s1-wifi"] },
+        { "text": "Video calls from the office cut out because the wifi is unreliable.", "themes": ["s1-wifi"] },
+        { "text": "Quiet sprint for me, nothing much to report.", "themes": [] }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "Sprint 22",
+      "planted": [
+        { "id": "s2-scope-creep", "summary": "Work keeps being added after the sprint starts" },
+        { "id": "s2-review-wait", "summary": "Code reviews are still slow" },
+        { "id": "s2-standup", "summary": "Standups run too long (below k)" }
+      ],
+      "notes": [
+        { "text": "New tickets kept landing in the sprint after planning was done.", "themes": ["s2-scope-creep"] },
+        { "text": "We committed to eight stories and ended up with twelve because of late additions.", "themes": ["s2-scope-creep"] },
+        { "text": "Scope grew every couple of days; hard to know what finishing even means.", "themes": ["s2-scope-creep"] },
+        { "text": "Requests from sales were pushed into the sprint halfway through.", "themes": ["s2-scope-creep"] },
+        { "text": "Too much unplanned work was added after the sprint started.", "themes": ["s2-scope-creep"] },
+        { "text": "This sprint felt like assembling flat-pack furniture with the instructions in Klingon; the plan changed daily.", "themes": ["s2-scope-creep"], "markers": ["flat-pack", "furniture", "klingon"] },
+        { "text": "Mid-sprint additions meant I never finished what I originally picked up.", "themes": ["s2-scope-creep"] },
+        { "text": "Code reviews are still slow, my changes waited three days.", "themes": ["s2-review-wait"] },
+        { "text": "Review queue is long again.", "themes": ["s2-review-wait"] },
+        { "text": "Still waiting too long for someone to review my merge requests.", "themes": ["s2-review-wait"] },
+        { "text": "Reviews remain a bottleneck; maybe we need a rota.", "themes": ["s2-review-wait"] },
+        { "text": "Slow reviews again held up my work.", "themes": ["s2-review-wait"] },
+        { "text": "Standups have turned into 30-minute status meetings.", "themes": ["s2-standup"] },
+        { "text": "Daily standup runs way over time.", "themes": ["s2-standup"] },
+        { "text": "The standup goes on too long and drifts into problem solving.", "themes": ["s2-standup"] }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "Sprint 23",
+      "planted": [
+        { "id": "s3-incident", "summary": "The production incident pulled people off planned work" },
+        { "id": "s3-meetings", "summary": "Too many meetings left no focus time" },
+        { "id": "s3-laptop", "summary": "Slow or overdue laptops (below k)" }
+      ],
+      "notes": [
+        { "text": "The outage on Tuesday took most of my week.", "themes": ["s3-incident"] },
+        { "text": "Incident response ate the time I had planned for the migration.", "themes": ["s3-incident"] },
+        { "text": "We all dropped sprint work to deal with the production incident.", "themes": ["s3-incident"] },
+        { "text": "Firefighting the payment failures meant none of my stories got done.", "themes": ["s3-incident"] },
+        { "text": "After the outage, half the team was on fixes instead of the plan.", "themes": ["s3-incident"] },
+        { "text": "I was on the incident bridge for two days. My cat now recognises the pager ringtone and leaves the room.", "themes": ["s3-incident"], "markers": ["cat", "ringtone"] },
+        { "text": "Production issues pulled me away from planned tickets all sprint.", "themes": ["s3-incident"] },
+        { "text": "Too many meetings this sprint; I barely had a two-hour block to focus.", "themes": ["s3-meetings"] },
+        { "text": "Back-to-back calls every afternoon, no time for deep work.", "themes": ["s3-meetings"] },
+        { "text": "My calendar was wall to wall meetings.", "themes": ["s3-meetings"] },
+        { "text": "Meetings fragmented the whole day, very hard to concentrate.", "themes": ["s3-meetings"] },
+        { "text": "We need fewer meetings, I could not get into the code.", "themes": ["s3-meetings"] },
+        { "text": "Spent more time in meetings than writing code. Since Marta moved teams nobody has trimmed the recurring invites.", "themes": ["s3-meetings"], "markers": ["marta"] },
+        { "text": "Still waiting for the laptop upgrade, builds take forever on this machine.", "themes": ["s3-laptop"] },
+        { "text": "My old laptop can barely run the test suite.", "themes": ["s3-laptop"] },
+        { "text": "Exhausted. Looking forward to a calmer sprint.", "themes": [] }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "Sprint 24",
+      "planted": [
+        { "id": "s4-focus", "summary": "Meeting-free Wednesday afternoons gave real focus time (positive)" },
+        { "id": "s4-followups", "summary": "Follow-up work from the incident is still unfinished" },
+        { "id": "s4-design", "summary": "Involve design earlier (below k)" }
+      ],
+      "notes": [
+        { "text": "The meeting-free Wednesday afternoon was great, got a lot done.", "themes": ["s4-focus"] },
+        { "text": "Having one afternoon without meetings made a real difference to my focus.", "themes": ["s4-focus"] },
+        { "text": "Loved the quiet Wednesday, finally finished the refactor.", "themes": ["s4-focus"] },
+        { "text": "No-meeting afternoons helped me get into deep work.", "themes": ["s4-focus"] },
+        { "text": "Protected focus time on Wednesdays is working, please keep it.", "themes": ["s4-focus"] },
+        { "text": "Wednesday afternoons without calls are the most productive hours of my week.", "themes": ["s4-focus"] },
+        { "text": "The follow-up actions from the outage are still not done.", "themes": ["s4-followups"] },
+        { "text": "Post-incident fixes keep getting pushed to next sprint.", "themes": ["s4-followups"] },
+        { "text": "We have not finished the postmortem actions and it worries me.", "themes": ["s4-followups"] },
+        { "text": "Incident follow-ups are half done, the same failure could happen again.", "themes": ["s4-followups"] },
+        { "text": "Still carrying debt from the outage; nobody has time to close it out. It hangs over us like a sword of Damocles made of YAML.", "themes": ["s4-followups"], "markers": ["damocles", "sword", "yaml"] },
+        { "text": "Would be good to see designs before the tickets are written.", "themes": ["s4-design"] },
+        { "text": "Design came in late again; involve them in refinement.", "themes": ["s4-design"] },
+        { "text": "Fine sprint.", "themes": [] }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "Sprint 25",
+      "planted": [
+        { "id": "s5-goal", "summary": "The sprint goal was unclear and priorities shifted" },
+        { "id": "s5-deps", "summary": "Waiting on other teams blocked work" },
+        { "id": "s5-docs", "summary": "Internal API docs are out of date (below k)" }
+      ],
+      "notes": [
+        { "text": "I could not tell what the sprint goal actually was.", "themes": ["s5-goal"] },
+        { "text": "Priorities changed twice during the sprint, confusing.", "themes": ["s5-goal"] },
+        { "text": "Planning ended without a clear goal, everyone picked their own direction.", "themes": ["s5-goal"] },
+        { "text": "Not sure what we were trying to achieve this sprint.", "themes": ["s5-goal"] },
+        { "text": "Goals were vague and kept shifting. Planning felt like a round of Calvinball.", "themes": ["s5-goal"], "markers": ["calvinball"] },
+        { "text": "The priorities were unclear so I worked on whatever seemed urgent.", "themes": ["s5-goal"] },
+        { "text": "We need a clearer sprint goal; it was hard to say no to anything.", "themes": ["s5-goal"] },
+        { "text": "Blocked for days waiting on another team's API change.", "themes": ["s5-deps"] },
+        { "text": "Dependencies on other teams stalled two of my tickets.", "themes": ["s5-deps"] },
+        { "text": "Could not progress because the shared service changes were not ready.", "themes": ["s5-deps"] },
+        { "text": "Waiting for another team to deploy their part blocked us again.", "themes": ["s5-deps"] },
+        { "text": "Cross-team dependencies held up our work most of the sprint.", "themes": ["s5-deps"] },
+        { "text": "The internal API docs are out of date.", "themes": ["s5-docs"] },
+        { "text": "Documentation for the new endpoints is missing or wrong.", "themes": ["s5-docs"] },
+        { "text": "Spent hours figuring out the API because the docs are stale.", "themes": ["s5-docs"] },
+        { "text": "Good to have the new joiner on board, they are learning fast.", "themes": [] }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "Sprint 26",
+      "planted": [
+        { "id": "s6-goal", "summary": "A clear sprint goal helped prioritise (positive)" },
+        { "id": "s6-release", "summary": "The release went smoothly (positive)" },
+        { "id": "s6-celebrate", "summary": "Celebrate wins together (below k)" }
+      ],
+      "notes": [
+        { "text": "Having a one-line sprint goal made it easy to prioritise.", "themes": ["s6-goal"] },
+        { "text": "The goal was clear from day one, which helped a lot.", "themes": ["s6-goal"] },
+        { "text": "Knowing exactly what we were aiming for made saying no easier.", "themes": ["s6-goal"] },
+        { "text": "Clear goal this time, I always knew what mattered most.", "themes": ["s6-goal"] },
+        { "text": "The sprint goal we wrote with the product owner kept us focused.", "themes": ["s6-goal"] },
+        { "text": "Much clearer priorities than last sprint.", "themes": ["s6-goal"] },
+        { "text": "The release went out without drama.", "themes": ["s6-release"] },
+        { "text": "Smoothest deployment we have had in months.", "themes": ["s6-release"] },
+        { "text": "Shipping was easy this time, the pipeline just worked.", "themes": ["s6-release"] },
+        { "text": "Release day was calm, no rollbacks.", "themes": ["s6-release"] },
+        { "text": "Deploy went smoothly. For once it ran like a well-oiled espresso machine.", "themes": ["s6-release"], "markers": ["espresso"] },
+        { "text": "We should celebrate when things go well.", "themes": ["s6-celebrate"] },
+        { "text": "Would be nice to mark wins together as a team, even small ones.", "themes": ["s6-celebrate"] },
+        { "text": "Tired but satisfied.", "themes": [] }
+      ]
+    }
+  ]
+}

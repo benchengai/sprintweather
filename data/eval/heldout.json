@@ -1,0 +1,72 @@
+{
+  "_comment": "SYNTHETIC. Held-out set for the theme evaluation: two fictional teams, written after the smoke test and before any model was run on them. Prompts and guard were frozen before the benchmark that first scored them. No real person wrote or is described by any note.",
+  "k": 5,
+  "scopes": [
+    {
+      "id": "h1",
+      "label": "Web frontend team",
+      "planted": [
+        { "id": "h1-component-churn", "summary": "Changes to the shared component library keep breaking pages" },
+        { "id": "h1-staging", "summary": "The shared staging environment is unstable" },
+        { "id": "h1-mob", "summary": "Mob programming sessions helped (positive)" },
+        { "id": "h1-desks", "summary": "Standing desks (below k)" }
+      ],
+      "notes": [
+        { "text": "The shared component library changed again and broke three of our pages.", "themes": ["h1-component-churn"] },
+        { "text": "Every update to the design system means hours of fixing layouts.", "themes": ["h1-component-churn"] },
+        { "text": "Button and form components keep changing under us without notice.", "themes": ["h1-component-churn"] },
+        { "text": "Upgrading the UI kit ate two days this sprint.", "themes": ["h1-component-churn"] },
+        { "text": "Breaking changes in the component library are a constant drain.", "themes": ["h1-component-churn"] },
+        { "text": "We spend more time chasing design system updates than building features. It feels like repainting the Golden Gate Bridge.", "themes": ["h1-component-churn"], "markers": ["golden gate", "bridge", "repainting"] },
+        { "text": "Staging was down for most of Wednesday.", "themes": ["h1-staging"] },
+        { "text": "The test environment is so unstable we cannot demo anything.", "themes": ["h1-staging"] },
+        { "text": "Shared staging keeps breaking because everyone deploys to it at once.", "themes": ["h1-staging"] },
+        { "text": "Could not verify my fixes because staging was broken again.", "themes": ["h1-staging"] },
+        { "text": "Staging data gets reset without warning, so testing is a gamble.", "themes": ["h1-staging"] },
+        { "text": "Half of my testing time went into waiting for staging to come back.", "themes": ["h1-staging"] },
+        { "text": "The mob programming session on the checkout bug was excellent.", "themes": ["h1-mob"] },
+        { "text": "Mobbing on the tricky accessibility issue got it solved in an hour.", "themes": ["h1-mob"] },
+        { "text": "Working as a group on one screen helped the new people learn quickly.", "themes": ["h1-mob"] },
+        { "text": "Our mob session was the most productive afternoon of the sprint.", "themes": ["h1-mob"] },
+        { "text": "Would like more mob programming, it spreads knowledge well.", "themes": ["h1-mob"] },
+        { "text": "Could we get standing desks in the team area?", "themes": ["h1-desks"] },
+        { "text": "My back hurts from the chairs; standing desks would help.", "themes": ["h1-desks"] },
+        { "text": "Since the bundler upgrade our build is slower than a sloth on a Sunday.", "themes": [], "markers": ["sloth"] },
+        { "text": "Nothing to report.", "themes": [] }
+      ]
+    },
+    {
+      "id": "h2",
+      "label": "Support tooling team",
+      "planted": [
+        { "id": "h2-vague-tickets", "summary": "Bug reports from support lack the details needed to act" },
+        { "id": "h2-interruptions", "summary": "Constant interruptions and context switching" },
+        { "id": "h2-automation", "summary": "New triage automation saves time (positive)" },
+        { "id": "h2-cold", "summary": "The office is too cold (below k)" }
+      ],
+      "notes": [
+        { "text": "Bug reports from support often lack steps to reproduce.", "themes": ["h2-vague-tickets"] },
+        { "text": "Half the tickets I picked up had no clear description of the problem.", "themes": ["h2-vague-tickets"] },
+        { "text": "We waste time asking support for basic details about each bug.", "themes": ["h2-vague-tickets"] },
+        { "text": "Incoming tickets are vague, so I guess what the customer meant.", "themes": ["h2-vague-tickets"] },
+        { "text": "Tickets arrive without screenshots or logs, which slows everything down.", "themes": ["h2-vague-tickets"] },
+        { "text": "Unclear bug reports again; reading them is like decoding a ransom note.", "themes": ["h2-vague-tickets"], "markers": ["ransom"] },
+        { "text": "I was interrupted every hour with urgent questions.", "themes": ["h2-interruptions"] },
+        { "text": "Constant context switching between tickets and chat made it hard to finish anything.", "themes": ["h2-interruptions"] },
+        { "text": "Too many interruptions from the support channel.", "themes": ["h2-interruptions"] },
+        { "text": "Jumping between tasks all day left me with nothing finished.", "themes": ["h2-interruptions"] },
+        { "text": "Could not focus because of the steady stream of pings.", "themes": ["h2-interruptions"] },
+        { "text": "Every time I started deep work someone needed an urgent answer.", "themes": ["h2-interruptions"] },
+        { "text": "The interruptions never stop; my brain feels like a browser with ninety tabs open.", "themes": ["h2-interruptions"], "markers": ["browser", "ninety tabs"] },
+        { "text": "The new ticket triage automation saves me a lot of time.", "themes": ["h2-automation"] },
+        { "text": "Auto-tagging incoming tickets has been a big help.", "themes": ["h2-automation"] },
+        { "text": "Automating the duplicate check removed a boring chore.", "themes": ["h2-automation"] },
+        { "text": "The triage bot sorted most tickets correctly, great improvement.", "themes": ["h2-automation"] },
+        { "text": "Glad we automated the routing, fewer tickets land in the wrong queue.", "themes": ["h2-automation"] },
+        { "text": "The office is too cold in the mornings.", "themes": ["h2-cold"] },
+        { "text": "Can we fix the heating? It is freezing by the windows.", "themes": ["h2-cold"] },
+        { "text": "Priya's onboarding guide was the only reason I understood the codebase.", "themes": [], "markers": ["priya"] }
+      ]
+    }
+  ]
+}
