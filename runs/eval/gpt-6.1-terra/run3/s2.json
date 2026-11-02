@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Reviews were slow or backlogged.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          10,
+          7,
+          8,
+          11,
+          9
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Additional tasks were introduced to the iteration once initial commitments had been made.",
+        "topic": "workload",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          0,
+          6,
+          3,
+          1,
+          4
+        ],
+        "rewritten": true
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_4a5f799112ad4e9f9502f0416b8f0765",
+        "inputTokens": 582,
+        "cachedInputTokens": 0,
+        "outputTokens": 469,
+        "reasoningTokens": 373,
+        "latencyS": 7.18,
+        "costUsd": 0.002927
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_ab4f379b1b7a41519fdc6c178fdd461b",
+        "inputTokens": 409,
+        "cachedInputTokens": 0,
+        "outputTokens": 136,
+        "reasoningTokens": 69,
+        "latencyS": 2.76,
+        "costUsd": 0.001089
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_09346759189142ff9b69904a6da4fb25",
+        "inputTokens": 154,
+        "cachedInputTokens": 0,
+        "outputTokens": 202,
+        "reasoningTokens": 164,
+        "latencyS": 3.99,
+        "costUsd": 0.001164
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Reviews were slow or backlogged.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n01",
+              "n02",
+              "n09",
+              "n14",
+              "n15"
+            ]
+          },
+          {
+            "statement": "Work was added to the sprint after planning.",
+            "topic": "workload",
+            "polarity": "concern",
+            "note_ids": [
+              "n04",
+              "n05",
+              "n06",
+              "n10",
+              "n11",
+              "n12"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n02",
+              "n09",
+              "n14",
+              "n15"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n04",
+              "n06",
+              "n10",
+              "n11",
+              "n12"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t2",
+              "statement": "Additional tasks were introduced to the iteration once initial commitments had been made."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 1,
+      "rewritten": 1
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_4a5f799112ad4e9f9502f0416b8f0765",
+      "inputTokens": 582,
+      "cachedInputTokens": 0,
+      "outputTokens": 469,
+      "reasoningTokens": 373,
+      "latencyS": 7.18,
+      "costUsd": 0.002927
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_ab4f379b1b7a41519fdc6c178fdd461b",
+      "inputTokens": 409,
+      "cachedInputTokens": 0,
+      "outputTokens": 136,
+      "reasoningTokens": 69,
+      "latencyS": 2.76,
+      "costUsd": 0.001089
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_09346759189142ff9b69904a6da4fb25",
+      "inputTokens": 154,
+      "cachedInputTokens": 0,
+      "outputTokens": 202,
+      "reasoningTokens": 164,
+      "latencyS": 3.99,
+      "costUsd": 0.001164
+    }
+  ]
+}

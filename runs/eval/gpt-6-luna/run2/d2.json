@@ -1,0 +1,203 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Excessive alerts that need no follow-up add strain to incident response and on-call duties.",
+        "topic": "tooling",
+        "polarity": "concern",
+        "support": 7,
+        "supportIdx": [
+          4,
+          1,
+          5,
+          2,
+          0,
+          6,
+          3
+        ],
+        "rewritten": true
+      }
+    ],
+    "withheld": [
+      {
+        "statement": "Regular knowledge-sharing sessions support learning across the team.",
+        "reason": "verified-below-k",
+        "supportIdx": [
+          15,
+          13,
+          16
+        ]
+      },
+      {
+        "statement": "Requirements and changes often arrive late, disrupting planning and requiring rework.",
+        "reason": "verified-below-k",
+        "supportIdx": [
+          7,
+          11,
+          9,
+          10
+        ]
+      }
+    ],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_656bf44aa7954fa6afc83afc69d5b16b",
+        "inputTokens": 661,
+        "cachedInputTokens": 0,
+        "outputTokens": 536,
+        "reasoningTokens": 384,
+        "latencyS": 6.57,
+        "costUsd": 0.00033410000000000004
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_9cdada2b67c442409ea88aab72b2f7d0",
+        "inputTokens": 558,
+        "cachedInputTokens": 0,
+        "outputTokens": 802,
+        "reasoningTokens": 712,
+        "latencyS": 9.82,
+        "costUsd": 0.0004568
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6-luna",
+        "requestId": "req_d1492b8a0e0a4865a66e210152bcf7af",
+        "inputTokens": 155,
+        "cachedInputTokens": 0,
+        "outputTokens": 137,
+        "reasoningTokens": 94,
+        "latencyS": 3.11,
+        "costUsd": 0.000084
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Regular knowledge-sharing sessions support learning across the team.",
+            "topic": "collaboration",
+            "polarity": "positive",
+            "note_ids": [
+              "n02",
+              "n05",
+              "n14",
+              "n17",
+              "n19"
+            ]
+          },
+          {
+            "statement": "Frequent non-actionable alerts make monitoring and on-call work harder.",
+            "topic": "tooling",
+            "polarity": "concern",
+            "note_ids": [
+              "n03",
+              "n08",
+              "n10",
+              "n11",
+              "n13",
+              "n18",
+              "n20"
+            ]
+          },
+          {
+            "statement": "Requirements and changes often arrive late, disrupting planning and requiring rework.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n04",
+              "n07",
+              "n12",
+              "n15",
+              "n16"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n02",
+              "n17",
+              "n19"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n03",
+              "n08",
+              "n10",
+              "n11",
+              "n13",
+              "n18",
+              "n20"
+            ]
+          },
+          {
+            "theme_id": "t3",
+            "supported_note_ids": [
+              "n04",
+              "n07",
+              "n12",
+              "n16"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t2",
+              "statement": "Excessive alerts that need no follow-up add strain to incident response and on-call duties."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 1,
+      "rewritten": 1
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_656bf44aa7954fa6afc83afc69d5b16b",
+      "inputTokens": 661,
+      "cachedInputTokens": 0,
+      "outputTokens": 536,
+      "reasoningTokens": 384,
+      "latencyS": 6.57,
+      "costUsd": 0.00033410000000000004
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_9cdada2b67c442409ea88aab72b2f7d0",
+      "inputTokens": 558,
+      "cachedInputTokens": 0,
+      "outputTokens": 802,
+      "reasoningTokens": 712,
+      "latencyS": 9.82,
+      "costUsd": 0.0004568
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_d1492b8a0e0a4865a66e210152bcf7af",
+      "inputTokens": 155,
+      "cachedInputTokens": 0,
+      "outputTokens": 137,
+      "reasoningTokens": 94,
+      "latencyS": 3.11,
+      "costUsd": 0.000084
+    }
+  ]
+}

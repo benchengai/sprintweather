@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Incoming bug reports often omit details needed to diagnose issues.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          5,
+          0,
+          1,
+          4,
+          3,
+          2
+        ],
+        "rewritten": true
+      },
+      {
+        "statement": "Frequent interruptions and task switching make it difficult to focus and complete work.",
+        "topic": "workload",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          7,
+          9,
+          11,
+          10,
+          12
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "New tools have improved ticket handling and reduced manual effort.",
+        "topic": "tooling",
+        "polarity": "positive",
+        "support": 5,
+        "supportIdx": [
+          17,
+          13,
+          14,
+          15,
+          16
+        ],
+        "rewritten": true
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_e2df38f7d5914e6fafd992315d33568b",
+        "inputTokens": 691,
+        "cachedInputTokens": 0,
+        "outputTokens": 614,
+        "reasoningTokens": 458,
+        "latencyS": 6.15,
+        "costUsd": 0.00037610000000000003
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_438c8aece16a4108a52ad188f18f1395",
+        "inputTokens": 585,
+        "cachedInputTokens": 0,
+        "outputTokens": 458,
+        "reasoningTokens": 362,
+        "latencyS": 5.83,
+        "costUsd": 0.0002875
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6-luna",
+        "requestId": "req_8fa4e634cce342338a1b8444eef0a779",
+        "inputTokens": 177,
+        "cachedInputTokens": 0,
+        "outputTokens": 124,
+        "reasoningTokens": 69,
+        "latencyS": 2.56,
+        "costUsd": 0.0000797
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Incoming bug reports often lack the information needed to understand or reproduce problems.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n01",
+              "n07",
+              "n15",
+              "n16",
+              "n20",
+              "n21"
+            ]
+          },
+          {
+            "statement": "Frequent interruptions and task switching make it difficult to focus and complete work.",
+            "topic": "workload",
+            "polarity": "concern",
+            "note_ids": [
+              "n02",
+              "n08",
+              "n09",
+              "n10",
+              "n11",
+              "n14",
+              "n17"
+            ]
+          },
+          {
+            "statement": "Automation has improved ticket handling and reduced manual work.",
+            "topic": "tooling",
+            "polarity": "positive",
+            "note_ids": [
+              "n04",
+              "n12",
+              "n13",
+              "n18",
+              "n19"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n07",
+              "n15",
+              "n16",
+              "n20",
+              "n21"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n02",
+              "n08",
+              "n09",
+              "n11",
+              "n17"
+            ]
+          },
+          {
+            "theme_id": "t3",
+            "supported_note_ids": [
+              "n04",
+              "n12",
+              "n13",
+              "n18",
+              "n19"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t1",
+              "statement": "Incoming bug reports often omit details needed to diagnose issues."
+            },
+            {
+              "theme_id": "t3",
+              "statement": "New tools have improved ticket handling and reduced manual effort."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 2,
+      "rewritten": 2
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_e2df38f7d5914e6fafd992315d33568b",
+      "inputTokens": 691,
+      "cachedInputTokens": 0,
+      "outputTokens": 614,
+      "reasoningTokens": 458,
+      "latencyS": 6.15,
+      "costUsd": 0.00037610000000000003
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_438c8aece16a4108a52ad188f18f1395",
+      "inputTokens": 585,
+      "cachedInputTokens": 0,
+      "outputTokens": 458,
+      "reasoningTokens": 362,
+      "latencyS": 5.83,
+      "costUsd": 0.0002875
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_8fa4e634cce342338a1b8444eef0a779",
+      "inputTokens": 177,
+      "cachedInputTokens": 0,
+      "outputTokens": 124,
+      "reasoningTokens": 69,
+      "latencyS": 2.56,
+      "costUsd": 0.0000797
+    }
+  ]
+}

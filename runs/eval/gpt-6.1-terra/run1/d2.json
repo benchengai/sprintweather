@@ -1,0 +1,218 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Alerts create too much disruption.",
+        "topic": "tooling",
+        "polarity": "concern",
+        "support": 7,
+        "supportIdx": [
+          1,
+          3,
+          6,
+          2,
+          5,
+          0,
+          4
+        ],
+        "rewritten": true
+      },
+      {
+        "statement": "Opportunities to learn from one another are valuable.",
+        "topic": "collaboration",
+        "polarity": "positive",
+        "support": 5,
+        "supportIdx": [
+          13,
+          15,
+          16,
+          14,
+          12
+        ],
+        "rewritten": true
+      },
+      {
+        "statement": "Requirements and changes arrive late.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          9,
+          10,
+          11,
+          8,
+          7
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_820d53d3fb174384bb16239e72bcbf4e",
+        "inputTokens": 661,
+        "cachedInputTokens": 0,
+        "outputTokens": 443,
+        "reasoningTokens": 310,
+        "latencyS": 6.42,
+        "costUsd": 0.002876
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_5acbb7f4ad694548b4ffa1235b11a7fa",
+        "inputTokens": 540,
+        "cachedInputTokens": 0,
+        "outputTokens": 199,
+        "reasoningTokens": 100,
+        "latencyS": 3.56,
+        "costUsd": 0.001535
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_e304f142a31f4c53ab0bb75fc992b174",
+        "inputTokens": 171,
+        "cachedInputTokens": 0,
+        "outputTokens": 110,
+        "reasoningTokens": 61,
+        "latencyS": 2.7,
+        "costUsd": 0.000721
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Alerts are excessively noisy.",
+            "topic": "tooling",
+            "polarity": "concern",
+            "note_ids": [
+              "n02",
+              "n03",
+              "n10",
+              "n11",
+              "n13",
+              "n17",
+              "n19"
+            ]
+          },
+          {
+            "statement": "Learning and knowledge-sharing sessions are valuable.",
+            "topic": "collaboration",
+            "polarity": "positive",
+            "note_ids": [
+              "n04",
+              "n05",
+              "n06",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "statement": "Requirements and changes arrive late.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n07",
+              "n16",
+              "n18",
+              "n20",
+              "n21"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n02",
+              "n03",
+              "n10",
+              "n11",
+              "n13",
+              "n17",
+              "n19"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n04",
+              "n05",
+              "n06",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "theme_id": "t3",
+            "supported_note_ids": [
+              "n07",
+              "n16",
+              "n18",
+              "n20",
+              "n21"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t1",
+              "statement": "Alerts create too much disruption."
+            },
+            {
+              "theme_id": "t2",
+              "statement": "Opportunities to learn from one another are valuable."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 2,
+      "rewritten": 2
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_820d53d3fb174384bb16239e72bcbf4e",
+      "inputTokens": 661,
+      "cachedInputTokens": 0,
+      "outputTokens": 443,
+      "reasoningTokens": 310,
+      "latencyS": 6.42,
+      "costUsd": 0.002876
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_5acbb7f4ad694548b4ffa1235b11a7fa",
+      "inputTokens": 540,
+      "cachedInputTokens": 0,
+      "outputTokens": 199,
+      "reasoningTokens": 100,
+      "latencyS": 3.56,
+      "costUsd": 0.001535
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_e304f142a31f4c53ab0bb75fc992b174",
+      "inputTokens": 171,
+      "cachedInputTokens": 0,
+      "outputTokens": 110,
+      "reasoningTokens": 61,
+      "latencyS": 2.7,
+      "costUsd": 0.000721
+    }
+  ]
+}

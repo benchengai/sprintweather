@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Meeting-free afternoons support focus and productive work.",
+        "topic": "workload",
+        "polarity": "positive",
+        "support": 6,
+        "supportIdx": [
+          4,
+          5,
+          1,
+          2,
+          0,
+          3
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Outage follow-up work remains unfinished or is being deferred.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          6,
+          7,
+          9,
+          8,
+          10
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_8a37e6ec8ac34e14aaee71ebf53d361f",
+        "inputTokens": 573,
+        "cachedInputTokens": 0,
+        "outputTokens": 329,
+        "reasoningTokens": 229,
+        "latencyS": 5.67,
+        "costUsd": 0.00022180000000000002
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_e5de923ce9f1402995f1a3b0b4fcafdb",
+        "inputTokens": 436,
+        "cachedInputTokens": 0,
+        "outputTokens": 115,
+        "reasoningTokens": 45,
+        "latencyS": 2.75,
+        "costUsd": 0.00010109999999999999
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Outage follow-up work remains unfinished or is being deferred.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n02",
+              "n04",
+              "n07",
+              "n08",
+              "n09"
+            ]
+          },
+          {
+            "statement": "Meeting-free afternoons support focus and productive work.",
+            "topic": "workload",
+            "polarity": "positive",
+            "note_ids": [
+              "n03",
+              "n05",
+              "n06",
+              "n11",
+              "n12",
+              "n13"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n02",
+              "n04",
+              "n07",
+              "n08",
+              "n09"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n03",
+              "n05",
+              "n06",
+              "n11",
+              "n12",
+              "n13"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_8a37e6ec8ac34e14aaee71ebf53d361f",
+      "inputTokens": 573,
+      "cachedInputTokens": 0,
+      "outputTokens": 329,
+      "reasoningTokens": 229,
+      "latencyS": 5.67,
+      "costUsd": 0.00022180000000000002
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_e5de923ce9f1402995f1a3b0b4fcafdb",
+      "inputTokens": 436,
+      "cachedInputTokens": 0,
+      "outputTokens": 115,
+      "reasoningTokens": 45,
+      "latencyS": 2.75,
+      "costUsd": 0.00010109999999999999
+    }
+  ]
+}

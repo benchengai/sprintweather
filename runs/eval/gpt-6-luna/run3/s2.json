@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Work plans changed or expanded after sprint planning.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 7,
+        "supportIdx": [
+          0,
+          2,
+          6,
+          3,
+          1,
+          4,
+          5
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [
+      {
+        "statement": "Code reviews took too long and delayed work.",
+        "reason": "verified-below-k",
+        "supportIdx": [
+          10,
+          7,
+          11,
+          9
+        ]
+      }
+    ],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_7f03e9a1f23242f5a429826dd317db4c",
+        "inputTokens": 582,
+        "cachedInputTokens": 0,
+        "outputTokens": 434,
+        "reasoningTokens": 334,
+        "latencyS": 4.93,
+        "costUsd": 0.00027519999999999997
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_a5cb5cb050ca43168b583e8fd65db29a",
+        "inputTokens": 436,
+        "cachedInputTokens": 0,
+        "outputTokens": 415,
+        "reasoningTokens": 345,
+        "latencyS": 4.89,
+        "costUsd": 0.0002511
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Code reviews took too long and delayed work.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n01",
+              "n02",
+              "n09",
+              "n14",
+              "n15"
+            ]
+          },
+          {
+            "statement": "Work plans changed or expanded after sprint planning.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n04",
+              "n05",
+              "n06",
+              "n10",
+              "n11",
+              "n12",
+              "n13"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n02",
+              "n14",
+              "n15"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n04",
+              "n05",
+              "n06",
+              "n10",
+              "n11",
+              "n12",
+              "n13"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_7f03e9a1f23242f5a429826dd317db4c",
+      "inputTokens": 582,
+      "cachedInputTokens": 0,
+      "outputTokens": 434,
+      "reasoningTokens": 334,
+      "latencyS": 4.93,
+      "costUsd": 0.00027519999999999997
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_a5cb5cb050ca43168b583e8fd65db29a",
+      "inputTokens": 436,
+      "cachedInputTokens": 0,
+      "outputTokens": 415,
+      "reasoningTokens": 345,
+      "latencyS": 4.89,
+      "costUsd": 0.0002511
+    }
+  ]
+}

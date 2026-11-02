@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Test environments are unreliable or unavailable.",
+        "topic": "tooling",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          11,
+          10,
+          8,
+          7,
+          6,
+          9
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Working together on shared tasks was beneficial.",
+        "topic": "collaboration",
+        "polarity": "positive",
+        "support": 5,
+        "supportIdx": [
+          12,
+          15,
+          13,
+          14,
+          16
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Changes to shared interface components create extra work.",
+        "topic": "tooling",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          3,
+          0,
+          1,
+          4,
+          5
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_9b213d64a493448cbceb56cc643cbc0b",
+        "inputTokens": 693,
+        "cachedInputTokens": 0,
+        "outputTokens": 685,
+        "reasoningTokens": 549,
+        "latencyS": 10.05,
+        "costUsd": 0.004118
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_1c7ea416eb7a417ba22a21121492479b",
+        "inputTokens": 546,
+        "cachedInputTokens": 0,
+        "outputTokens": 130,
+        "reasoningTokens": 34,
+        "latencyS": 2.73,
+        "costUsd": 0.001196
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Test environments are unreliable or unavailable.",
+            "topic": "tooling",
+            "polarity": "concern",
+            "note_ids": [
+              "n01",
+              "n02",
+              "n05",
+              "n09",
+              "n16",
+              "n17"
+            ]
+          },
+          {
+            "statement": "Working together on shared tasks was beneficial.",
+            "topic": "collaboration",
+            "polarity": "positive",
+            "note_ids": [
+              "n03",
+              "n08",
+              "n12",
+              "n14",
+              "n15"
+            ]
+          },
+          {
+            "statement": "Changes to shared interface components create extra work.",
+            "topic": "tooling",
+            "polarity": "concern",
+            "note_ids": [
+              "n07",
+              "n10",
+              "n11",
+              "n13",
+              "n20"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n02",
+              "n05",
+              "n09",
+              "n16",
+              "n17"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n03",
+              "n08",
+              "n12",
+              "n14",
+              "n15"
+            ]
+          },
+          {
+            "theme_id": "t3",
+            "supported_note_ids": [
+              "n07",
+              "n10",
+              "n11",
+              "n13",
+              "n20"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_9b213d64a493448cbceb56cc643cbc0b",
+      "inputTokens": 693,
+      "cachedInputTokens": 0,
+      "outputTokens": 685,
+      "reasoningTokens": 549,
+      "latencyS": 10.05,
+      "costUsd": 0.004118
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_1c7ea416eb7a417ba22a21121492479b",
+      "inputTokens": 546,
+      "cachedInputTokens": 0,
+      "outputTokens": 130,
+      "reasoningTokens": 34,
+      "latencyS": 2.73,
+      "costUsd": 0.001196
+    }
+  ]
+}

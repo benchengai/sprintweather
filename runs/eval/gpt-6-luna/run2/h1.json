@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Shared test environments are unreliable, disrupting testing and demonstrations.",
+        "topic": "tooling",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          9,
+          7,
+          6,
+          10,
+          8,
+          11
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Mob programming is viewed as an effective way to work together.",
+        "topic": "collaboration",
+        "polarity": "positive",
+        "support": 5,
+        "supportIdx": [
+          12,
+          15,
+          16,
+          14,
+          13
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [
+      {
+        "statement": "Changes and upgrades to shared UI tools consume substantial development time.",
+        "reason": "verified-below-k",
+        "supportIdx": [
+          3,
+          1,
+          4,
+          5
+        ]
+      }
+    ],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_aecfbd8da7fc425188a3a55119e5e3aa",
+        "inputTokens": 693,
+        "cachedInputTokens": 0,
+        "outputTokens": 795,
+        "reasoningTokens": 645,
+        "latencyS": 9.32,
+        "costUsd": 0.0004668
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_fecc56ad6c814d76a6f86954b63a46c0",
+        "inputTokens": 573,
+        "cachedInputTokens": 0,
+        "outputTokens": 349,
+        "reasoningTokens": 256,
+        "latencyS": 5.06,
+        "costUsd": 0.00023180000000000002
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Shared test environments are unreliable, disrupting testing and demonstrations.",
+            "topic": "tooling",
+            "polarity": "concern",
+            "note_ids": [
+              "n02",
+              "n05",
+              "n07",
+              "n10",
+              "n12",
+              "n18"
+            ]
+          },
+          {
+            "statement": "Changes and upgrades to shared UI tools consume substantial development time.",
+            "topic": "tooling",
+            "polarity": "concern",
+            "note_ids": [
+              "n04",
+              "n06",
+              "n08",
+              "n11",
+              "n19",
+              "n21"
+            ]
+          },
+          {
+            "statement": "Mob programming is viewed as an effective way to work together.",
+            "topic": "collaboration",
+            "polarity": "positive",
+            "note_ids": [
+              "n03",
+              "n09",
+              "n13",
+              "n16",
+              "n17"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n02",
+              "n05",
+              "n07",
+              "n10",
+              "n12",
+              "n18"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n04",
+              "n11",
+              "n19",
+              "n21"
+            ]
+          },
+          {
+            "theme_id": "t3",
+            "supported_note_ids": [
+              "n03",
+              "n09",
+              "n13",
+              "n16",
+              "n17"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_aecfbd8da7fc425188a3a55119e5e3aa",
+      "inputTokens": 693,
+      "cachedInputTokens": 0,
+      "outputTokens": 795,
+      "reasoningTokens": 645,
+      "latencyS": 9.32,
+      "costUsd": 0.0004668
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_fecc56ad6c814d76a6f86954b63a46c0",
+      "inputTokens": 573,
+      "cachedInputTokens": 0,
+      "outputTokens": 349,
+      "reasoningTokens": 256,
+      "latencyS": 5.06,
+      "costUsd": 0.00023180000000000002
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Code reviews were often delayed.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          4,
+          2,
+          3,
+          1,
+          0,
+          5
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Working together in pairs went well.",
+        "topic": "collaboration",
+        "polarity": "positive",
+        "support": 5,
+        "supportIdx": [
+          8,
+          10,
+          7,
+          9,
+          6
+        ],
+        "rewritten": true
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_498415f2e5434d808b965a09e2c42720",
+        "inputTokens": 590,
+        "cachedInputTokens": 0,
+        "outputTokens": 279,
+        "reasoningTokens": 184,
+        "latencyS": 5.53,
+        "costUsd": 0.001985
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_17802536f07d47708018bd8b75c0aafe",
+        "inputTokens": 444,
+        "cachedInputTokens": 0,
+        "outputTokens": 96,
+        "reasoningTokens": 26,
+        "latencyS": 2.06,
+        "costUsd": 0.000924
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_2c69bf80481844cd857697eaadc731ae",
+        "inputTokens": 155,
+        "cachedInputTokens": 0,
+        "outputTokens": 65,
+        "reasoningTokens": 34,
+        "latencyS": 2.2,
+        "costUsd": 0.00048
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Code reviews were often delayed.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n01",
+              "n03",
+              "n08",
+              "n09",
+              "n11",
+              "n14"
+            ]
+          },
+          {
+            "statement": "Pairing was a positive part of the sprint.",
+            "topic": "collaboration",
+            "polarity": "positive",
+            "note_ids": [
+              "n04",
+              "n05",
+              "n06",
+              "n12",
+              "n13"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n03",
+              "n08",
+              "n09",
+              "n11",
+              "n14"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n04",
+              "n05",
+              "n06",
+              "n12",
+              "n13"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t2",
+              "statement": "Working together in pairs went well."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 1,
+      "rewritten": 1
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_498415f2e5434d808b965a09e2c42720",
+      "inputTokens": 590,
+      "cachedInputTokens": 0,
+      "outputTokens": 279,
+      "reasoningTokens": 184,
+      "latencyS": 5.53,
+      "costUsd": 0.001985
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_17802536f07d47708018bd8b75c0aafe",
+      "inputTokens": 444,
+      "cachedInputTokens": 0,
+      "outputTokens": 96,
+      "reasoningTokens": 26,
+      "latencyS": 2.06,
+      "costUsd": 0.000924
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_2c69bf80481844cd857697eaadc731ae",
+      "inputTokens": 155,
+      "cachedInputTokens": 0,
+      "outputTokens": 65,
+      "reasoningTokens": 34,
+      "latencyS": 2.2,
+      "costUsd": 0.00048
+    }
+  ]
+}

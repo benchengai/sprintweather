@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Sprint direction was unclear or changed during the work.",
+        "topic": "goals",
+        "polarity": "concern",
+        "support": 7,
+        "supportIdx": [
+          4,
+          0,
+          3,
+          5,
+          2,
+          6,
+          1
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Work was delayed while waiting for changes or deployments from other teams.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          10,
+          11,
+          7,
+          8,
+          9
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_d4b27f5d4b19491491b126b488b0d418",
+        "inputTokens": 598,
+        "cachedInputTokens": 0,
+        "outputTokens": 502,
+        "reasoningTokens": 396,
+        "latencyS": 5.88,
+        "costUsd": 0.0003108
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_4aeb8d36a25541b0a8e0b80a8dd085ea",
+        "inputTokens": 441,
+        "cachedInputTokens": 0,
+        "outputTokens": 136,
+        "reasoningTokens": 63,
+        "latencyS": 2.63,
+        "costUsd": 0.0001121
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Sprint direction was unclear or changed during the work.",
+            "topic": "goals",
+            "polarity": "concern",
+            "note_ids": [
+              "n01",
+              "n06",
+              "n07",
+              "n08",
+              "n11",
+              "n12",
+              "n13"
+            ]
+          },
+          {
+            "statement": "Work was delayed while waiting for changes or deployments from other teams.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n02",
+              "n05",
+              "n09",
+              "n10",
+              "n14"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n06",
+              "n07",
+              "n08",
+              "n11",
+              "n12",
+              "n13"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n02",
+              "n05",
+              "n09",
+              "n10",
+              "n14"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_d4b27f5d4b19491491b126b488b0d418",
+      "inputTokens": 598,
+      "cachedInputTokens": 0,
+      "outputTokens": 502,
+      "reasoningTokens": 396,
+      "latencyS": 5.88,
+      "costUsd": 0.0003108
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_4aeb8d36a25541b0a8e0b80a8dd085ea",
+      "inputTokens": 441,
+      "cachedInputTokens": 0,
+      "outputTokens": 136,
+      "reasoningTokens": 63,
+      "latencyS": 2.63,
+      "costUsd": 0.0001121
+    }
+  ]
+}

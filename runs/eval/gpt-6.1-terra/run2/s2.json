@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Code reviews are a bottleneck.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          7,
+          9,
+          8,
+          11,
+          10
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "The team took on more tasks mid-iteration.",
+        "topic": "workload",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          0,
+          4,
+          3,
+          6,
+          1
+        ],
+        "rewritten": true
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_546f58deef9a454c86a065000635cf7d",
+        "inputTokens": 582,
+        "cachedInputTokens": 0,
+        "outputTokens": 263,
+        "reasoningTokens": 168,
+        "latencyS": 4.38,
+        "costUsd": 0.001897
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_3e38be5c3116449692629861c14d091d",
+        "inputTokens": 408,
+        "cachedInputTokens": 0,
+        "outputTokens": 173,
+        "reasoningTokens": 106,
+        "latencyS": 3.7,
+        "costUsd": 0.001273
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_d713ddabc9254027b1ab9b30177e4ab9",
+        "inputTokens": 165,
+        "cachedInputTokens": 0,
+        "outputTokens": 225,
+        "reasoningTokens": 191,
+        "latencyS": 4.3,
+        "costUsd": 0.00129
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Code reviews are a bottleneck.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n01",
+              "n06",
+              "n07",
+              "n11",
+              "n13"
+            ]
+          },
+          {
+            "statement": "Work was added after the sprint began.",
+            "topic": "workload",
+            "polarity": "concern",
+            "note_ids": [
+              "n04",
+              "n05",
+              "n08",
+              "n10",
+              "n12",
+              "n14"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n06",
+              "n07",
+              "n11",
+              "n13"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n04",
+              "n05",
+              "n08",
+              "n12",
+              "n14"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t2",
+              "statement": "The team took on more tasks mid-iteration."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 1,
+      "rewritten": 1
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_546f58deef9a454c86a065000635cf7d",
+      "inputTokens": 582,
+      "cachedInputTokens": 0,
+      "outputTokens": 263,
+      "reasoningTokens": 168,
+      "latencyS": 4.38,
+      "costUsd": 0.001897
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_3e38be5c3116449692629861c14d091d",
+      "inputTokens": 408,
+      "cachedInputTokens": 0,
+      "outputTokens": 173,
+      "reasoningTokens": 106,
+      "latencyS": 3.7,
+      "costUsd": 0.001273
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_d713ddabc9254027b1ab9b30177e4ab9",
+      "inputTokens": 165,
+      "cachedInputTokens": 0,
+      "outputTokens": 225,
+      "reasoningTokens": 191,
+      "latencyS": 4.3,
+      "costUsd": 0.00129
+    }
+  ]
+}

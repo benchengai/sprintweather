@@ -1,0 +1,148 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Production incidents displaced planned sprint work.",
+        "topic": "workload",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          1,
+          6,
+          0,
+          4,
+          3,
+          2
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Frequent meetings reduced time available for focused work.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          12,
+          8,
+          7,
+          9,
+          11,
+          10
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_c2424dca02864419a44a095a460bafe5",
+        "inputTokens": 618,
+        "cachedInputTokens": 0,
+        "outputTokens": 246,
+        "reasoningTokens": 143,
+        "latencyS": 3.46,
+        "costUsd": 0.00018480000000000002
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_0b9b33781ec64d2c8c86149a24bfa16a",
+        "inputTokens": 472,
+        "cachedInputTokens": 0,
+        "outputTokens": 321,
+        "reasoningTokens": 248,
+        "latencyS": 5.14,
+        "costUsd": 0.00020769999999999998
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Production incidents displaced planned sprint work.",
+            "topic": "workload",
+            "polarity": "concern",
+            "note_ids": [
+              "n01",
+              "n02",
+              "n03",
+              "n04",
+              "n10",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "statement": "Frequent meetings reduced time available for focused work.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n07",
+              "n08",
+              "n09",
+              "n11",
+              "n13",
+              "n16"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n03",
+              "n04",
+              "n10",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n07",
+              "n08",
+              "n09",
+              "n11",
+              "n13",
+              "n16"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_c2424dca02864419a44a095a460bafe5",
+      "inputTokens": 618,
+      "cachedInputTokens": 0,
+      "outputTokens": 246,
+      "reasoningTokens": 143,
+      "latencyS": 3.46,
+      "costUsd": 0.00018480000000000002
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_0b9b33781ec64d2c8c86149a24bfa16a",
+      "inputTokens": 472,
+      "cachedInputTokens": 0,
+      "outputTokens": 321,
+      "reasoningTokens": 248,
+      "latencyS": 5.14,
+      "costUsd": 0.00020769999999999998
+    }
+  ]
+}

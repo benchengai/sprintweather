@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Work was added to the sprint after it began.",
+        "topic": "workload",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          2,
+          1,
+          4,
+          6,
+          0,
+          3
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Code reviews were a bottleneck.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          11,
+          10,
+          7,
+          9,
+          8
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_b21a8888def94d5c8670b489d5ddd2d4",
+        "inputTokens": 582,
+        "cachedInputTokens": 0,
+        "outputTokens": 232,
+        "reasoningTokens": 135,
+        "latencyS": 3.93,
+        "costUsd": 0.001742
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_adf5972ad292493db2582458c43fd431",
+        "inputTokens": 410,
+        "cachedInputTokens": 0,
+        "outputTokens": 237,
+        "reasoningTokens": 167,
+        "latencyS": 4.25,
+        "costUsd": 0.001595
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Work was added to the sprint after it began.",
+            "topic": "workload",
+            "polarity": "concern",
+            "note_ids": [
+              "n01",
+              "n02",
+              "n03",
+              "n04",
+              "n06",
+              "n10"
+            ]
+          },
+          {
+            "statement": "Code reviews were a bottleneck.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n07",
+              "n08",
+              "n09",
+              "n12",
+              "n13"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n02",
+              "n03",
+              "n04",
+              "n06",
+              "n10"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n07",
+              "n08",
+              "n09",
+              "n12",
+              "n13"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_b21a8888def94d5c8670b489d5ddd2d4",
+      "inputTokens": 582,
+      "cachedInputTokens": 0,
+      "outputTokens": 232,
+      "reasoningTokens": 135,
+      "latencyS": 3.93,
+      "costUsd": 0.001742
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_adf5972ad292493db2582458c43fd431",
+      "inputTokens": 410,
+      "cachedInputTokens": 0,
+      "outputTokens": 237,
+      "reasoningTokens": 167,
+      "latencyS": 4.25,
+      "costUsd": 0.001595
+    }
+  ]
+}

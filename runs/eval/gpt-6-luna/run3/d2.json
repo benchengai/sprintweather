@@ -1,0 +1,218 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Many on-call alerts do not signal issues that need attention.",
+        "topic": "tooling",
+        "polarity": "concern",
+        "support": 7,
+        "supportIdx": [
+          5,
+          4,
+          1,
+          6,
+          0,
+          2,
+          3
+        ],
+        "rewritten": true
+      },
+      {
+        "statement": "Requirements often arrive after work has begun.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          9,
+          11,
+          7,
+          10,
+          8
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Team learning sessions help people share knowledge and understand the system better.",
+        "topic": "collaboration",
+        "polarity": "positive",
+        "support": 5,
+        "supportIdx": [
+          12,
+          15,
+          16,
+          14,
+          13
+        ],
+        "rewritten": true
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_c5ca9b5b59d44ed09666ae30ad76ce19",
+        "inputTokens": 661,
+        "cachedInputTokens": 0,
+        "outputTokens": 608,
+        "reasoningTokens": 462,
+        "latencyS": 7.7,
+        "costUsd": 0.0003701
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_2d56f01f1c874fbfafb5e8532ab803e9",
+        "inputTokens": 553,
+        "cachedInputTokens": 0,
+        "outputTokens": 500,
+        "reasoningTokens": 401,
+        "latencyS": 6.57,
+        "costUsd": 0.0003053
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6-luna",
+        "requestId": "req_54e76ef6074c4dd29ce446b04e2fb207",
+        "inputTokens": 179,
+        "cachedInputTokens": 0,
+        "outputTokens": 137,
+        "reasoningTokens": 79,
+        "latencyS": 2.6,
+        "costUsd": 0.0000864
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Requirements often arrive after work has begun.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n01",
+              "n03",
+              "n11",
+              "n15",
+              "n17"
+            ]
+          },
+          {
+            "statement": "Many on-call alerts are false or non-actionable.",
+            "topic": "tooling",
+            "polarity": "concern",
+            "note_ids": [
+              "n02",
+              "n05",
+              "n10",
+              "n16",
+              "n18",
+              "n20",
+              "n21"
+            ]
+          },
+          {
+            "statement": "Internal learning sessions are useful for sharing knowledge and building system understanding.",
+            "topic": "collaboration",
+            "polarity": "positive",
+            "note_ids": [
+              "n04",
+              "n09",
+              "n12",
+              "n13",
+              "n19"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n03",
+              "n11",
+              "n15",
+              "n17"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n02",
+              "n05",
+              "n10",
+              "n16",
+              "n18",
+              "n20",
+              "n21"
+            ]
+          },
+          {
+            "theme_id": "t3",
+            "supported_note_ids": [
+              "n04",
+              "n09",
+              "n12",
+              "n13",
+              "n19"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t2",
+              "statement": "Many on-call alerts do not signal issues that need attention."
+            },
+            {
+              "theme_id": "t3",
+              "statement": "Team learning sessions help people share knowledge and understand the system better."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 2,
+      "rewritten": 2
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_c5ca9b5b59d44ed09666ae30ad76ce19",
+      "inputTokens": 661,
+      "cachedInputTokens": 0,
+      "outputTokens": 608,
+      "reasoningTokens": 462,
+      "latencyS": 7.7,
+      "costUsd": 0.0003701
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_2d56f01f1c874fbfafb5e8532ab803e9",
+      "inputTokens": 553,
+      "cachedInputTokens": 0,
+      "outputTokens": 500,
+      "reasoningTokens": 401,
+      "latencyS": 6.57,
+      "costUsd": 0.0003053
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_54e76ef6074c4dd29ce446b04e2fb207",
+      "inputTokens": 179,
+      "cachedInputTokens": 0,
+      "outputTokens": 137,
+      "reasoningTokens": 79,
+      "latencyS": 2.6,
+      "costUsd": 0.0000864
+    }
+  ]
+}

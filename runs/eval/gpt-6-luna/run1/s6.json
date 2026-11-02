@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Priorities and sprint goals were clear, helping the team focus.",
+        "topic": "goals",
+        "polarity": "positive",
+        "support": 6,
+        "supportIdx": [
+          5,
+          0,
+          3,
+          4,
+          2,
+          1
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Releases and deployments went smoothly.",
+        "topic": "process",
+        "polarity": "positive",
+        "support": 5,
+        "supportIdx": [
+          9,
+          8,
+          10,
+          7,
+          6
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_a807d623069146bd9ea04ad85596b179",
+        "inputTokens": 543,
+        "cachedInputTokens": 0,
+        "outputTokens": 393,
+        "reasoningTokens": 295,
+        "latencyS": 6.08,
+        "costUsd": 0.0002508
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_d3378b85aa164eeeaa3c6e54b3dc3c30",
+        "inputTokens": 402,
+        "cachedInputTokens": 0,
+        "outputTokens": 174,
+        "reasoningTokens": 104,
+        "latencyS": 2.59,
+        "costUsd": 0.0001272
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Priorities and sprint goals were clear, helping the team focus.",
+            "topic": "goals",
+            "polarity": "positive",
+            "note_ids": [
+              "n01",
+              "n04",
+              "n07",
+              "n11",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "statement": "Releases and deployments went smoothly.",
+            "topic": "process",
+            "polarity": "positive",
+            "note_ids": [
+              "n02",
+              "n03",
+              "n08",
+              "n09",
+              "n10"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n04",
+              "n07",
+              "n11",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n02",
+              "n03",
+              "n08",
+              "n09",
+              "n10"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_a807d623069146bd9ea04ad85596b179",
+      "inputTokens": 543,
+      "cachedInputTokens": 0,
+      "outputTokens": 393,
+      "reasoningTokens": 295,
+      "latencyS": 6.08,
+      "costUsd": 0.0002508
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_d3378b85aa164eeeaa3c6e54b3dc3c30",
+      "inputTokens": 402,
+      "cachedInputTokens": 0,
+      "outputTokens": 174,
+      "reasoningTokens": 104,
+      "latencyS": 2.59,
+      "costUsd": 0.0001272
+    }
+  ]
+}

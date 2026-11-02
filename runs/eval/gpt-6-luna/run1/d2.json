@@ -1,0 +1,208 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "The system generates frequent alerts that need no response.",
+        "topic": "tooling",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          1,
+          3,
+          6,
+          5,
+          0,
+          4
+        ],
+        "rewritten": true
+      },
+      {
+        "statement": "Requirements often arrive late in the work process.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          9,
+          10,
+          11,
+          8,
+          7
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [
+      {
+        "statement": "Team learning sessions provide useful opportunities to share knowledge.",
+        "reason": "verified-below-k",
+        "supportIdx": [
+          13,
+          15,
+          14,
+          12
+        ]
+      }
+    ],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_6dba00d0a68f48b98391fd8597cbeede",
+        "inputTokens": 661,
+        "cachedInputTokens": 0,
+        "outputTokens": 586,
+        "reasoningTokens": 443,
+        "latencyS": 7.3,
+        "costUsd": 0.0003591
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_6f96512771b640c78aa91b26a72216cd",
+        "inputTokens": 550,
+        "cachedInputTokens": 0,
+        "outputTokens": 532,
+        "reasoningTokens": 439,
+        "latencyS": 6.43,
+        "costUsd": 0.000321
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6-luna",
+        "requestId": "req_42fc26e0d6ad46ce9c48ec3aac8c86f0",
+        "inputTokens": 150,
+        "cachedInputTokens": 0,
+        "outputTokens": 71,
+        "reasoningTokens": 37,
+        "latencyS": 1.94,
+        "costUsd": 0.0000505
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Monitoring produces frequent alerts that do not require action.",
+            "topic": "tooling",
+            "polarity": "concern",
+            "note_ids": [
+              "n02",
+              "n03",
+              "n10",
+              "n11",
+              "n13",
+              "n17",
+              "n19"
+            ]
+          },
+          {
+            "statement": "Team learning sessions provide useful opportunities to share knowledge.",
+            "topic": "collaboration",
+            "polarity": "positive",
+            "note_ids": [
+              "n04",
+              "n05",
+              "n06",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "statement": "Requirements often arrive late in the work process.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n07",
+              "n16",
+              "n18",
+              "n20",
+              "n21"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n02",
+              "n03",
+              "n10",
+              "n13",
+              "n17",
+              "n19"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n04",
+              "n05",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "theme_id": "t3",
+            "supported_note_ids": [
+              "n07",
+              "n16",
+              "n18",
+              "n20",
+              "n21"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t1",
+              "statement": "The system generates frequent alerts that need no response."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 1,
+      "rewritten": 1
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_6dba00d0a68f48b98391fd8597cbeede",
+      "inputTokens": 661,
+      "cachedInputTokens": 0,
+      "outputTokens": 586,
+      "reasoningTokens": 443,
+      "latencyS": 7.3,
+      "costUsd": 0.0003591
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_6f96512771b640c78aa91b26a72216cd",
+      "inputTokens": 550,
+      "cachedInputTokens": 0,
+      "outputTokens": 532,
+      "reasoningTokens": 439,
+      "latencyS": 6.43,
+      "costUsd": 0.000321
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_42fc26e0d6ad46ce9c48ec3aac8c86f0",
+      "inputTokens": 150,
+      "cachedInputTokens": 0,
+      "outputTokens": 71,
+      "reasoningTokens": 37,
+      "latencyS": 1.94,
+      "costUsd": 0.0000505
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Production incidents displaced planned work.",
+        "topic": "workload",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          1,
+          6,
+          4,
+          3,
+          2
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Meetings limited time for focused work.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          12,
+          8,
+          7,
+          11,
+          10
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_2411922b7f774a8a99a15698fb9adefa",
+        "inputTokens": 618,
+        "cachedInputTokens": 0,
+        "outputTokens": 849,
+        "reasoningTokens": 758,
+        "latencyS": 12.03,
+        "costUsd": 0.004863
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_4e321d9e72f849cbbcd7245f7fb334cd",
+        "inputTokens": 413,
+        "cachedInputTokens": 0,
+        "outputTokens": 105,
+        "reasoningTokens": 38,
+        "latencyS": 2.53,
+        "costUsd": 0.000938
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Production incidents displaced planned work.",
+            "topic": "workload",
+            "polarity": "concern",
+            "note_ids": [
+              "n01",
+              "n03",
+              "n10",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "statement": "Meetings limited time for focused work.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n07",
+              "n08",
+              "n09",
+              "n13",
+              "n16"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n03",
+              "n10",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n07",
+              "n08",
+              "n09",
+              "n13",
+              "n16"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_2411922b7f774a8a99a15698fb9adefa",
+      "inputTokens": 618,
+      "cachedInputTokens": 0,
+      "outputTokens": 849,
+      "reasoningTokens": 758,
+      "latencyS": 12.03,
+      "costUsd": 0.004863
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_4e321d9e72f849cbbcd7245f7fb334cd",
+      "inputTokens": 413,
+      "cachedInputTokens": 0,
+      "outputTokens": 105,
+      "reasoningTokens": 38,
+      "latencyS": 2.53,
+      "costUsd": 0.000938
+    }
+  ]
+}

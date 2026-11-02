@@ -1,0 +1,208 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Alerts create too much noise, including notifications about issues that aren't real.",
+        "topic": "tooling",
+        "polarity": "concern",
+        "support": 7,
+        "supportIdx": [
+          5,
+          4,
+          1,
+          6,
+          0,
+          2,
+          3
+        ],
+        "rewritten": true
+      },
+      {
+        "statement": "Requirements and changes arrive late in the work.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          9,
+          11,
+          7,
+          10,
+          8
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [
+      {
+        "statement": "Knowledge-sharing sessions are valuable.",
+        "reason": "verified-below-k",
+        "supportIdx": [
+          12,
+          15,
+          13
+        ]
+      }
+    ],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_d60c0c2e128b4ba88cb47518b099d345",
+        "inputTokens": 661,
+        "cachedInputTokens": 0,
+        "outputTokens": 560,
+        "reasoningTokens": 423,
+        "latencyS": 8.63,
+        "costUsd": 0.003461
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_cb162a92c6444ff18f72f554a9986cb4",
+        "inputTokens": 544,
+        "cachedInputTokens": 0,
+        "outputTokens": 318,
+        "reasoningTokens": 225,
+        "latencyS": 5.38,
+        "costUsd": 0.002134
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_a9c35cf78b6f43ecb9914ab45abe4ca3",
+        "inputTokens": 150,
+        "cachedInputTokens": 0,
+        "outputTokens": 134,
+        "reasoningTokens": 96,
+        "latencyS": 2.85,
+        "costUsd": 0.00082
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Requirements and changes arrive late in the work.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n01",
+              "n03",
+              "n11",
+              "n15",
+              "n17"
+            ]
+          },
+          {
+            "statement": "Alerts generate excessive noise and false alarms.",
+            "topic": "tooling",
+            "polarity": "concern",
+            "note_ids": [
+              "n02",
+              "n05",
+              "n10",
+              "n16",
+              "n18",
+              "n20",
+              "n21"
+            ]
+          },
+          {
+            "statement": "Knowledge-sharing sessions are valuable.",
+            "topic": "collaboration",
+            "polarity": "positive",
+            "note_ids": [
+              "n04",
+              "n09",
+              "n12",
+              "n13",
+              "n19"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n03",
+              "n11",
+              "n15",
+              "n17"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n02",
+              "n05",
+              "n10",
+              "n16",
+              "n18",
+              "n20",
+              "n21"
+            ]
+          },
+          {
+            "theme_id": "t3",
+            "supported_note_ids": [
+              "n04",
+              "n09",
+              "n19"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t2",
+              "statement": "Alerts create too much noise, including notifications about issues that aren't real."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 1,
+      "rewritten": 1
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_d60c0c2e128b4ba88cb47518b099d345",
+      "inputTokens": 661,
+      "cachedInputTokens": 0,
+      "outputTokens": 560,
+      "reasoningTokens": 423,
+      "latencyS": 8.63,
+      "costUsd": 0.003461
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_cb162a92c6444ff18f72f554a9986cb4",
+      "inputTokens": 544,
+      "cachedInputTokens": 0,
+      "outputTokens": 318,
+      "reasoningTokens": 225,
+      "latencyS": 5.38,
+      "costUsd": 0.002134
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_a9c35cf78b6f43ecb9914ab45abe4ca3",
+      "inputTokens": 150,
+      "cachedInputTokens": 0,
+      "outputTokens": 134,
+      "reasoningTokens": 96,
+      "latencyS": 2.85,
+      "costUsd": 0.00082
+    }
+  ]
+}

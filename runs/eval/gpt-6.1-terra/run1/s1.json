@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Code reviews take too long to get picked up.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          1,
+          0,
+          2,
+          5,
+          3,
+          4
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Pairing was a valuable way to work.",
+        "topic": "collaboration",
+        "polarity": "positive",
+        "support": 5,
+        "supportIdx": [
+          6,
+          8,
+          7,
+          9,
+          10
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_5c7406ac031541eebe890e1a451a2c6c",
+        "inputTokens": 590,
+        "cachedInputTokens": 0,
+        "outputTokens": 193,
+        "reasoningTokens": 95,
+        "latencyS": 3.74,
+        "costUsd": 0.001555
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_c3d44a17276447f1aea6b382d1e1ba11",
+        "inputTokens": 447,
+        "cachedInputTokens": 0,
+        "outputTokens": 106,
+        "reasoningTokens": 36,
+        "latencyS": 2.46,
+        "costUsd": 0.000977
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Code reviews take too long to get picked up.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n03",
+              "n04",
+              "n07",
+              "n10",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "statement": "Pairing was a valuable way to work.",
+            "topic": "collaboration",
+            "polarity": "positive",
+            "note_ids": [
+              "n01",
+              "n08",
+              "n09",
+              "n11",
+              "n13"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n03",
+              "n04",
+              "n07",
+              "n10",
+              "n12",
+              "n14"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n01",
+              "n08",
+              "n09",
+              "n11",
+              "n13"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_5c7406ac031541eebe890e1a451a2c6c",
+      "inputTokens": 590,
+      "cachedInputTokens": 0,
+      "outputTokens": 193,
+      "reasoningTokens": 95,
+      "latencyS": 3.74,
+      "costUsd": 0.001555
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_c3d44a17276447f1aea6b382d1e1ba11",
+      "inputTokens": 447,
+      "cachedInputTokens": 0,
+      "outputTokens": 106,
+      "reasoningTokens": 36,
+      "latencyS": 2.46,
+      "costUsd": 0.000977
+    }
+  ]
+}

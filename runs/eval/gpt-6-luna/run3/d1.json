@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Test results that vary between runs are slowing progress and forcing teams to repeat checks.",
+        "topic": "tooling",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          6,
+          11,
+          12,
+          8,
+          7,
+          10
+        ],
+        "rewritten": true
+      },
+      {
+        "statement": "Store review bottlenecks are delaying releases and making delivery timing harder to forecast.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          3,
+          5,
+          4,
+          2,
+          1,
+          0
+        ],
+        "rewritten": true
+      }
+    ],
+    "withheld": [
+      {
+        "statement": "Early interactive prototypes clarify design handoffs and reduce back-and-forth.",
+        "reason": "verified-below-k",
+        "supportIdx": [
+          13,
+          16,
+          14,
+          15
+        ]
+      }
+    ],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_2e0558412fa149f0a45409080228d189",
+        "inputTokens": 696,
+        "cachedInputTokens": 0,
+        "outputTokens": 418,
+        "reasoningTokens": 261,
+        "latencyS": 4.71,
+        "costUsd": 0.0002786
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_030a5df19cee4c64a7173d7601cff2c3",
+        "inputTokens": 596,
+        "cachedInputTokens": 0,
+        "outputTokens": 988,
+        "reasoningTokens": 892,
+        "latencyS": 11.48,
+        "costUsd": 0.0005536
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6-luna",
+        "requestId": "req_82a2797ad4c54e0b9294327a2a018a3f",
+        "inputTokens": 186,
+        "cachedInputTokens": 0,
+        "outputTokens": 176,
+        "reasoningTokens": 111,
+        "latencyS": 2.94,
+        "costUsd": 0.00010659999999999999
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6-luna",
+        "requestId": "req_6cced3cc4b9743f589900a58b00cf452",
+        "inputTokens": 160,
+        "cachedInputTokens": 0,
+        "outputTokens": 155,
+        "reasoningTokens": 115,
+        "latencyS": 4.41,
+        "costUsd": 0.0000935
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Unreliable automated tests are slowing work and requiring repeated reruns.",
+            "topic": "tooling",
+            "polarity": "concern",
+            "note_ids": [
+              "n01",
+              "n02",
+              "n08",
+              "n10",
+              "n16",
+              "n17",
+              "n20"
+            ]
+          },
+          {
+            "statement": "Store approval delays are blocking releases and making launch timing unpredictable.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n05",
+              "n07",
+              "n09",
+              "n12",
+              "n15",
+              "n19"
+            ]
+          },
+          {
+            "statement": "Early interactive prototypes clarify design handoffs and reduce back-and-forth.",
+            "topic": "collaboration",
+            "polarity": "positive",
+            "note_ids": [
+              "n03",
+              "n06",
+              "n11",
+              "n14",
+              "n18"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n02",
+              "n08",
+              "n10",
+              "n16",
+              "n20"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n05",
+              "n07",
+              "n09",
+              "n12",
+              "n15",
+              "n19"
+            ]
+          },
+          {
+            "theme_id": "t3",
+            "supported_note_ids": [
+              "n03",
+              "n06",
+              "n14",
+              "n18"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t1",
+              "statement": "Test results that vary between runs are slowing progress and forcing teams to repeat checks."
+            },
+            {
+              "theme_id": "t2",
+              "statement": "Store sign-off delays are holding up releases and making release dates difficult to predict."
+            }
+          ]
+        },
+        {
+          "rewrites": [
+            {
+              "theme_id": "t2",
+              "statement": "Store review bottlenecks are delaying releases and making delivery timing harder to forecast."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 2,
+      "rewritten": 2
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_2e0558412fa149f0a45409080228d189",
+      "inputTokens": 696,
+      "cachedInputTokens": 0,
+      "outputTokens": 418,
+      "reasoningTokens": 261,
+      "latencyS": 4.71,
+      "costUsd": 0.0002786
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_030a5df19cee4c64a7173d7601cff2c3",
+      "inputTokens": 596,
+      "cachedInputTokens": 0,
+      "outputTokens": 988,
+      "reasoningTokens": 892,
+      "latencyS": 11.48,
+      "costUsd": 0.0005536
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_82a2797ad4c54e0b9294327a2a018a3f",
+      "inputTokens": 186,
+      "cachedInputTokens": 0,
+      "outputTokens": 176,
+      "reasoningTokens": 111,
+      "latencyS": 2.94,
+      "costUsd": 0.00010659999999999999
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_6cced3cc4b9743f589900a58b00cf452",
+      "inputTokens": 160,
+      "cachedInputTokens": 0,
+      "outputTokens": 155,
+      "reasoningTokens": 115,
+      "latencyS": 4.41,
+      "costUsd": 0.0000935
+    }
+  ]
+}

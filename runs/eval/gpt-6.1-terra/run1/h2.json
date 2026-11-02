@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Frequent interruptions and task switching disrupt work.",
+        "topic": "workload",
+        "polarity": "concern",
+        "support": 7,
+        "supportIdx": [
+          7,
+          9,
+          11,
+          8,
+          10,
+          6,
+          12
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Bug reports and tickets often lack clear or sufficient information.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          5,
+          0,
+          1,
+          4,
+          3,
+          2
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Tools that handle repetitive tasks have improved everyday work.",
+        "topic": "tooling",
+        "polarity": "positive",
+        "support": 5,
+        "supportIdx": [
+          17,
+          13,
+          14,
+          15,
+          16
+        ],
+        "rewritten": true
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_aa7e5ff5cf1b45c38b8848baf92c1bfd",
+        "inputTokens": 691,
+        "cachedInputTokens": 0,
+        "outputTokens": 514,
+        "reasoningTokens": 371,
+        "latencyS": 7.11,
+        "costUsd": 0.003261
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_24141e834d234964aed168ea16b6d733",
+        "inputTokens": 572,
+        "cachedInputTokens": 0,
+        "outputTokens": 100,
+        "reasoningTokens": 0,
+        "latencyS": 2.35,
+        "costUsd": 0.001072
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_23a5244bf618478e9074c5308b90791e",
+        "inputTokens": 146,
+        "cachedInputTokens": 0,
+        "outputTokens": 129,
+        "reasoningTokens": 95,
+        "latencyS": 3.29,
+        "costUsd": 0.000791
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Bug reports and tickets often lack clear or sufficient information.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n01",
+              "n07",
+              "n15",
+              "n16",
+              "n20",
+              "n21"
+            ]
+          },
+          {
+            "statement": "Frequent interruptions and task switching disrupt work.",
+            "topic": "workload",
+            "polarity": "concern",
+            "note_ids": [
+              "n02",
+              "n08",
+              "n09",
+              "n10",
+              "n11",
+              "n14",
+              "n17"
+            ]
+          },
+          {
+            "statement": "Automation has improved routine work.",
+            "topic": "tooling",
+            "polarity": "positive",
+            "note_ids": [
+              "n04",
+              "n12",
+              "n13",
+              "n18",
+              "n19"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n07",
+              "n15",
+              "n16",
+              "n20",
+              "n21"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n02",
+              "n08",
+              "n09",
+              "n10",
+              "n11",
+              "n14",
+              "n17"
+            ]
+          },
+          {
+            "theme_id": "t3",
+            "supported_note_ids": [
+              "n04",
+              "n12",
+              "n13",
+              "n18",
+              "n19"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t3",
+              "statement": "Tools that handle repetitive tasks have improved everyday work."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 1,
+      "rewritten": 1
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_aa7e5ff5cf1b45c38b8848baf92c1bfd",
+      "inputTokens": 691,
+      "cachedInputTokens": 0,
+      "outputTokens": 514,
+      "reasoningTokens": 371,
+      "latencyS": 7.11,
+      "costUsd": 0.003261
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_24141e834d234964aed168ea16b6d733",
+      "inputTokens": 572,
+      "cachedInputTokens": 0,
+      "outputTokens": 100,
+      "reasoningTokens": 0,
+      "latencyS": 2.35,
+      "costUsd": 0.001072
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_23a5244bf618478e9074c5308b90791e",
+      "inputTokens": 146,
+      "cachedInputTokens": 0,
+      "outputTokens": 129,
+      "reasoningTokens": 95,
+      "latencyS": 3.29,
+      "costUsd": 0.000791
+    }
+  ]
+}

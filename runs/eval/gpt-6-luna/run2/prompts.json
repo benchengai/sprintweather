@@ -1,0 +1,274 @@
+{
+  "version": 1,
+  "ok": true,
+  "sprints": [
+    {
+      "sprint": "s1",
+      "prompts": [
+        {
+          "question": "What could help our team get code reviews picked up sooner?",
+          "why": "Six notes raised concern that code reviews often wait too long to be picked up.",
+          "basedOn": [
+            "theme:1"
+          ]
+        },
+        {
+          "question": "How might we make pairing useful in more of our work, when it fits?",
+          "why": "Five notes described pairing as a useful way to work together.",
+          "basedOn": [
+            "theme:2"
+          ]
+        },
+        {
+          "question": "What would help us navigate day-long blockers when they arise?",
+          "why": "Two of 16 responses reported being blocked for a day or more.",
+          "basedOn": [
+            "blocked"
+          ]
+        },
+        {
+          "question": "How did workload and goal clarity feel across the team this sprint, and what, if anything, should we carry forward or change?",
+          "why": "Workload and goal clarity both averaged 3.4, with confidence intervals of 3.0–3.9 and 2.9–4.0.",
+          "basedOn": [
+            "metric:workload",
+            "metric:clarity"
+          ]
+        }
+      ],
+      "meta": {
+        "model": "gpt-6-luna",
+        "requestId": "req_36fad03d243d4227b8708afe34cd0208",
+        "inputTokens": 433,
+        "cachedInputTokens": 0,
+        "outputTokens": 878,
+        "reasoningTokens": 663,
+        "latencyS": 11.91,
+        "costUsd": 0.0004823
+      }
+    },
+    {
+      "sprint": "s2",
+      "prompts": [
+        {
+          "question": "What could help the team handle work added or changed after planning while keeping the sprint scope workable?",
+          "why": "Notes mention scope changes after planning, and workload averaged 2.6. [theme:1] [metric:workload]",
+          "basedOn": [
+            "theme:1",
+            "metric:workload"
+          ]
+        },
+        {
+          "question": "What might help code reviews move at a pace that supports the team's work?",
+          "why": "Notes raise concern that code reviews are taking too long. [theme:2]",
+          "basedOn": [
+            "theme:2"
+          ]
+        },
+        {
+          "question": "What could make it easier for the team to resolve blockers that last a day or more?",
+          "why": "Three of 17 responses reported being blocked for a day or more. [blocked]",
+          "basedOn": [
+            "blocked"
+          ]
+        },
+        {
+          "question": "What would help the team feel more energised during a sprint?",
+          "why": "Energy averaged 3.1, with a 95% confidence interval from 2.6 to 3.5. [metric:energy]",
+          "basedOn": [
+            "metric:energy"
+          ]
+        }
+      ],
+      "meta": {
+        "model": "gpt-6-luna",
+        "requestId": "req_30deed166ac244a0b98d7d42add06b65",
+        "inputTokens": 467,
+        "cachedInputTokens": 0,
+        "outputTokens": 695,
+        "reasoningTokens": 420,
+        "latencyS": 8.9,
+        "costUsd": 0.0003942
+      }
+    },
+    {
+      "sprint": "s3",
+      "prompts": [
+        {
+          "question": "How could we make room to respond to production incidents while keeping planned sprint work visible and manageable?",
+          "why": "Seven notes raised concern that production incidents displaced planned work; workload averaged 2.0.",
+          "basedOn": [
+            "theme:1",
+            "metric:workload"
+          ]
+        },
+        {
+          "question": "What changes to our meeting practices might protect time for focused work?",
+          "why": "Six notes raised concern that meetings reduced focused work time.",
+          "basedOn": [
+            "theme:2"
+          ]
+        },
+        {
+          "question": "What would help the team finish a sprint with more energy?",
+          "why": "Team energy averaged 2.4, with a 95% confidence interval of 2.0 to 2.8.",
+          "basedOn": [
+            "metric:energy"
+          ]
+        },
+        {
+          "question": "What would help us keep sprint goals clear as work changes?",
+          "why": "Goal clarity averaged 2.8, with a 95% confidence interval of 2.5 to 3.1.",
+          "basedOn": [
+            "metric:clarity"
+          ]
+        }
+      ],
+      "meta": {
+        "model": "gpt-6-luna",
+        "requestId": "req_77cd2f5566974b8b9ef2d63f8d23a94b",
+        "inputTokens": 461,
+        "cachedInputTokens": 0,
+        "outputTokens": 715,
+        "reasoningTokens": 454,
+        "latencyS": 8.62,
+        "costUsd": 0.0004036
+      }
+    },
+    {
+      "sprint": "s4",
+      "prompts": [
+        {
+          "question": "What would help us preserve and make good use of meeting-free afternoons for focused work?",
+          "why": "Six notes valued meeting-free afternoons, and the agreed Wednesday-afternoon action coincided with an energy change; neither establishes cause. [theme:1] [action:a1]",
+          "basedOn": [
+            "theme:1",
+            "action:a1"
+          ]
+        },
+        {
+          "question": "How could we make workload more manageable while protecting time for focused work?",
+          "why": "Workload averaged 2.7, and notes described meeting-free afternoons as supporting focus and productive work. [metric:workload] [theme:1]",
+          "basedOn": [
+            "metric:workload",
+            "theme:1"
+          ]
+        },
+        {
+          "question": "What would help us finish or appropriately plan the outage follow-up work that remains unfinished or deferred?",
+          "why": "Five notes raised concern that outage follow-up work remains unfinished or is being deferred. [theme:2]",
+          "basedOn": [
+            "theme:2"
+          ]
+        },
+        {
+          "question": "What would help us make sprint goals clearer as we do the work?",
+          "why": "Goal clarity averaged 2.9, with a 95% confidence interval from 2.5 to 3.4. [metric:clarity]",
+          "basedOn": [
+            "metric:clarity"
+          ]
+        }
+      ],
+      "meta": {
+        "model": "gpt-6-luna",
+        "requestId": "req_86ad2fc332194021ba7497cbbd121e07",
+        "inputTokens": 521,
+        "cachedInputTokens": 0,
+        "outputTokens": 498,
+        "reasoningTokens": 231,
+        "latencyS": 5.59,
+        "costUsd": 0.0003011
+      }
+    },
+    {
+      "sprint": "s5",
+      "prompts": [
+        {
+          "question": "How could we make sprint goals and priority changes easier to understand as work progresses?",
+          "why": "Seven notes raised unclear or changing goals and priorities; goal clarity averaged 2.7.",
+          "basedOn": [
+            "theme:1",
+            "metric:clarity"
+          ]
+        },
+        {
+          "question": "What could help us surface and manage dependencies earlier when shared work or other teams are involved?",
+          "why": "Five notes described dependency delays, and 9 of 18 responses reported being blocked for a day or more.",
+          "basedOn": [
+            "theme:2",
+            "blocked"
+          ]
+        },
+        {
+          "question": "What might help make workload more manageable and reduce stretches of day-or-longer blocking?",
+          "why": "Workload averaged 2.9, and 9 of 18 responses reported being blocked for a day or more.",
+          "basedOn": [
+            "metric:workload",
+            "blocked"
+          ]
+        },
+        {
+          "question": "What, if anything, should we keep or adjust about keeping Wednesday afternoons free of meetings?",
+          "why": "Energy was 0.60 higher after this action, though the before-and-after result alone does not establish a cause.",
+          "basedOn": [
+            "action:a1"
+          ]
+        }
+      ],
+      "meta": {
+        "model": "gpt-6-luna",
+        "requestId": "req_313cf4a378e44a1481d4155eff0c0977",
+        "inputTokens": 523,
+        "cachedInputTokens": 0,
+        "outputTokens": 681,
+        "reasoningTokens": 445,
+        "latencyS": 7.26,
+        "costUsd": 0.0003928
+      }
+    },
+    {
+      "sprint": "s6",
+      "prompts": [
+        {
+          "question": "What, if anything, about our deployment process should we keep or change after the smooth releases this sprint?",
+          "why": "Five notes described deployments as smooth, with few or no release problems.",
+          "basedOn": [
+            "theme:1"
+          ]
+        },
+        {
+          "question": "What did we notice about goal clarity this sprint, and what should we keep exploring about agreeing on a one-line sprint goal before planning?",
+          "why": "Goal clarity averaged 3.6, and the check-in reports a change after the one-line goal action.",
+          "basedOn": [
+            "metric:clarity",
+            "action:a2"
+          ]
+        },
+        {
+          "question": "Where, if anywhere, did being blocked for a day or more affect our work, and what could help next sprint?",
+          "why": "Three of 16 responses reported being blocked for a day or more.",
+          "basedOn": [
+            "blocked"
+          ]
+        },
+        {
+          "question": "How did workload and energy feel across the sprint, and what could help make the next sprint more manageable and energising?",
+          "why": "The team reported workload and energy means of 3.3 and 3.7, respectively.",
+          "basedOn": [
+            "metric:workload",
+            "metric:energy"
+          ]
+        }
+      ],
+      "meta": {
+        "model": "gpt-6-luna",
+        "requestId": "req_41847df9ce194e00b8adeac863a237fb",
+        "inputTokens": 498,
+        "cachedInputTokens": 0,
+        "outputTokens": 716,
+        "reasoningTokens": 423,
+        "latencyS": 7.18,
+        "costUsd": 0.0004078
+      }
+    }
+  ]
+}

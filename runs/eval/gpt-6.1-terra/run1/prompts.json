@@ -1,0 +1,274 @@
+{
+  "version": 1,
+  "ok": true,
+  "sprints": [
+    {
+      "sprint": "s1",
+      "prompts": [
+        {
+          "question": "What could we try to help code reviews get picked up sooner?",
+          "why": "Six notes raised concern about reviews taking too long to get picked up.",
+          "basedOn": [
+            "theme:1"
+          ]
+        },
+        {
+          "question": "How could we make useful pairing opportunities part of our work next sprint?",
+          "why": "Five notes described pairing as a valuable way to work.",
+          "basedOn": [
+            "theme:2"
+          ]
+        },
+        {
+          "question": "What could help us move forward when work is blocked?",
+          "why": "Two of 16 responses reported being blocked for a day or more.",
+          "basedOn": [
+            "blocked"
+          ]
+        },
+        {
+          "question": "What could we do to support clear goals and manageable work next sprint?",
+          "why": "Goal clarity and workload both had a team mean of 3.4, with overlapping confidence intervals.",
+          "basedOn": [
+            "metric:clarity",
+            "metric:workload"
+          ]
+        }
+      ],
+      "meta": {
+        "model": "gpt-6.1-terra",
+        "requestId": "req_420092400eea4a428cd5b086f3c20ac1",
+        "inputTokens": 431,
+        "cachedInputTokens": 0,
+        "outputTokens": 271,
+        "reasoningTokens": 87,
+        "latencyS": 5,
+        "costUsd": 0.001786
+      }
+    },
+    {
+      "sprint": "s2",
+      "prompts": [
+        {
+          "question": "How could we handle work added after the sprint begins?",
+          "why": "Six notes raised work added during the sprint, and workload was rated 2.6 out of 5.",
+          "basedOn": [
+            "theme:1",
+            "metric:workload"
+          ]
+        },
+        {
+          "question": "What could we try to make code reviews flow more smoothly?",
+          "why": "Five notes described code reviews as a bottleneck.",
+          "basedOn": [
+            "theme:2"
+          ]
+        },
+        {
+          "question": "What could help us manage work that is blocked for a day or more?",
+          "why": "Three of 17 responses reported being blocked for a day or more.",
+          "basedOn": [
+            "blocked"
+          ]
+        },
+        {
+          "question": "What could we do to support team energy while keeping the sprint goal clear?",
+          "why": "Energy was rated 3.1 out of 5, and goal clarity was rated 3.4.",
+          "basedOn": [
+            "metric:energy",
+            "metric:clarity"
+          ]
+        }
+      ],
+      "meta": {
+        "model": "gpt-6.1-terra",
+        "requestId": "req_671f87dee30b48e2b8f87c6315abb320",
+        "inputTokens": 463,
+        "cachedInputTokens": 0,
+        "outputTokens": 368,
+        "reasoningTokens": 120,
+        "latencyS": 5.56,
+        "costUsd": 0.002303
+      }
+    },
+    {
+      "sprint": "s3",
+      "prompts": [
+        {
+          "question": "What could we try as a team to make workload more manageable and support energy next sprint?",
+          "why": "Energy averaged 2.4 out of 5, and workload manageability averaged 2.0.",
+          "basedOn": [
+            "metric:energy",
+            "metric:workload"
+          ]
+        },
+        {
+          "question": "What could we change as a team to reduce blocks lasting a day or more?",
+          "why": "Eleven of 17 responses reported being blocked for a day or more.",
+          "basedOn": [
+            "blocked"
+          ]
+        },
+        {
+          "question": "How might we plan our sprint work around time spent on incident response?",
+          "why": "Seven notes raised incident response occupying work time as a process concern.",
+          "basedOn": [
+            "theme:1"
+          ]
+        },
+        {
+          "question": "What would help us make the sprint goal clearer to the whole team?",
+          "why": "Goal clarity averaged 2.8 out of 5.",
+          "basedOn": [
+            "metric:clarity"
+          ]
+        }
+      ],
+      "meta": {
+        "model": "gpt-6.1-terra",
+        "requestId": "req_19f3b270ca4c42fe95229da6b5acacb8",
+        "inputTokens": 432,
+        "cachedInputTokens": 0,
+        "outputTokens": 377,
+        "reasoningTokens": 181,
+        "latencyS": 5.79,
+        "costUsd": 0.002317
+      }
+    },
+    {
+      "sprint": "s4",
+      "prompts": [
+        {
+          "question": "How could we protect useful quiet time while meeting the team's other needs?",
+          "why": "Six notes mentioned quiet time, and energy was higher after the Wednesday meeting-free action.",
+          "basedOn": [
+            "theme:1",
+            "action:a1"
+          ]
+        },
+        {
+          "question": "What could help us make the workload more manageable and address longer blocks next sprint?",
+          "why": "Workload averaged 2.7, and 4 of 15 responses reported being blocked for a day or more.",
+          "basedOn": [
+            "metric:workload",
+            "blocked"
+          ]
+        },
+        {
+          "question": "What would help us make our sprint goals clearer?",
+          "why": "Goal clarity averaged 2.9; the previous mean of 2.8 falls within the current confidence interval.",
+          "basedOn": [
+            "metric:clarity"
+          ]
+        },
+        {
+          "question": "How could we make progress on work that remains after incidents?",
+          "why": "Five notes raised a concern that some work needed after incidents has not yet been completed.",
+          "basedOn": [
+            "theme:2"
+          ]
+        }
+      ],
+      "meta": {
+        "model": "gpt-6.1-terra",
+        "requestId": "req_d209ee2944144288a17ae6763f00037b",
+        "inputTokens": 518,
+        "cachedInputTokens": 0,
+        "outputTokens": 523,
+        "reasoningTokens": 263,
+        "latencyS": 8.24,
+        "costUsd": 0.003133
+      }
+    },
+    {
+      "sprint": "s5",
+      "prompts": [
+        {
+          "question": "How could we make the sprint goal clearer as a team?",
+          "why": "Goal clarity averaged 2.7, and five notes described the sprint as lacking a clear goal.",
+          "basedOn": [
+            "metric:clarity",
+            "theme:1"
+          ]
+        },
+        {
+          "question": "How could we handle dependencies that are not ready so work can keep moving?",
+          "why": "Nine of 18 responses reported being blocked for a day or more, and five notes mentioned waiting for dependencies.",
+          "basedOn": [
+            "blocked",
+            "theme:2"
+          ]
+        },
+        {
+          "question": "What could make the workload more manageable for the team in a future sprint?",
+          "why": "Workload manageability averaged 2.9 on a five-point scale.",
+          "basedOn": [
+            "metric:workload"
+          ]
+        },
+        {
+          "question": "What should we do with our practice of keeping Wednesday afternoons free of meetings?",
+          "why": "Energy was higher after the practice was agreed, with an estimated change of 0.60.",
+          "basedOn": [
+            "action:a1"
+          ]
+        }
+      ],
+      "meta": {
+        "model": "gpt-6.1-terra",
+        "requestId": "req_9e471104ac8b4bbeb66e3b0a03c4360c",
+        "inputTokens": 519,
+        "cachedInputTokens": 0,
+        "outputTokens": 429,
+        "reasoningTokens": 169,
+        "latencyS": 5.99,
+        "costUsd": 0.002664
+      }
+    },
+    {
+      "sprint": "s6",
+      "prompts": [
+        {
+          "question": "How, if at all, could a one-line sprint goal help us maintain a clear direction?",
+          "why": "Six notes described a clear direction, and clarity changed by +0.81 after the one-line-goal action, with a 95% CI of +0.22 to +1.39.",
+          "basedOn": [
+            "theme:1",
+            "action:a2"
+          ]
+        },
+        {
+          "question": "What helped releases and deployments go smoothly, and what should we carry forward?",
+          "why": "Five notes described releases and deployments as smooth.",
+          "basedOn": [
+            "theme:2"
+          ]
+        },
+        {
+          "question": "What could we try as a team to reduce blocks lasting a day or more?",
+          "why": "Three of 16 responses reported being blocked for a day or more.",
+          "basedOn": [
+            "blocked"
+          ]
+        },
+        {
+          "question": "What could we change to make the sprint more manageable while supporting team energy?",
+          "why": "Mean workload manageability was 3.3, and mean energy was 3.7.",
+          "basedOn": [
+            "metric:workload",
+            "metric:energy"
+          ]
+        }
+      ],
+      "meta": {
+        "model": "gpt-6.1-terra",
+        "requestId": "req_f921227fcfd04a7185a26ca2e068a55c",
+        "inputTokens": 519,
+        "cachedInputTokens": 0,
+        "outputTokens": 606,
+        "reasoningTokens": 333,
+        "latencyS": 8.08,
+        "costUsd": 0.003549
+      }
+    }
+  ]
+}

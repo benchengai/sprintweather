@@ -1,0 +1,211 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Incoming tickets often lack information needed to address them.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          3,
+          0,
+          2,
+          1,
+          5,
+          4
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Work is frequently interrupted.",
+        "topic": "workload",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          6,
+          10,
+          12,
+          11,
+          8
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Technology that handles tasks has improved how work gets done.",
+        "topic": "tooling",
+        "polarity": "positive",
+        "support": 5,
+        "supportIdx": [
+          15,
+          17,
+          16,
+          14,
+          13
+        ],
+        "rewritten": true
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_662a20466a3844a89d1550d601fb6f1e",
+        "inputTokens": 691,
+        "cachedInputTokens": 0,
+        "outputTokens": 380,
+        "reasoningTokens": 248,
+        "latencyS": 5.65,
+        "costUsd": 0.002591
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_a954d80345b74c71aad10e15c8f79582",
+        "inputTokens": 532,
+        "cachedInputTokens": 0,
+        "outputTokens": 164,
+        "reasoningTokens": 68,
+        "latencyS": 3.24,
+        "costUsd": 0.001352
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_1b7c5587c9384a0abf189d84a37e82ac",
+        "inputTokens": 146,
+        "cachedInputTokens": 0,
+        "outputTokens": 90,
+        "reasoningTokens": 55,
+        "latencyS": 2.69,
+        "costUsd": 0.000596
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Work is frequently interrupted.",
+            "topic": "workload",
+            "polarity": "concern",
+            "note_ids": [
+              "n01",
+              "n04",
+              "n08",
+              "n10",
+              "n18"
+            ]
+          },
+          {
+            "statement": "Incoming tickets often lack information needed to address them.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n06",
+              "n13",
+              "n14",
+              "n16",
+              "n17",
+              "n19"
+            ]
+          },
+          {
+            "statement": "Automation has improved work processes.",
+            "topic": "tooling",
+            "polarity": "positive",
+            "note_ids": [
+              "n02",
+              "n03",
+              "n07",
+              "n11",
+              "n21"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n04",
+              "n08",
+              "n10",
+              "n18"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n06",
+              "n13",
+              "n14",
+              "n16",
+              "n17",
+              "n19"
+            ]
+          },
+          {
+            "theme_id": "t3",
+            "supported_note_ids": [
+              "n02",
+              "n03",
+              "n07",
+              "n11",
+              "n21"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t3",
+              "statement": "Technology that handles tasks has improved how work gets done."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 1,
+      "rewritten": 1
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_662a20466a3844a89d1550d601fb6f1e",
+      "inputTokens": 691,
+      "cachedInputTokens": 0,
+      "outputTokens": 380,
+      "reasoningTokens": 248,
+      "latencyS": 5.65,
+      "costUsd": 0.002591
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_a954d80345b74c71aad10e15c8f79582",
+      "inputTokens": 532,
+      "cachedInputTokens": 0,
+      "outputTokens": 164,
+      "reasoningTokens": 68,
+      "latencyS": 3.24,
+      "costUsd": 0.001352
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_1b7c5587c9384a0abf189d84a37e82ac",
+      "inputTokens": 146,
+      "cachedInputTokens": 0,
+      "outputTokens": 90,
+      "reasoningTokens": 55,
+      "latencyS": 2.69,
+      "costUsd": 0.000596
+    }
+  ]
+}

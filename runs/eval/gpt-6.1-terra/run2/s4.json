@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Uninterrupted work time is effective.",
+        "topic": "process",
+        "polarity": "positive",
+        "support": 6,
+        "supportIdx": [
+          4,
+          5,
+          1,
+          2,
+          0,
+          3
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Incident follow-up work remains unfinished.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 5,
+        "supportIdx": [
+          6,
+          7,
+          9,
+          8,
+          10
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_6b8c3a6f17d440b2a647d6298a8597b4",
+        "inputTokens": 573,
+        "cachedInputTokens": 0,
+        "outputTokens": 431,
+        "reasoningTokens": 338,
+        "latencyS": 6.73,
+        "costUsd": 0.002728
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6.1-terra",
+        "requestId": "req_962710bb78e94669b2f7524ac49f836b",
+        "inputTokens": 430,
+        "cachedInputTokens": 0,
+        "outputTokens": 111,
+        "reasoningTokens": 41,
+        "latencyS": 2.24,
+        "costUsd": 0.000985
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Incident follow-up work remains unfinished.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n02",
+              "n04",
+              "n07",
+              "n08",
+              "n09"
+            ]
+          },
+          {
+            "statement": "Uninterrupted work time is effective.",
+            "topic": "process",
+            "polarity": "positive",
+            "note_ids": [
+              "n03",
+              "n05",
+              "n06",
+              "n11",
+              "n12",
+              "n13"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n02",
+              "n04",
+              "n07",
+              "n08",
+              "n09"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n03",
+              "n05",
+              "n06",
+              "n11",
+              "n12",
+              "n13"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_6b8c3a6f17d440b2a647d6298a8597b4",
+      "inputTokens": 573,
+      "cachedInputTokens": 0,
+      "outputTokens": 431,
+      "reasoningTokens": 338,
+      "latencyS": 6.73,
+      "costUsd": 0.002728
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "requestId": "req_962710bb78e94669b2f7524ac49f836b",
+      "inputTokens": 430,
+      "cachedInputTokens": 0,
+      "outputTokens": 111,
+      "reasoningTokens": 41,
+      "latencyS": 2.24,
+      "costUsd": 0.000985
+    }
+  ]
+}

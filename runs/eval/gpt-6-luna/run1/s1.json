@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Code reviews often took too long, leaving changes waiting.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          1,
+          0,
+          2,
+          5,
+          3,
+          4
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Pairing supported collaborative work.",
+        "topic": "collaboration",
+        "polarity": "positive",
+        "support": 5,
+        "supportIdx": [
+          6,
+          8,
+          7,
+          9,
+          10
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_bcd3e7384d754ada9bcfbbf278ffedfd",
+        "inputTokens": 590,
+        "cachedInputTokens": 0,
+        "outputTokens": 357,
+        "reasoningTokens": 261,
+        "latencyS": 5.78,
+        "costUsd": 0.0002375
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_eaf0e7efed46459793f5a8bb7b5dbff5",
+        "inputTokens": 445,
+        "cachedInputTokens": 0,
+        "outputTokens": 155,
+        "reasoningTokens": 85,
+        "latencyS": 2.99,
+        "costUsd": 0.000122
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Pairing supported collaborative work.",
+            "topic": "collaboration",
+            "polarity": "positive",
+            "note_ids": [
+              "n01",
+              "n08",
+              "n09",
+              "n11",
+              "n13"
+            ]
+          },
+          {
+            "statement": "Code reviews often took too long, leaving changes waiting.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n03",
+              "n04",
+              "n07",
+              "n10",
+              "n12",
+              "n14"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n08",
+              "n09",
+              "n11",
+              "n13"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n03",
+              "n04",
+              "n07",
+              "n10",
+              "n12",
+              "n14"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_bcd3e7384d754ada9bcfbbf278ffedfd",
+      "inputTokens": 590,
+      "cachedInputTokens": 0,
+      "outputTokens": 357,
+      "reasoningTokens": 261,
+      "latencyS": 5.78,
+      "costUsd": 0.0002375
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_eaf0e7efed46459793f5a8bb7b5dbff5",
+      "inputTokens": 445,
+      "cachedInputTokens": 0,
+      "outputTokens": 155,
+      "reasoningTokens": 85,
+      "latencyS": 2.99,
+      "costUsd": 0.000122
+    }
+  ]
+}

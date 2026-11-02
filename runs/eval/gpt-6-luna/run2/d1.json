@@ -1,0 +1,213 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Recurring test failures make results hard to trust and slow development.",
+        "topic": "tooling",
+        "polarity": "concern",
+        "support": 7,
+        "supportIdx": [
+          12,
+          8,
+          6,
+          10,
+          11,
+          9,
+          7
+        ],
+        "rewritten": true
+      },
+      {
+        "statement": "App review delays repeatedly block releases and make release timing uncertain.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          1,
+          3,
+          2,
+          5,
+          4,
+          0
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [
+      {
+        "statement": "Early interactive prototypes clarify design handoffs and reduce back-and-forth.",
+        "reason": "verified-below-k",
+        "supportIdx": [
+          16,
+          13,
+          14,
+          15
+        ]
+      }
+    ],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_5af7fab6996847ce8946753f8c65773b",
+        "inputTokens": 696,
+        "cachedInputTokens": 0,
+        "outputTokens": 468,
+        "reasoningTokens": 311,
+        "latencyS": 5.96,
+        "costUsd": 0.0003036
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_11f637c9c9604ce895201ef5242eea38",
+        "inputTokens": 596,
+        "cachedInputTokens": 0,
+        "outputTokens": 961,
+        "reasoningTokens": 862,
+        "latencyS": 11.19,
+        "costUsd": 0.0005401000000000001
+      },
+      {
+        "step": "rewrite",
+        "model": "gpt-6-luna",
+        "requestId": "req_81bfe7b45bff44f693e5bb25b9150156",
+        "inputTokens": 156,
+        "cachedInputTokens": 0,
+        "outputTokens": 110,
+        "reasoningTokens": 74,
+        "latencyS": 3.36,
+        "costUsd": 0.0000706
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "App review delays repeatedly block releases and make release timing uncertain.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n01",
+              "n02",
+              "n09",
+              "n10",
+              "n11",
+              "n21"
+            ]
+          },
+          {
+            "statement": "Unreliable automated tests create repeated failures and slow down development work.",
+            "topic": "tooling",
+            "polarity": "concern",
+            "note_ids": [
+              "n03",
+              "n04",
+              "n05",
+              "n06",
+              "n08",
+              "n13",
+              "n20"
+            ]
+          },
+          {
+            "statement": "Early interactive prototypes clarify design handoffs and reduce back-and-forth.",
+            "topic": "collaboration",
+            "polarity": "positive",
+            "note_ids": [
+              "n07",
+              "n12",
+              "n14",
+              "n17",
+              "n19"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n02",
+              "n09",
+              "n10",
+              "n11",
+              "n21"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n03",
+              "n04",
+              "n05",
+              "n06",
+              "n08",
+              "n13",
+              "n20"
+            ]
+          },
+          {
+            "theme_id": "t3",
+            "supported_note_ids": [
+              "n12",
+              "n14",
+              "n17",
+              "n19"
+            ]
+          }
+        ]
+      },
+      "rewrite": [
+        {
+          "rewrites": [
+            {
+              "theme_id": "t2",
+              "statement": "Recurring test failures make results hard to trust and slow development."
+            }
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "flagged": 1,
+      "rewritten": 1
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_5af7fab6996847ce8946753f8c65773b",
+      "inputTokens": 696,
+      "cachedInputTokens": 0,
+      "outputTokens": 468,
+      "reasoningTokens": 311,
+      "latencyS": 5.96,
+      "costUsd": 0.0003036
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_11f637c9c9604ce895201ef5242eea38",
+      "inputTokens": 596,
+      "cachedInputTokens": 0,
+      "outputTokens": 961,
+      "reasoningTokens": 862,
+      "latencyS": 11.19,
+      "costUsd": 0.0005401000000000001
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_81bfe7b45bff44f693e5bb25b9150156",
+      "inputTokens": 156,
+      "cachedInputTokens": 0,
+      "outputTokens": 110,
+      "reasoningTokens": 74,
+      "latencyS": 3.36,
+      "costUsd": 0.0000706
+    }
+  ]
+}

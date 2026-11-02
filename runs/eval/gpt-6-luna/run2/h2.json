@@ -1,0 +1,186 @@
+{
+  "version": 1,
+  "ok": true,
+  "result": {
+    "themes": [
+      {
+        "statement": "Interruptions and task switching disrupt sustained work.",
+        "topic": "workload",
+        "polarity": "concern",
+        "support": 7,
+        "supportIdx": [
+          6,
+          10,
+          9,
+          12,
+          11,
+          8,
+          7
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Incoming tickets and bug reports often lack enough detail to work from.",
+        "topic": "process",
+        "polarity": "concern",
+        "support": 6,
+        "supportIdx": [
+          3,
+          0,
+          2,
+          1,
+          5,
+          4
+        ],
+        "rewritten": false
+      },
+      {
+        "statement": "Automating ticket-related tasks improves efficiency.",
+        "topic": "tooling",
+        "polarity": "positive",
+        "support": 5,
+        "supportIdx": [
+          15,
+          17,
+          16,
+          14,
+          13
+        ],
+        "rewritten": false
+      }
+    ],
+    "withheld": [],
+    "calls": [
+      {
+        "step": "extract",
+        "model": "gpt-6-luna",
+        "requestId": "req_1196cc02e03b4d3c942ec47ad39228fb",
+        "inputTokens": 691,
+        "cachedInputTokens": 0,
+        "outputTokens": 1052,
+        "reasoningTokens": 905,
+        "latencyS": 11.33,
+        "costUsd": 0.0005951
+      },
+      {
+        "step": "verify",
+        "model": "gpt-6-luna",
+        "requestId": "req_8a447c22f8134afa95b3dc3db3c45457",
+        "inputTokens": 577,
+        "cachedInputTokens": 0,
+        "outputTokens": 208,
+        "reasoningTokens": 106,
+        "latencyS": 2.97,
+        "costUsd": 0.0001617
+      }
+    ],
+    "raw": {
+      "extract": {
+        "themes": [
+          {
+            "statement": "Interruptions and task switching disrupt sustained work.",
+            "topic": "workload",
+            "polarity": "concern",
+            "note_ids": [
+              "n01",
+              "n04",
+              "n05",
+              "n08",
+              "n10",
+              "n18",
+              "n20"
+            ]
+          },
+          {
+            "statement": "Incoming tickets and bug reports often lack enough detail to work from.",
+            "topic": "process",
+            "polarity": "concern",
+            "note_ids": [
+              "n06",
+              "n13",
+              "n14",
+              "n16",
+              "n17",
+              "n19"
+            ]
+          },
+          {
+            "statement": "Automating ticket-related tasks improves efficiency.",
+            "topic": "tooling",
+            "polarity": "positive",
+            "note_ids": [
+              "n02",
+              "n03",
+              "n07",
+              "n11",
+              "n21"
+            ]
+          }
+        ]
+      },
+      "verify": {
+        "judgements": [
+          {
+            "theme_id": "t1",
+            "supported_note_ids": [
+              "n01",
+              "n04",
+              "n05",
+              "n08",
+              "n10",
+              "n18",
+              "n20"
+            ]
+          },
+          {
+            "theme_id": "t2",
+            "supported_note_ids": [
+              "n06",
+              "n13",
+              "n14",
+              "n16",
+              "n17",
+              "n19"
+            ]
+          },
+          {
+            "theme_id": "t3",
+            "supported_note_ids": [
+              "n02",
+              "n03",
+              "n07",
+              "n11",
+              "n21"
+            ]
+          }
+        ]
+      }
+    },
+    "guard": {
+      "flagged": 0,
+      "rewritten": 0
+    }
+  },
+  "calls": [
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_1196cc02e03b4d3c942ec47ad39228fb",
+      "inputTokens": 691,
+      "cachedInputTokens": 0,
+      "outputTokens": 1052,
+      "reasoningTokens": 905,
+      "latencyS": 11.33,
+      "costUsd": 0.0005951
+    },
+    {
+      "model": "gpt-6-luna",
+      "requestId": "req_8a447c22f8134afa95b3dc3db3c45457",
+      "inputTokens": 577,
+      "cachedInputTokens": 0,
+      "outputTokens": 208,
+      "reasoningTokens": 106,
+      "latencyS": 2.97,
+      "costUsd": 0.0001617
+    }
+  ]
+}

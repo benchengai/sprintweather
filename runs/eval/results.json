@@ -1,0 +1,2685 @@
+{
+  "k": 5,
+  "runs": 3,
+  "pricesAsOf": "2026-11-01",
+  "models": {
+    "gpt-6-luna": {
+      "rows": [
+        {
+          "model": "gpt-6-luna",
+          "run": 1,
+          "failedScopes": [],
+          "recallDev": 0.8888888888888888,
+          "recallHeldOut": 0.8333333333333334,
+          "themes": 21,
+          "violations": 0,
+          "belowKSurfaced": 0,
+          "spurious": 0,
+          "duplicates": 0,
+          "supportPrecision": 1,
+          "markerLeaks": 0,
+          "markerLeaksBeforeGuard": 0,
+          "maxSharedRun": 3,
+          "flagged": 4,
+          "rewritten": 4,
+          "withheldWording": 0,
+          "prompts": 24,
+          "promptSubgroupMentions": 0,
+          "promptMarkerLeaks": 0,
+          "themeCostUsd": 0.005416500000000001,
+          "promptCostUsd": 0.0025215,
+          "costUsd": 0.007938,
+          "latencyS": 173.07999999999996,
+          "inputTokens": 14590,
+          "outputTokens": 12958,
+          "reasoningTokens": 9145,
+          "scopes": [
+            {
+              "scope": "s1",
+              "plantedAtK": 2,
+              "recalled": [
+                "s1-review-wait",
+                "s1-pairing"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 11,
+              "trueTotal": 11,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Code reviews often took too long, leaving changes waiting.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s1-review-wait",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Pairing supported collaborative work.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s1-pairing",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s2",
+              "plantedAtK": 2,
+              "recalled": [
+                "s2-scope-creep",
+                "s2-review-wait"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 12,
+              "trueTotal": 12,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 3,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Work was repeatedly added or changed after sprint planning, making the sprint scope unstable.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "s2-scope-creep",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Code reviews are taking too long and delaying work.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s2-review-wait",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s3",
+              "plantedAtK": 2,
+              "recalled": [
+                "s3-incident",
+                "s3-meetings"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 12,
+              "trueTotal": 12,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Incident response displaced planned work.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "s3-incident",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Meetings took time away from focused work.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s3-meetings",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s4",
+              "plantedAtK": 2,
+              "recalled": [
+                "s4-focus",
+                "s4-followups"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 11,
+              "trueTotal": 11,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Meeting-free afternoons support focused, productive work.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s4-focus",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Incident follow-up work remains unfinished or repeatedly deferred.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s4-followups",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s5",
+              "plantedAtK": 2,
+              "recalled": [
+                "s5-goal",
+                "s5-deps"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 12,
+              "trueTotal": 12,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 3,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Sprint goals and priorities were unclear or changed during the work.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "s5-goal",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Work was blocked while waiting for other teams or shared changes.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s5-deps",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s6",
+              "plantedAtK": 2,
+              "recalled": [
+                "s6-goal",
+                "s6-release"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 11,
+              "trueTotal": 11,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Priorities and sprint goals were clear, helping the team focus.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s6-goal",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Releases and deployments went smoothly.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s6-release",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "d1",
+              "plantedAtK": 3,
+              "recalled": [
+                "d1-flaky-tests",
+                "d1-store-review"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 12,
+              "trueTotal": 12,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Test results that don't reflect code changes interrupt development and delay delivery.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "d1-flaky-tests",
+                  "rewritten": true
+                },
+                {
+                  "statement": "External app review delays are blocking releases and disrupting release timing.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "d1-store-review",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "d2",
+              "plantedAtK": 3,
+              "recalled": [
+                "d2-noisy-alerts",
+                "d2-late-reqs"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 11,
+              "trueTotal": 11,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "The system generates frequent alerts that need no response.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "d2-noisy-alerts",
+                  "rewritten": true
+                },
+                {
+                  "statement": "Requirements often arrive late in the work process.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "d2-late-reqs",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "h1",
+              "plantedAtK": 3,
+              "recalled": [
+                "h1-staging",
+                "h1-component-churn"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 10,
+              "trueTotal": 10,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 3,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Staging instability repeatedly interrupts testing and verification.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h1-staging",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Frequent design-system and component-library changes create substantial rework.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h1-component-churn",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "h2",
+              "plantedAtK": 3,
+              "recalled": [
+                "h2-vague-tickets",
+                "h2-interruptions",
+                "h2-automation"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 16,
+              "trueTotal": 16,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 2,
+              "rewritten": 2,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Incoming bug reports often omit details needed to diagnose issues.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "h2-vague-tickets",
+                  "rewritten": true
+                },
+                {
+                  "statement": "Frequent interruptions and task switching make it difficult to focus and complete work.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h2-interruptions",
+                  "rewritten": false
+                },
+                {
+                  "statement": "New tools have improved ticket handling and reduced manual effort.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h2-automation",
+                  "rewritten": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "model": "gpt-6-luna",
+          "run": 2,
+          "failedScopes": [],
+          "recallDev": 0.7777777777777778,
+          "recallHeldOut": 0.8333333333333334,
+          "themes": 19,
+          "violations": 0,
+          "belowKSurfaced": 0,
+          "spurious": 0,
+          "duplicates": 0,
+          "supportPrecision": 1,
+          "markerLeaks": 0,
+          "markerLeaksBeforeGuard": 0,
+          "maxSharedRun": 3,
+          "flagged": 2,
+          "rewritten": 2,
+          "withheldWording": 0,
+          "prompts": 24,
+          "promptSubgroupMentions": 0,
+          "promptMarkerLeaks": 0,
+          "themeCostUsd": 0.0057646,
+          "promptCostUsd": 0.0023818,
+          "costUsd": 0.0081464,
+          "latencyS": 176.56000000000003,
+          "inputTokens": 14404,
+          "outputTokens": 13412,
+          "reasoningTokens": 9670,
+          "scopes": [
+            {
+              "scope": "s1",
+              "plantedAtK": 2,
+              "recalled": [
+                "s1-review-wait",
+                "s1-pairing"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 11,
+              "trueTotal": 11,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Code reviews often wait too long to be picked up.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s1-review-wait",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Pairing is a useful way to work together.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s1-pairing",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s2",
+              "plantedAtK": 2,
+              "recalled": [
+                "s2-scope-creep",
+                "s2-review-wait"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 12,
+              "trueTotal": 12,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 3,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Work was added or changed after sprint planning, disrupting the planned scope.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "s2-scope-creep",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Code reviews are taking too long.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s2-review-wait",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s3",
+              "plantedAtK": 2,
+              "recalled": [
+                "s3-incident",
+                "s3-meetings"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 13,
+              "trueTotal": 13,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Production incidents displaced planned sprint work.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "s3-incident",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Meetings reduced time available for focused work.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s3-meetings",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s4",
+              "plantedAtK": 2,
+              "recalled": [
+                "s4-focus",
+                "s4-followups"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 11,
+              "trueTotal": 11,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Meeting-free afternoons support focus and productive work.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s4-focus",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Outage follow-up work remains unfinished or is being deferred.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s4-followups",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s5",
+              "plantedAtK": 2,
+              "recalled": [
+                "s5-goal",
+                "s5-deps"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 12,
+              "trueTotal": 12,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 3,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Sprint goals and priorities were unclear or changed during the work.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "s5-goal",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Dependencies on shared work or other teams delayed progress.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s5-deps",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s6",
+              "plantedAtK": 2,
+              "recalled": [
+                "s6-release"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 5,
+              "trueTotal": 5,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Deployments went smoothly with few or no release problems.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s6-release",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "d1",
+              "plantedAtK": 3,
+              "recalled": [
+                "d1-flaky-tests",
+                "d1-store-review"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 13,
+              "trueTotal": 13,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Recurring test failures make results hard to trust and slow development.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "d1-flaky-tests",
+                  "rewritten": true
+                },
+                {
+                  "statement": "App review delays repeatedly block releases and make release timing uncertain.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "d1-store-review",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "d2",
+              "plantedAtK": 3,
+              "recalled": [
+                "d2-noisy-alerts"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 7,
+              "trueTotal": 7,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Excessive alerts that need no follow-up add strain to incident response and on-call duties.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "d2-noisy-alerts",
+                  "rewritten": true
+                }
+              ]
+            },
+            {
+              "scope": "h1",
+              "plantedAtK": 3,
+              "recalled": [
+                "h1-staging",
+                "h1-mob"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 11,
+              "trueTotal": 11,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Shared test environments are unreliable, disrupting testing and demonstrations.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "h1-staging",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Mob programming is viewed as an effective way to work together.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h1-mob",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "h2",
+              "plantedAtK": 3,
+              "recalled": [
+                "h2-interruptions",
+                "h2-vague-tickets",
+                "h2-automation"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 18,
+              "trueTotal": 18,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Interruptions and task switching disrupt sustained work.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "h2-interruptions",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Incoming tickets and bug reports often lack enough detail to work from.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "h2-vague-tickets",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Automating ticket-related tasks improves efficiency.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h2-automation",
+                  "rewritten": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "model": "gpt-6-luna",
+          "run": 3,
+          "failedScopes": [],
+          "recallDev": 0.8888888888888888,
+          "recallHeldOut": 1,
+          "themes": 22,
+          "violations": 0,
+          "belowKSurfaced": 0,
+          "spurious": 0,
+          "duplicates": 0,
+          "supportPrecision": 1,
+          "markerLeaks": 0,
+          "markerLeaksBeforeGuard": 0,
+          "maxSharedRun": 3,
+          "flagged": 7,
+          "rewritten": 7,
+          "withheldWording": 0,
+          "prompts": 23,
+          "promptSubgroupMentions": 0,
+          "promptMarkerLeaks": 0,
+          "themeCostUsd": 0.0060763,
+          "promptCostUsd": 0.0024209,
+          "costUsd": 0.0084972,
+          "latencyS": 181.53000000000003,
+          "inputTokens": 15042,
+          "outputTokens": 13986,
+          "reasoningTokens": 10214,
+          "scopes": [
+            {
+              "scope": "s1",
+              "plantedAtK": 2,
+              "recalled": [
+                "s1-review-wait",
+                "s1-pairing"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 11,
+              "trueTotal": 11,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Code reviews were slow to get completed.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s1-review-wait",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Working together helped us make progress.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s1-pairing",
+                  "rewritten": true
+                }
+              ]
+            },
+            {
+              "scope": "s2",
+              "plantedAtK": 2,
+              "recalled": [
+                "s2-scope-creep"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 7,
+              "trueTotal": 7,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Work plans changed or expanded after sprint planning.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "s2-scope-creep",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s3",
+              "plantedAtK": 2,
+              "recalled": [
+                "s3-incident",
+                "s3-meetings"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 12,
+              "trueTotal": 12,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Production incidents displaced planned sprint work.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s3-incident",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Frequent meetings reduced time available for focused work.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s3-meetings",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s4",
+              "plantedAtK": 2,
+              "recalled": [
+                "s4-focus",
+                "s4-followups"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 11,
+              "trueTotal": 11,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Meeting-free afternoons support focused, productive work.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s4-focus",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Work after incidents is still incomplete.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s4-followups",
+                  "rewritten": true
+                }
+              ]
+            },
+            {
+              "scope": "s5",
+              "plantedAtK": 2,
+              "recalled": [
+                "s5-goal",
+                "s5-deps"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 12,
+              "trueTotal": 12,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Sprint direction was unclear or changed during the work.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "s5-goal",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Work was delayed while waiting for changes or deployments from other teams.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s5-deps",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s6",
+              "plantedAtK": 2,
+              "recalled": [
+                "s6-goal",
+                "s6-release"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 10,
+              "trueTotal": 10,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Clear goals and priorities helped the team focus its work.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s6-goal",
+                  "rewritten": false
+                },
+                {
+                  "statement": "The release and deployment process went smoothly.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s6-release",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "d1",
+              "plantedAtK": 3,
+              "recalled": [
+                "d1-flaky-tests",
+                "d1-store-review"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 12,
+              "trueTotal": 12,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 2,
+              "rewritten": 2,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Test results that vary between runs are slowing progress and forcing teams to repeat checks.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "d1-flaky-tests",
+                  "rewritten": true
+                },
+                {
+                  "statement": "Store review bottlenecks are delaying releases and making delivery timing harder to forecast.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "d1-store-review",
+                  "rewritten": true
+                }
+              ]
+            },
+            {
+              "scope": "d2",
+              "plantedAtK": 3,
+              "recalled": [
+                "d2-noisy-alerts",
+                "d2-late-reqs",
+                "d2-sessions"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 17,
+              "trueTotal": 17,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 2,
+              "rewritten": 2,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Many on-call alerts do not signal issues that need attention.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "d2-noisy-alerts",
+                  "rewritten": true
+                },
+                {
+                  "statement": "Requirements often arrive after work has begun.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "d2-late-reqs",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Team learning sessions help people share knowledge and understand the system better.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "d2-sessions",
+                  "rewritten": true
+                }
+              ]
+            },
+            {
+              "scope": "h1",
+              "plantedAtK": 3,
+              "recalled": [
+                "h1-staging",
+                "h1-component-churn",
+                "h1-mob"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 16,
+              "trueTotal": 16,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Unreliable shared test environments disrupt testing and demos.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "h1-staging",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Changes to shared UI components repeatedly create rework and slow feature development.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h1-component-churn",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Collaborative work on shared problems is productive.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h1-mob",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "h2",
+              "plantedAtK": 3,
+              "recalled": [
+                "h2-vague-tickets",
+                "h2-interruptions",
+                "h2-automation"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 16,
+              "trueTotal": 16,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 3,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Incoming bug reports often lack enough information for efficient investigation.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "h2-vague-tickets",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Frequent interruptions and task switching make it difficult to complete focused work.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h2-interruptions",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Incoming tickets are now handled more efficiently.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h2-automation",
+                  "rewritten": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "recallDev": {
+          "mean": 0.8518518518518517,
+          "min": 0.7777777777777778,
+          "max": 0.8888888888888888
+        },
+        "recallHeldOut": {
+          "mean": 0.888888888888889,
+          "min": 0.8333333333333334,
+          "max": 1
+        },
+        "themes": {
+          "mean": 20.666666666666668,
+          "min": 19,
+          "max": 22
+        },
+        "violations": {
+          "mean": 0,
+          "min": 0,
+          "max": 0
+        },
+        "belowKSurfaced": {
+          "mean": 0,
+          "min": 0,
+          "max": 0
+        },
+        "spurious": {
+          "mean": 0,
+          "min": 0,
+          "max": 0
+        },
+        "duplicates": {
+          "mean": 0,
+          "min": 0,
+          "max": 0
+        },
+        "supportPrecision": {
+          "mean": 1,
+          "min": 1,
+          "max": 1
+        },
+        "markerLeaks": {
+          "mean": 0,
+          "min": 0,
+          "max": 0
+        },
+        "markerLeaksBeforeGuard": {
+          "mean": 0,
+          "min": 0,
+          "max": 0
+        },
+        "maxSharedRun": {
+          "mean": 3,
+          "min": 3,
+          "max": 3
+        },
+        "flagged": {
+          "mean": 4.333333333333333,
+          "min": 2,
+          "max": 7
+        },
+        "rewritten": {
+          "mean": 4.333333333333333,
+          "min": 2,
+          "max": 7
+        },
+        "withheldWording": {
+          "mean": 0,
+          "min": 0,
+          "max": 0
+        },
+        "prompts": {
+          "mean": 23.666666666666668,
+          "min": 23,
+          "max": 24
+        },
+        "promptSubgroupMentions": {
+          "mean": 0,
+          "min": 0,
+          "max": 0
+        },
+        "promptMarkerLeaks": {
+          "mean": 0,
+          "min": 0,
+          "max": 0
+        },
+        "themeCostUsd": {
+          "mean": 0.005752466666666667,
+          "min": 0.005416500000000001,
+          "max": 0.0060763
+        },
+        "promptCostUsd": {
+          "mean": 0.0024414,
+          "min": 0.0023818,
+          "max": 0.0025215
+        },
+        "costUsd": {
+          "mean": 0.008193866666666666,
+          "min": 0.007938,
+          "max": 0.0084972
+        },
+        "latencyS": {
+          "mean": 177.0566666666667,
+          "min": 173.07999999999996,
+          "max": 181.53000000000003
+        },
+        "inputTokens": {
+          "mean": 14678.666666666666,
+          "min": 14404,
+          "max": 15042
+        },
+        "outputTokens": {
+          "mean": 13452,
+          "min": 12958,
+          "max": 13986
+        },
+        "reasoningTokens": {
+          "mean": 9676.333333333334,
+          "min": 9145,
+          "max": 10214
+        }
+      }
+    },
+    "gpt-6.1-terra": {
+      "rows": [
+        {
+          "model": "gpt-6.1-terra",
+          "run": 1,
+          "failedScopes": [],
+          "recallDev": 0.9444444444444444,
+          "recallHeldOut": 1,
+          "themes": 23,
+          "violations": 0,
+          "belowKSurfaced": 0,
+          "spurious": 0,
+          "duplicates": 0,
+          "supportPrecision": 1,
+          "markerLeaks": 0,
+          "markerLeaksBeforeGuard": 0,
+          "maxSharedRun": 3,
+          "flagged": 5,
+          "rewritten": 5,
+          "withheldWording": 0,
+          "prompts": 24,
+          "promptSubgroupMentions": 0,
+          "promptMarkerLeaks": 0,
+          "themeCostUsd": 0.04176400000000001,
+          "promptCostUsd": 0.015752000000000002,
+          "costUsd": 0.05751600000000001,
+          "latencyS": 143.37000000000003,
+          "inputTokens": 14531,
+          "outputTokens": 8597,
+          "reasoningTokens": 5092,
+          "scopes": [
+            {
+              "scope": "s1",
+              "plantedAtK": 2,
+              "recalled": [
+                "s1-review-wait",
+                "s1-pairing"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 11,
+              "trueTotal": 11,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Code reviews take too long to get picked up.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s1-review-wait",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Pairing was a valuable way to work.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s1-pairing",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s2",
+              "plantedAtK": 2,
+              "recalled": [
+                "s2-scope-creep",
+                "s2-review-wait"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 11,
+              "trueTotal": 11,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 3,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Work was added to the sprint after it began.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s2-scope-creep",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Code reviews were a bottleneck.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s2-review-wait",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s3",
+              "plantedAtK": 2,
+              "recalled": [
+                "s3-incident"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 7,
+              "trueTotal": 7,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Incident response occupied work time.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "s3-incident",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s4",
+              "plantedAtK": 2,
+              "recalled": [
+                "s4-focus",
+                "s4-followups"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 11,
+              "trueTotal": 11,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 1,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Dedicated quiet time helps people work.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s4-focus",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Some work needed after incidents has not yet been completed.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s4-followups",
+                  "rewritten": true
+                }
+              ]
+            },
+            {
+              "scope": "s5",
+              "plantedAtK": 2,
+              "recalled": [
+                "s5-goal",
+                "s5-deps"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 10,
+              "trueTotal": 10,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 3,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "The sprint lacked a clear goal.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s5-goal",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Work was blocked while waiting for dependencies to be ready.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s5-deps",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s6",
+              "plantedAtK": 2,
+              "recalled": [
+                "s6-goal",
+                "s6-release"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 11,
+              "trueTotal": 11,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "The sprint had a clear direction.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s6-goal",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Releases and deployments went smoothly.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s6-release",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "d1",
+              "plantedAtK": 3,
+              "recalled": [
+                "d1-flaky-tests",
+                "d1-store-review",
+                "d1-prototypes"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 18,
+              "trueTotal": 18,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Tests run by software produced inconsistent results.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "d1-flaky-tests",
+                  "rewritten": true
+                },
+                {
+                  "statement": "App review caused delays.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "d1-store-review",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Prototypes were helpful for the work.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "d1-prototypes",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "d2",
+              "plantedAtK": 3,
+              "recalled": [
+                "d2-noisy-alerts",
+                "d2-sessions",
+                "d2-late-reqs"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 17,
+              "trueTotal": 17,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 2,
+              "rewritten": 2,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Alerts create too much disruption.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "d2-noisy-alerts",
+                  "rewritten": true
+                },
+                {
+                  "statement": "Opportunities to learn from one another are valuable.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "d2-sessions",
+                  "rewritten": true
+                },
+                {
+                  "statement": "Requirements and changes arrive late.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "d2-late-reqs",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "h1",
+              "plantedAtK": 3,
+              "recalled": [
+                "h1-staging",
+                "h1-mob",
+                "h1-component-churn"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 16,
+              "trueTotal": 16,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Test environments are unreliable or unavailable.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "h1-staging",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Working together on shared tasks was beneficial.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h1-mob",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Changes to shared interface components create extra work.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h1-component-churn",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "h2",
+              "plantedAtK": 3,
+              "recalled": [
+                "h2-interruptions",
+                "h2-vague-tickets",
+                "h2-automation"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 18,
+              "trueTotal": 18,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Frequent interruptions and task switching disrupt work.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "h2-interruptions",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Bug reports and tickets often lack clear or sufficient information.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "h2-vague-tickets",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Tools that handle repetitive tasks have improved everyday work.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h2-automation",
+                  "rewritten": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "model": "gpt-6.1-terra",
+          "run": 2,
+          "failedScopes": [],
+          "recallDev": 0.8888888888888888,
+          "recallHeldOut": 1,
+          "themes": 22,
+          "violations": 0,
+          "belowKSurfaced": 0,
+          "spurious": 0,
+          "duplicates": 0,
+          "supportPrecision": 1,
+          "markerLeaks": 0,
+          "markerLeaksBeforeGuard": 0,
+          "maxSharedRun": 3,
+          "flagged": 5,
+          "rewritten": 5,
+          "withheldWording": 0,
+          "prompts": 24,
+          "promptSubgroupMentions": 0,
+          "promptMarkerLeaks": 0,
+          "themeCostUsd": 0.042621000000000006,
+          "promptCostUsd": 0.013511000000000002,
+          "costUsd": 0.05613200000000001,
+          "latencyS": 143.82,
+          "inputTokens": 14567,
+          "outputTokens": 8313,
+          "reasoningTokens": 4847,
+          "scopes": [
+            {
+              "scope": "s1",
+              "plantedAtK": 2,
+              "recalled": [
+                "s1-review-wait",
+                "s1-pairing"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 11,
+              "trueTotal": 11,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Code reviews were often delayed.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s1-review-wait",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Working together in pairs went well.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s1-pairing",
+                  "rewritten": true
+                }
+              ]
+            },
+            {
+              "scope": "s2",
+              "plantedAtK": 2,
+              "recalled": [
+                "s2-review-wait",
+                "s2-scope-creep"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 10,
+              "trueTotal": 10,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 3,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Code reviews are a bottleneck.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s2-review-wait",
+                  "rewritten": false
+                },
+                {
+                  "statement": "The team took on more tasks mid-iteration.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s2-scope-creep",
+                  "rewritten": true
+                }
+              ]
+            },
+            {
+              "scope": "s3",
+              "plantedAtK": 2,
+              "recalled": [
+                "s3-meetings",
+                "s3-incident"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 10,
+              "trueTotal": 10,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Meetings limited time for focused work.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s3-meetings",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Production incidents disrupted planned work.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s3-incident",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s4",
+              "plantedAtK": 2,
+              "recalled": [
+                "s4-focus",
+                "s4-followups"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 11,
+              "trueTotal": 11,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Uninterrupted work time is effective.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s4-focus",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Incident follow-up work remains unfinished.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s4-followups",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s5",
+              "plantedAtK": 2,
+              "recalled": [
+                "s5-goal",
+                "s5-deps"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 10,
+              "trueTotal": 10,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 3,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "The sprint goal was unclear.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s5-goal",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Dependencies delayed work.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s5-deps",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s6",
+              "plantedAtK": 2,
+              "recalled": [
+                "s6-release"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 5,
+              "trueTotal": 5,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "The release process went smoothly.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s6-release",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "d1",
+              "plantedAtK": 3,
+              "recalled": [
+                "d1-flaky-tests",
+                "d1-store-review"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 13,
+              "trueTotal": 13,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Tests run by software gave inconsistent results.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "d1-flaky-tests",
+                  "rewritten": true
+                },
+                {
+                  "statement": "App review delays held up releases.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "d1-store-review",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "d2",
+              "plantedAtK": 3,
+              "recalled": [
+                "d2-noisy-alerts",
+                "d2-late-reqs",
+                "d2-sessions"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 17,
+              "trueTotal": 17,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Alerts generate too much noise.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "d2-noisy-alerts",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Requirements and changes arrive late in the work.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "d2-late-reqs",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Group learning meetings provide value.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "d2-sessions",
+                  "rewritten": true
+                }
+              ]
+            },
+            {
+              "scope": "h1",
+              "plantedAtK": 3,
+              "recalled": [
+                "h1-staging",
+                "h1-component-churn",
+                "h1-mob"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 17,
+              "trueTotal": 17,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 3,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "The shared test environment is unreliable.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "h1-staging",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Changes to shared interface components create challenges for development.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "h1-component-churn",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Working together on the same task is valuable.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h1-mob",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "h2",
+              "plantedAtK": 3,
+              "recalled": [
+                "h2-vague-tickets",
+                "h2-interruptions",
+                "h2-automation"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 16,
+              "trueTotal": 16,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Incoming tickets often lack information needed to address them.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "h2-vague-tickets",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Work is frequently interrupted.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h2-interruptions",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Technology that handles tasks has improved how work gets done.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h2-automation",
+                  "rewritten": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "model": "gpt-6.1-terra",
+          "run": 3,
+          "failedScopes": [],
+          "recallDev": 0.9444444444444444,
+          "recallHeldOut": 1,
+          "themes": 23,
+          "violations": 0,
+          "belowKSurfaced": 0,
+          "spurious": 0,
+          "duplicates": 0,
+          "supportPrecision": 1,
+          "markerLeaks": 0,
+          "markerLeaksBeforeGuard": 0,
+          "maxSharedRun": 2,
+          "flagged": 6,
+          "rewritten": 6,
+          "withheldWording": 0,
+          "prompts": 24,
+          "promptSubgroupMentions": 0,
+          "promptMarkerLeaks": 0,
+          "themeCostUsd": 0.046162999999999996,
+          "promptCostUsd": 0.013688,
+          "costUsd": 0.059850999999999994,
+          "latencyS": 149.16999999999996,
+          "inputTokens": 14661,
+          "outputTokens": 9038,
+          "reasoningTokens": 5621,
+          "scopes": [
+            {
+              "scope": "s1",
+              "plantedAtK": 2,
+              "recalled": [
+                "s1-review-wait",
+                "s1-pairing"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 11,
+              "trueTotal": 11,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Reviews often waited too long to be picked up.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s1-review-wait",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Pairing was helpful or valued.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s1-pairing",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s2",
+              "plantedAtK": 2,
+              "recalled": [
+                "s2-review-wait",
+                "s2-scope-creep"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 10,
+              "trueTotal": 10,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 1,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Reviews were slow or backlogged.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s2-review-wait",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Additional tasks were introduced to the iteration once initial commitments had been made.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s2-scope-creep",
+                  "rewritten": true
+                }
+              ]
+            },
+            {
+              "scope": "s3",
+              "plantedAtK": 2,
+              "recalled": [
+                "s3-incident",
+                "s3-meetings"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 10,
+              "trueTotal": 10,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Production incidents displaced planned work.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s3-incident",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Meetings limited time for focused work.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s3-meetings",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s4",
+              "plantedAtK": 2,
+              "recalled": [
+                "s4-focus",
+                "s4-followups"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 11,
+              "trueTotal": 11,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Dedicated quiet time supports effective work.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s4-focus",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Follow-up work from incidents remains unfinished.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s4-followups",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s5",
+              "plantedAtK": 2,
+              "recalled": [
+                "s5-goal",
+                "s5-deps"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 11,
+              "trueTotal": 11,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Work direction was unclear.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "s5-goal",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Work was blocked while waiting for dependencies.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s5-deps",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "s6",
+              "plantedAtK": 2,
+              "recalled": [
+                "s6-goal",
+                "s6-release"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 10,
+              "trueTotal": 10,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 0,
+              "rewritten": 0,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "The work had a clear direction.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s6-goal",
+                  "rewritten": false
+                },
+                {
+                  "statement": "The release process went smoothly.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "s6-release",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "d1",
+              "plantedAtK": 3,
+              "recalled": [
+                "d1-flaky-tests",
+                "d1-store-review",
+                "d1-prototypes"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 18,
+              "trueTotal": 18,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 2,
+              "rewritten": 2,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Tests run by software produced inconsistent results.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "d1-flaky-tests",
+                  "rewritten": true
+                },
+                {
+                  "statement": "The store review process involved delays and waiting.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "d1-store-review",
+                  "rewritten": true
+                },
+                {
+                  "statement": "Prototypes helped the team work more effectively.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "d1-prototypes",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "d2",
+              "plantedAtK": 3,
+              "recalled": [
+                "d2-noisy-alerts",
+                "d2-late-reqs"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 12,
+              "trueTotal": 12,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Alerts create too much noise, including notifications about issues that aren't real.",
+                  "support": 7,
+                  "trueSupport": 7,
+                  "matched": "d2-noisy-alerts",
+                  "rewritten": true
+                },
+                {
+                  "statement": "Requirements and changes arrive late in the work.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "d2-late-reqs",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "h1",
+              "plantedAtK": 3,
+              "recalled": [
+                "h1-component-churn",
+                "h1-staging",
+                "h1-mob"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 16,
+              "trueTotal": 16,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Changes to shared UI components create challenges for development.",
+                  "support": 6,
+                  "trueSupport": 6,
+                  "matched": "h1-component-churn",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Systems used for testing are often unreliable.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h1-staging",
+                  "rewritten": true
+                },
+                {
+                  "statement": "Collaborative programming sessions worked well.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h1-mob",
+                  "rewritten": false
+                }
+              ]
+            },
+            {
+              "scope": "h2",
+              "plantedAtK": 3,
+              "recalled": [
+                "h2-vague-tickets",
+                "h2-interruptions",
+                "h2-automation"
+              ],
+              "belowKSurfaced": [],
+              "violations": 0,
+              "spurious": 0,
+              "duplicates": 0,
+              "claimed": 15,
+              "trueTotal": 15,
+              "markerLeaks": [],
+              "markerLeaksBeforeGuard": [],
+              "maxSharedRun": 2,
+              "flagged": 1,
+              "rewritten": 1,
+              "withheldWording": 0,
+              "themes": [
+                {
+                  "statement": "Incoming bug reports often lack sufficient detail.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h2-vague-tickets",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Work is frequently interrupted.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h2-interruptions",
+                  "rewritten": false
+                },
+                {
+                  "statement": "Using tools to handle tasks without manual input has improved parts of the workflow.",
+                  "support": 5,
+                  "trueSupport": 5,
+                  "matched": "h2-automation",
+                  "rewritten": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "recallDev": {
+          "mean": 0.9259259259259259,
+          "min": 0.8888888888888888,
+          "max": 0.9444444444444444
+        },
+        "recallHeldOut": {
+          "mean": 1,
+          "min": 1,
+          "max": 1
+        },
+        "themes": {
+          "mean": 22.666666666666668,
+          "min": 22,
+          "max": 23
+        },
+        "violations": {
+          "mean": 0,
+          "min": 0,
+          "max": 0
+        },
+        "belowKSurfaced": {
+          "mean": 0,
+          "min": 0,
+          "max": 0
+        },
+        "spurious": {
+          "mean": 0,
+          "min": 0,
+          "max": 0
+        },
+        "duplicates": {
+          "mean": 0,
+          "min": 0,
+          "max": 0
+        },
+        "supportPrecision": {
+          "mean": 1,
+          "min": 1,
+          "max": 1
+        },
+        "markerLeaks": {
+          "mean": 0,
+          "min": 0,
+          "max": 0
+        },
+        "markerLeaksBeforeGuard": {
+          "mean": 0,
+          "min": 0,
+          "max": 0
+        },
+        "maxSharedRun": {
+          "mean": 2.6666666666666665,
+          "min": 2,
+          "max": 3
+        },
+        "flagged": {
+          "mean": 5.333333333333333,
+          "min": 5,
+          "max": 6
+        },
+        "rewritten": {
+          "mean": 5.333333333333333,
+          "min": 5,
+          "max": 6
+        },
+        "withheldWording": {
+          "mean": 0,
+          "min": 0,
+          "max": 0
+        },
+        "prompts": {
+          "mean": 24,
+          "min": 24,
+          "max": 24
+        },
+        "promptSubgroupMentions": {
+          "mean": 0,
+          "min": 0,
+          "max": 0
+        },
+        "promptMarkerLeaks": {
+          "mean": 0,
+          "min": 0,
+          "max": 0
+        },
+        "themeCostUsd": {
+          "mean": 0.043516,
+          "min": 0.04176400000000001,
+          "max": 0.046162999999999996
+        },
+        "promptCostUsd": {
+          "mean": 0.014317000000000002,
+          "min": 0.013511000000000002,
+          "max": 0.015752000000000002
+        },
+        "costUsd": {
+          "mean": 0.057833,
+          "min": 0.05613200000000001,
+          "max": 0.059850999999999994
+        },
+        "latencyS": {
+          "mean": 145.45333333333335,
+          "min": 143.37000000000003,
+          "max": 149.16999999999996
+        },
+        "inputTokens": {
+          "mean": 14586.333333333334,
+          "min": 14531,
+          "max": 14661
+        },
+        "outputTokens": {
+          "mean": 8649.333333333334,
+          "min": 8313,
+          "max": 9038
+        },
+        "reasoningTokens": {
+          "mean": 5186.666666666667,
+          "min": 4847,
+          "max": 5621
+        }
+      }
+    }
+  }
+}
