@@ -36,7 +36,7 @@ command below exited with the 429, cached nothing, and billed nothing. Once the
 account has credits, from the repository root:
 
 ```bash
-npx tsx scripts/eval-themes.ts --env-file /Users/ben/Documents/ClaudeProject/Personal/elicitsense/.env --models gpt-6-luna,gpt-6.1-terra --runs 3
+npx tsx scripts/eval-themes.ts --env-file .env --models gpt-6-luna,gpt-6.1-terra --runs 3
 ```
 
 It writes `runs/eval/results.json` and `docs/eval/results.md`, with the
