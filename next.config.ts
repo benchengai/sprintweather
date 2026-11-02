@@ -11,6 +11,8 @@ const config: NextConfig = {
   pageExtensions: demo ? ["tsx", "ts"] : ["tsx", "ts", "api.ts"],
   trailingSlash: true,
   images: { unoptimized: true },
+  // DEMO_BASE_PATH serves the demo build from a sub-path, e.g. /demos/sprintweather.
+  basePath: demo ? (process.env.DEMO_BASE_PATH ?? "") : "",
   env: { NEXT_PUBLIC_SW_MODE: demo ? "demo" : "local" },
   agentRules: false,
 };
