@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+.DS_Store
+
+# Secrets: never commit API keys
+.env
+.env.*
+
+# Local-mode store (real team data stays on the machine)
+.data/

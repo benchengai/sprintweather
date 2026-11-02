@@ -1,0 +1,37 @@
+{
+  "name": "sprintweather",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Opt-in, self-reported, k-anonymous team pulse for sprint retrospectives",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "build:demo": "SW_MODE=demo next build && tsx scripts/check-export.ts",
+    "serve:demo": "node scripts/serve-out.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "synth": "tsx scripts/gen-synthetic.ts",
+    "eval": "tsx scripts/eval-themes.ts",
+    "demo:pipeline": "tsx scripts/demo-pipeline.ts"
+  },
+  "dependencies": {
+    "next": "16.4.3",
+    "openai": "7.47.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "fast-check": "4.10.2",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
+  }
+}
